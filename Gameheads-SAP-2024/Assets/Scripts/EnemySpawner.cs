@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private int spawnRate;
+    [SerializeField] private float spawnRate;
     [SerializeField] private GameObject enemyObject;
 
     public void setSpawnRate(int spawnRate) {
@@ -13,17 +13,11 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        InvokeRepeating("Spawn", spawnRate, spawnRate);
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        int timer = 0;
-        while(timer < spawnRate * Time.deltaTime)
-        {
-            timer++;
-        }
-        GameObject.Instantiate(enemyObject); //TODO: randomize or change spawn position
+    private void Spawn() {
+        GameObject.Instantiate(enemyObject);
     }
 }
