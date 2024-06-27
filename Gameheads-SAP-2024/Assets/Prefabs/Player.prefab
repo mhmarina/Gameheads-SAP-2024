@@ -100,6 +100,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  pulseRadius: 100
+  pulseForce: 100
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!61 &4638336433469962771
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private int moveSpeed;
+    [SerializeField] private float pulseRadius;
+    [SerializeField] private float pulseForce;
+    [SerializeField] private LayerMask enemyLayer;
     float horizontalInput;
     float verticalInput;
 
@@ -23,5 +26,28 @@ public class PlayerMovement : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
         transform.Translate(new Vector2(horizontalInput, verticalInput) * moveSpeed * Time.deltaTime);
+
+        if (Input.GetKey(KeyCode.M))
+        {
+            Debug.Log("pulse");
+            releasePulse();
+        }
+    }
+
+    private void releasePulse()
+    {
+        //3 is the enemy layer...
+        Collider2D[] enemiesWithinPulseRange = Physics2D.OverlapCircleAll(transform.position, pulseRadius, enemyLayer);
+        Debug.Log(enemiesWithinPulseRange.Length);
+        //check for objects tagged enemy in collider
+        foreach(Collider2D enemy in enemiesWithinPulseRange)
+        {
+            Vector2 direction = enemy.transform.position - transform.position;
+            Rigidbody2D rb = enemy.GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+                rb.AddForce(direction.normalized * pulseForce, ForceMode2D.Impulse);
+            }
+        }
     }
 }

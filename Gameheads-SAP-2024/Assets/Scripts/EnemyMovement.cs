@@ -18,6 +18,15 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         //TODO: make movement more random
-        transform.position = (Vector2.MoveTowards(transform.position, playerObject.transform.position, moveSpeed*Time.deltaTime));
+        if (Input.GetKey(KeyCode.Space))
+        {
+            moveTowardsPlayer();
+        }
+    }
+
+    public void moveTowardsPlayer()
+    {
+        transform.position = (Vector2.MoveTowards(transform.position, playerObject.transform.position, moveSpeed * Time.deltaTime));
+
     }
 }
