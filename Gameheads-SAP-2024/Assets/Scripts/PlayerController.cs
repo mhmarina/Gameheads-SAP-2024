@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private int moveSpeed;
+    [SerializeField] private float moveSpeed;
     [SerializeField] private float pulseRadius;
     [SerializeField] private float pulseForce;
+    [SerializeField] private float pullForce;
     [SerializeField] private LayerMask enemyLayer;
     float horizontalInput;
     float verticalInput;
 
-    public int getMoveSpeed() {
+    public float getMoveSpeed() {
         return moveSpeed;
     }
 
-    public void setMoveSpeed(int speed)
+    public void setMoveSpeed(float speed)
     {
         moveSpeed = speed;
     }
@@ -23,22 +24,30 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //movement
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
         transform.Translate(new Vector2(horizontalInput, verticalInput) * moveSpeed * Time.deltaTime);
 
-        if (Input.GetKey(KeyCode.M))
+        //attacks
+        //can only either inhale OR exhale
+        if (Input.GetKey(KeyCode.M) && !Input.GetKey(KeyCode.Space))
         {
-            Debug.Log("pulse");
-            releasePulse();
+            Debug.Log("exhale");
+            exhale();
+        }
+
+        if (Input.GetKey(KeyCode.Space) && !Input.GetKey(KeyCode.M))
+        {
+            Debug.Log("inhale");
+            inhale();
         }
     }
 
-    private void releasePulse()
+    private void exhale()
     {
         //3 is the enemy layer...
         Collider2D[] enemiesWithinPulseRange = Physics2D.OverlapCircleAll(transform.position, pulseRadius, enemyLayer);
-        Debug.Log(enemiesWithinPulseRange.Length);
         //check for objects tagged enemy in collider
         foreach(Collider2D enemy in enemiesWithinPulseRange)
         {
@@ -50,4 +59,18 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+    private void inhale()
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("pullableObject");
+        Debug.Log(enemies.Length);
+        if(enemies.Length > 0)
+        {
+            foreach(GameObject gO in enemies)
+            {
+                gO.GetComponent<EnemyMovement>().moveTowardsPlayer(pullForce);
+            }
+        }
+    }
+
 }

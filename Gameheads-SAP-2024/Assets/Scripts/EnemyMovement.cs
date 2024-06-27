@@ -5,8 +5,8 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     private GameObject playerObject;
-    [SerializeField] private int moveSpeed;
-    [SerializeField] private int shootingSpeed;
+    [SerializeField] private float moveSpeed;
+    [SerializeField] private float shootingSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -18,15 +18,17 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         //TODO: make movement more random
-        if (Input.GetKey(KeyCode.Space))
-        {
-            moveTowardsPlayer();
-        }
+        moveTowardsPlayer(moveSpeed);
     }
 
-    public void moveTowardsPlayer()
+    public void moveTowardsPlayer(float mS)
     {
-        transform.position = (Vector2.MoveTowards(transform.position, playerObject.transform.position, moveSpeed * Time.deltaTime));
+        transform.position = (Vector2.MoveTowards(transform.position, playerObject.transform.position, mS * Time.deltaTime));
+
+    }
+    //TODO:
+    public void orbitPlayer()
+    {
 
     }
 }
