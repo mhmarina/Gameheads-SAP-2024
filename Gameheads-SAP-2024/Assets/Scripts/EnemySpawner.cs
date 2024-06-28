@@ -14,15 +14,9 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         InvokeRepeating("Spawn", spawnRate, spawnRate);
-        InvokeRepeating("moveRandomly", 10, 10);
     }
 
     private void Spawn() {
         GameObject.Instantiate(enemyObject);
-    }
-
-    private void moveRandomly()
-    {
-        transform.position = new Vector2(Random.Range(0, Screen.width),Random.Range(0, Screen.height));
     }
 }
