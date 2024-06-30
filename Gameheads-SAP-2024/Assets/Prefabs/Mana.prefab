@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 8453329983107196920}
   - component: {fileID: 1764928014472476725}
   - component: {fileID: 4260673034866182089}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Mana
-  m_TagString: pullableObject
+  m_TagString: InteractableObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

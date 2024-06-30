@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpawner : MonoBehaviour
+public class Spawner : MonoBehaviour
 {
     [SerializeField] private float spawnRate;
-    [SerializeField] private GameObject enemyObject;
+    [SerializeField] private GameObject spawnObject;
 
     public void setSpawnRate(int spawnRate) {
         this.spawnRate = spawnRate;
@@ -18,7 +18,7 @@ public class EnemySpawner : MonoBehaviour
     }
 
     private void Spawn() {
-        GameObject.Instantiate(enemyObject, transform.position, transform.rotation);
+        GameObject.Instantiate(spawnObject, transform.position, transform.rotation);
     }
 
     private void randomizePosition()

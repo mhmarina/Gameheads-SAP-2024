@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    private const string INTERACTABLE_TAG = "InteractableObject";
+
     [SerializeField] private float moveSpeed;
     [SerializeField] private float pulseRadius;
     [SerializeField] private float pulseForce;
     [SerializeField] private float pullForce;
-    [SerializeField] private LayerMask interactableLayer;
     private int playerHealth;
     [SerializeField] int MAX_PLAYER_HEALTH;
     float horizontalInput;
     float verticalInput;
+    
 
     public float getMoveSpeed() {
         return moveSpeed;
@@ -63,22 +65,25 @@ public class PlayerController : MonoBehaviour
     private void exhale()
     {
         //3 is the enemy layer...
-        Collider2D[] enemiesWithinPulseRange = Physics2D.OverlapCircleAll(transform.position, pulseRadius, interactableLayer);
+        Collider2D[] enemiesWithinPulseRange = Physics2D.OverlapCircleAll(transform.position, pulseRadius);
         //check for objects tagged enemy in collider
         foreach(Collider2D enemy in enemiesWithinPulseRange)
         {
-            Vector2 direction = enemy.transform.position - transform.position;
-            Rigidbody2D rb = enemy.GetComponent<Rigidbody2D>();
-            if (rb != null)
+            if (enemy.CompareTag(INTERACTABLE_TAG))
             {
-                rb.AddForce(direction.normalized * pulseForce, ForceMode2D.Impulse);
+                Vector2 direction = enemy.transform.position - transform.position;
+                Rigidbody2D rb = enemy.GetComponent<Rigidbody2D>();
+                if (rb != null)
+                {
+                    rb.AddForce(direction.normalized * pulseForce, ForceMode2D.Impulse);
+                }
             }
         }
     }
 
     private void inhale()
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("pullableObject");
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag(INTERACTABLE_TAG);
         if(enemies.Length > 0)
         {
             foreach(GameObject gO in enemies)
