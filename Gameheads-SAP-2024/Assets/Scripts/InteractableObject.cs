@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class moveTowardPlayer : MonoBehaviour
+public class InteractableObject : MonoBehaviour
 {
     private GameObject playerObject;
+    [SerializeField] public bool canBePulled;
+    [SerializeField] public bool canBePushed;
 
     void Start()
     {

@@ -69,16 +69,15 @@ public class PlayerController : MonoBehaviour
 
     private void exhale()
     {
-        //3 is the enemy layer...
-        Collider2D[] enemiesWithinPulseRange = Physics2D.OverlapCircleAll(transform.position, pulseRadius);
-        //check for objects tagged enemy in collider
-        foreach(Collider2D enemy in enemiesWithinPulseRange)
+        Collider2D[] collidersWithinPulseRange = Physics2D.OverlapCircleAll(transform.position, pulseRadius);
+        foreach(Collider2D collider in collidersWithinPulseRange)
         {
-            if (enemy.CompareTag(INTERACTABLE_TAG))
+            if (collider.CompareTag(INTERACTABLE_TAG))
             {
-                Vector2 direction = enemy.transform.position - transform.position;
-                Rigidbody2D rb = enemy.GetComponent<Rigidbody2D>();
-                if (rb != null)
+                Vector2 direction = collider.transform.position - transform.position;
+                Rigidbody2D rb = collider.GetComponent<Rigidbody2D>();
+                InteractableObject io = collider.GetComponent<InteractableObject>();
+                if (rb != null && io.canBePushed)
                 {
                     rb.AddForce(direction.normalized * pulseForce, ForceMode2D.Impulse);
                 }
@@ -93,7 +92,10 @@ public class PlayerController : MonoBehaviour
         {
             foreach(GameObject gO in enemies)
             {
-                gO.GetComponent<moveTowardPlayer>().moveTowardsPlayer(pullForce);
+                if (gO.GetComponent<InteractableObject>().canBePulled)
+                {
+                    gO.GetComponent<InteractableObject>().moveTowardsPlayer(pullForce);
+                }
             }
         }
     }

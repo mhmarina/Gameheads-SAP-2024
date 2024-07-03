@@ -11,7 +11,7 @@ public class ManaMovement : MonoBehaviour
     [SerializeField] float orbitSpeed;
     private InputManager im;
     private Vector2 velocity = Vector2.zero;
-    private float smoothTime = 0.0f;
+    [SerializeField] private float smoothTime = 0.0f;
 
     //angle in radians from 0 to 2pi
     private float angle;
@@ -27,12 +27,12 @@ public class ManaMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!im.button_inhale && !im.button_exhale)
+        if(!im.button_inhale)
         {
             angle += orbitSpeed * Time.deltaTime;
             float h = player.transform.position.x - radius * Mathf.Cos(angle);
             float k = player.transform.position.y - radius * Mathf.Sin(angle);
-            transform.position = new Vector2(h, k);
+            transform.position = Vector2.SmoothDamp(transform.position, new Vector2(h, k), ref velocity, smoothTime);
         }
     }
 }
