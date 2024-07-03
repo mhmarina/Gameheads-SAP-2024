@@ -12,9 +12,4 @@ public class EnemyMovement : MonoBehaviour
         //TODO: make movement more random
         GetComponent<moveTowardPlayer>().moveTowardsPlayer(moveSpeed);
     }
-    //TODO:
-    public void orbitPlayer()
-    {
-
-    }
 }
