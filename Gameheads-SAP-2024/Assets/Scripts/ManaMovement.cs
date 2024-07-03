@@ -34,5 +34,11 @@ public class ManaMovement : MonoBehaviour
             float k = player.transform.position.y - radius * Mathf.Sin(angle);
             transform.position = Vector2.SmoothDamp(transform.position, new Vector2(h, k), ref velocity, smoothTime);
         }
+
+        if (im.button_inhale)
+        {
+            GetComponent<InteractableObject>().setPullSpeed(10);
+            GetComponent<InteractableObject>().moveTowardsPlayer();
+        }
     }
 }

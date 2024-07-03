@@ -188,3 +188,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePulled: 1
   canBePushed: 1
+  pullSpeed: 2

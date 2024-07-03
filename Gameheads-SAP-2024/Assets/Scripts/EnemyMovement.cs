@@ -9,7 +9,8 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
-        //TODO: make movement more random
-        GetComponent<InteractableObject>().moveTowardsPlayer(moveSpeed);
+        InteractableObject iO = GetComponent<InteractableObject>();
+        iO.setPullSpeed(moveSpeed);
+        iO.moveTowardsPlayer();
     }
 }

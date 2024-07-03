@@ -92,9 +92,11 @@ public class PlayerController : MonoBehaviour
         {
             foreach(GameObject gO in enemies)
             {
-                if (gO.GetComponent<InteractableObject>().canBePulled)
+                InteractableObject iO = gO.GetComponent<InteractableObject>();
+                if (iO.canBePulled)
                 {
-                    gO.GetComponent<InteractableObject>().moveTowardsPlayer(pullForce);
+                    iO.setPullSpeed(pullForce);
+                    iO.moveTowardsPlayer();
                 }
             }
         }
