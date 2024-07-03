@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8453329983107196920}
   - component: {fileID: 1764928014472476725}
   - component: {fileID: 4260673034866182089}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mana
   m_TagString: InteractableObject
   m_Icon: {fileID: 0}
@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.1305, y: -0.17925945, z: 0}
-  m_LocalScale: {x: 0.5228, y: 1, z: 1}
+  m_LocalScale: {x: 0.23680788, y: 0.45296073, z: 0.45296073}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -114,7 +114,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &8453329983107196920
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -172,6 +172,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b07c83412261a42a8a503273cc8d980a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  radius: 2
+  orbitSpeed: 1
+  smoothTime: 0.1
 --- !u!114 &4260673034866182089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,6 +184,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1351830361585359163}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 962895ed56b3340d48b430c5dce444ef, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d0a18d3265284bb4b137321476ed8fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canBePulled: 1
+  canBePushed: 0
+  pullSpeed: 5

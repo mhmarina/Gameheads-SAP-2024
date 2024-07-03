@@ -10,8 +10,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float pulseRadius;
     [SerializeField] private float pulseForce;
     [SerializeField] private float pullForce;
-    private int playerHealth;
+    [SerializeField] private GameObject InputManager;
     [SerializeField] int MAX_PLAYER_HEALTH;
+    private InputManager im;
+    private int playerHealth;
     float horizontalInput;
     float verticalInput;
     
@@ -32,25 +34,28 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        /* We want this player to persist across levels. */
+        DontDestroyOnLoad(this.gameObject);
         playerHealth = MAX_PLAYER_HEALTH;
+        im = InputManager.GetComponent<InputManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
         //movement
-        horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
+        horizontalInput = im.button_horizontalInput;
+        verticalInput = im.button_verticalInput;
         transform.Translate(new Vector2(horizontalInput, verticalInput) * moveSpeed * Time.deltaTime);
 
         //attacks
         //can only either inhale OR exhale
-        if (Input.GetKey(KeyCode.M) && !Input.GetKeyDown(KeyCode.Space))
+        if (im.button_exhale)
         {
             exhale();
         }
 
-        if (Input.GetKey(KeyCode.Space) && !Input.GetKeyDown(KeyCode.M))
+        else if (im.button_inhale)
         {
             inhale();
         }
@@ -64,16 +69,15 @@ public class PlayerController : MonoBehaviour
 
     private void exhale()
     {
-        //3 is the enemy layer...
-        Collider2D[] enemiesWithinPulseRange = Physics2D.OverlapCircleAll(transform.position, pulseRadius);
-        //check for objects tagged enemy in collider
-        foreach(Collider2D enemy in enemiesWithinPulseRange)
+        Collider2D[] collidersWithinPulseRange = Physics2D.OverlapCircleAll(transform.position, pulseRadius);
+        foreach(Collider2D collider in collidersWithinPulseRange)
         {
-            if (enemy.CompareTag(INTERACTABLE_TAG))
+            if (collider.CompareTag(INTERACTABLE_TAG))
             {
-                Vector2 direction = enemy.transform.position - transform.position;
-                Rigidbody2D rb = enemy.GetComponent<Rigidbody2D>();
-                if (rb != null)
+                Vector2 direction = collider.transform.position - transform.position;
+                Rigidbody2D rb = collider.GetComponent<Rigidbody2D>();
+                InteractableObject io = collider.GetComponent<InteractableObject>();
+                if (rb != null && io.canBePushed)
                 {
                     rb.AddForce(direction.normalized * pulseForce, ForceMode2D.Impulse);
                 }
@@ -88,7 +92,12 @@ public class PlayerController : MonoBehaviour
         {
             foreach(GameObject gO in enemies)
             {
-                gO.GetComponent<moveTowardPlayer>().moveTowardsPlayer(pullForce);
+                InteractableObject iO = gO.GetComponent<InteractableObject>();
+                if (iO.canBePulled)
+                {
+                    iO.setPullSpeed(pullForce);
+                    iO.moveTowardsPlayer();
+                }
             }
         }
     }

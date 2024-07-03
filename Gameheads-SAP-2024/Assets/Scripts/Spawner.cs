@@ -6,6 +6,7 @@ public class Spawner : MonoBehaviour
 {
     [SerializeField] private float spawnRate;
     [SerializeField] private GameObject spawnObject;
+    [SerializeField] private bool randomizeSpawnPos;
 
     public void setSpawnRate(int spawnRate) {
         this.spawnRate = spawnRate;
@@ -14,7 +15,10 @@ public class Spawner : MonoBehaviour
     void Start()
     {
         InvokeRepeating("Spawn", spawnRate, spawnRate);
-        InvokeRepeating("randomizePosition", 1, 1);
+        if (randomizeSpawnPos)
+        {
+            InvokeRepeating("randomizePosition", 1, 1);
+        }
     }
 
     private void Spawn() {

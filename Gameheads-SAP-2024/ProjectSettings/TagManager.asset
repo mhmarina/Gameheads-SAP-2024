@@ -6,6 +6,7 @@ TagManager:
   tags:
   - pullableObject
   - InteractableObject
+  - InputManager
   layers:
   - Default
   - TransparentFX
@@ -13,8 +14,8 @@ TagManager:
   - InteractableObject
   - Water
   - UI
-  - 
-  - 
+  - Mana
+  - Enemy
   - 
   - 
   - 

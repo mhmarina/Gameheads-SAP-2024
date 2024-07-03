@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7265675221390418208}
   - component: {fileID: 2270853058972301473}
   - component: {fileID: 8818921298114018888}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy
   m_TagString: InteractableObject
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae1dbcca69ec4d159179f857358a8df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.5
+  moveSpeed: 2
   shootingSpeed: 0
 --- !u!61 &7265675221390418208
 BoxCollider2D:
@@ -183,6 +183,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7126311854603686905}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 962895ed56b3340d48b430c5dce444ef, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d0a18d3265284bb4b137321476ed8fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canBePulled: 1
+  canBePushed: 1
+  pullSpeed: 2
