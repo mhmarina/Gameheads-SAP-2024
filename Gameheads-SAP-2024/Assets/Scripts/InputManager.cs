@@ -11,7 +11,6 @@ public class InputManager : MonoBehaviour
     public bool button_inhale;
     public bool button_exhale;
     public bool isMoving = true;
-    private GameObject Instance;
 
     private void Start()
     {
