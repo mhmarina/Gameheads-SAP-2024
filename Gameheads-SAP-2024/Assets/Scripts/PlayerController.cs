@@ -10,8 +10,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float pulseRadius;
     [SerializeField] private float pulseForce;
     [SerializeField] private float pullForce;
-    private int playerHealth;
+    [SerializeField] private GameObject InputManager;
     [SerializeField] int MAX_PLAYER_HEALTH;
+    private InputManager im;
+    private int playerHealth;
     float horizontalInput;
     float verticalInput;
     
@@ -32,25 +34,28 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        /* We want this player to persist across levels. */
+        DontDestroyOnLoad(this.gameObject);
         playerHealth = MAX_PLAYER_HEALTH;
+        im = InputManager.GetComponent<InputManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
         //movement
-        horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
+        horizontalInput = im.button_horizontalInput;
+        verticalInput = im.button_verticalInput;
         transform.Translate(new Vector2(horizontalInput, verticalInput) * moveSpeed * Time.deltaTime);
 
         //attacks
         //can only either inhale OR exhale
-        if (Input.GetKey(KeyCode.M) && !Input.GetKeyDown(KeyCode.Space))
+        if (im.button_exhale)
         {
             exhale();
         }
 
-        if (Input.GetKey(KeyCode.Space) && !Input.GetKeyDown(KeyCode.M))
+        else if (im.button_inhale)
         {
             inhale();
         }
