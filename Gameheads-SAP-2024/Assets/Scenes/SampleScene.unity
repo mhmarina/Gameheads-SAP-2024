@@ -962,6 +962,10 @@ PrefabInstance:
       propertyPath: m_Interpolate
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4527886243868513862, guid: 7d037850cbbae489d83e0ab5c63b4606, type: 3}
+      propertyPath: MAX_HEALTH
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6300087415271049751, guid: 7d037850cbbae489d83e0ab5c63b4606, type: 3}
       propertyPath: m_Name
       value: Player

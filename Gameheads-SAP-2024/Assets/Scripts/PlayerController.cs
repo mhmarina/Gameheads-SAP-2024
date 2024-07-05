@@ -11,9 +11,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float pulseForce;
     [SerializeField] private float pullForce;
     [SerializeField] private GameObject InputManager;
-    [SerializeField] int MAX_PLAYER_HEALTH;
+    private Health playerHealth;
     private InputManager im;
-    private int playerHealth;
     float horizontalInput;
     float verticalInput;
     
@@ -27,16 +26,11 @@ public class PlayerController : MonoBehaviour
         moveSpeed = speed;
     }
 
-    public int getPlayerHealth()
-    {
-        return playerHealth;
-    }
-
     private void Start()
     {
         /* We want this player to persist across levels. */
+        playerHealth = GetComponent<Health>();
         DontDestroyOnLoad(this.gameObject);
-        playerHealth = MAX_PLAYER_HEALTH;
         im = InputManager.GetComponent<InputManager>();
     }
 
@@ -61,7 +55,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Player death
-        if(playerHealth <= 0)
+        if(playerHealth.getHealth() <= 0)
         {
             Destroy(gameObject);
         }
@@ -106,17 +100,15 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<ManaMovement>())
         {
-            playerHealth++;
-            Mathf.Clamp(playerHealth, 0, MAX_PLAYER_HEALTH);
+            playerHealth.setHealth(playerHealth.getHealth() + 1);
             Destroy(collision.gameObject);
-            Debug.Log("Collision with Mana " + playerHealth);
+            Debug.Log("Collision with Mana " + playerHealth.getHealth());
         }
         if (collision.gameObject.GetComponent<EnemyMovement>())
         {
-            playerHealth--;
-            Mathf.Clamp(playerHealth, 0, MAX_PLAYER_HEALTH);
+            playerHealth.setHealth(playerHealth.getHealth() - 1);
             Destroy(collision.gameObject);
-            Debug.Log("Collision with Enemy " + playerHealth);
+            Debug.Log("Collision with Enemy " + playerHealth.getHealth());
         }
     }
 

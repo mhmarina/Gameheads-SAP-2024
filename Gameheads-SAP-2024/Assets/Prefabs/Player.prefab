@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9188518994893437824}
   - component: {fileID: 4638336433469962771}
   - component: {fileID: 3479199613892123550}
+  - component: {fileID: 4527886243868513862}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -103,9 +104,8 @@ MonoBehaviour:
   pulseRadius: 2
   pulseForce: 0.5
   pullForce: 0.5
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 8
+  InputManager: {fileID: 0}
+  MAX_PLAYER_HEALTH: 0
 --- !u!61 &4638336433469962771
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -178,3 +178,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &4527886243868513862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6300087415271049751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c435462dde2d47808368a2b25cf6ace, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
