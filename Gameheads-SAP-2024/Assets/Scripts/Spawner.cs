@@ -36,9 +36,6 @@ public class Spawner : MonoBehaviour
 
     private void randomizePosition()
     {
-        Camera cam = Camera.main;
-        float height = 2f * cam.orthographicSize;
-        float width = height * cam.aspect;
         transform.position = new Vector2(Random.Range(-10, 10), Random.Range(-5, 5));
     }
 }
