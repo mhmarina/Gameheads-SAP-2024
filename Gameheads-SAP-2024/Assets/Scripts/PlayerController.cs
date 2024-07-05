@@ -98,17 +98,14 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.GetComponent<ManaMovement>())
+        if (collision.gameObject.GetComponent<InteractableObject>())
         {
-            playerHealth.setHealth(playerHealth.getHealth() + 1);
-            Destroy(collision.gameObject);
-            Debug.Log("Collision with Mana " + playerHealth.getHealth());
+            collision.gameObject.GetComponent<InteractableObject>().Interact();
+            Debug.Log("Interacted");
         }
-        if (collision.gameObject.GetComponent<EnemyMovement>())
+        else
         {
-            playerHealth.setHealth(playerHealth.getHealth() - 1);
-            Destroy(collision.gameObject);
-            Debug.Log("Collision with Enemy " + playerHealth.getHealth());
+            Debug.Log("no go");
         }
     }
 

@@ -189,3 +189,5 @@ MonoBehaviour:
   canBePulled: 1
   canBePushed: 1
   pullSpeed: 2
+  damageOrHealing: 10
+  myType: 0

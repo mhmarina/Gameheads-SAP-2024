@@ -7,6 +7,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private float spawnRate;
     [SerializeField] private GameObject spawnObject;
     [SerializeField] private bool randomizeSpawnPos;
+    [SerializeField] private GameObject player;
 
     public void setSpawnRate(int spawnRate) {
         this.spawnRate = spawnRate;
@@ -21,6 +22,14 @@ public class Spawner : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (!player)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     private void Spawn() {
         GameObject.Instantiate(spawnObject, transform.position, transform.rotation);
     }
@@ -30,8 +39,6 @@ public class Spawner : MonoBehaviour
         Camera cam = Camera.main;
         float height = 2f * cam.orthographicSize;
         float width = height * cam.aspect;
-
-
         transform.position = new Vector2(Random.Range(-10, 10), Random.Range(-5, 5));
     }
 }

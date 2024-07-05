@@ -101,11 +101,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  pulseRadius: 2
-  pulseForce: 0.5
-  pullForce: 0.5
+  pulseRadius: 5
+  pulseForce: 0.05
+  pullForce: 2
   InputManager: {fileID: 0}
-  MAX_PLAYER_HEALTH: 0
 --- !u!61 &4638336433469962771
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -159,11 +158,11 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6300087415271049751}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 10
+  m_Mass: 100
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -190,3 +189,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c435462dde2d47808368a2b25cf6ace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MAX_HEALTH: 100
