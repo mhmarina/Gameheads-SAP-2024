@@ -10,9 +10,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float pulseRadius;
     [SerializeField] private float pulseForce;
     [SerializeField] private float pullForce;
-    [SerializeField] private GameObject InputManager;
+    [SerializeField] private InputManager im;
     private Health playerHealth;
-    private InputManager im;
     float horizontalInput;
     float verticalInput;
     
@@ -31,31 +30,32 @@ public class PlayerController : MonoBehaviour
         /* We want this player to persist across levels. */
         playerHealth = GetComponent<Health>();
         DontDestroyOnLoad(this.gameObject);
-        im = InputManager.GetComponent<InputManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
         //movement
-        horizontalInput = im.button_horizontalInput;
-        verticalInput = im.button_verticalInput;
-        transform.Translate(new Vector2(horizontalInput, verticalInput) * moveSpeed * Time.deltaTime);
-
-        //attacks
-        //can only either inhale OR exhale
-        if (im.button_exhale)
+        if (im)
         {
-            exhale();
-        }
+            horizontalInput = im.button_horizontalInput;
+            verticalInput = im.button_verticalInput;
+            transform.Translate(new Vector2(horizontalInput, verticalInput) * moveSpeed * Time.deltaTime);
 
-        else if (im.button_inhale)
-        {
-            inhale();
-        }
+            //attacks
+            //can only either inhale OR exhale
+            if (im.button_exhale)
+            {
+                exhale();
+            }
 
+            else if (im.button_inhale)
+            {
+                inhale();
+            }
+        }
         // Player death
-        if(playerHealth.getHealth() <= 0)
+        if (playerHealth.getHealth() <= 0)
         {
             Destroy(gameObject);
         }
