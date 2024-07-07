@@ -11,9 +11,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float pulseForce;
     [SerializeField] private float pullForce;
     [SerializeField] private GameObject InputManager;
-    [SerializeField] int MAX_PLAYER_HEALTH;
+    private Health playerHealth;
     private InputManager im;
-    private int playerHealth;
     float horizontalInput;
     float verticalInput;
     
@@ -27,16 +26,11 @@ public class PlayerController : MonoBehaviour
         moveSpeed = speed;
     }
 
-    public int getPlayerHealth()
-    {
-        return playerHealth;
-    }
-
     private void Start()
     {
         /* We want this player to persist across levels. */
+        playerHealth = GetComponent<Health>();
         DontDestroyOnLoad(this.gameObject);
-        playerHealth = MAX_PLAYER_HEALTH;
         im = InputManager.GetComponent<InputManager>();
     }
 
@@ -61,7 +55,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Player death
-        if(playerHealth <= 0)
+        if(playerHealth.getHealth() <= 0)
         {
             Destroy(gameObject);
         }
@@ -104,19 +98,14 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.GetComponent<ManaMovement>())
+        if (collision.gameObject.GetComponent<InteractableObject>())
         {
-            playerHealth++;
-            Mathf.Clamp(playerHealth, 0, MAX_PLAYER_HEALTH);
-            Destroy(collision.gameObject);
-            Debug.Log("Collision with Mana " + playerHealth);
+            collision.gameObject.GetComponent<InteractableObject>().Interact();
+            Debug.Log("Interacted");
         }
-        if (collision.gameObject.GetComponent<EnemyMovement>())
+        else
         {
-            playerHealth--;
-            Mathf.Clamp(playerHealth, 0, MAX_PLAYER_HEALTH);
-            Destroy(collision.gameObject);
-            Debug.Log("Collision with Enemy " + playerHealth);
+            Debug.Log("no go");
         }
     }
 
