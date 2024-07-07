@@ -1367,6 +1367,10 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9188518994893437824, guid: 7d037850cbbae489d83e0ab5c63b4606, type: 3}
+      propertyPath: im
+      value: 
+      objectReference: {fileID: 1258689934}
+    - target: {fileID: 9188518994893437824, guid: 7d037850cbbae489d83e0ab5c63b4606, type: 3}
       propertyPath: InputManager
       value: 
       objectReference: {fileID: 1258689933}
