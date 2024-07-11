@@ -76,4 +76,16 @@ public class InteractableObject : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public string getObjectType()
+    {
+        switch (myType)
+        {
+            case interActableObjectType.enemy:
+                return "enemy";
+            case interActableObjectType.mana:
+                return "mana";
+        }
+        //base case return empty string
+        return "";
+    }
 }
