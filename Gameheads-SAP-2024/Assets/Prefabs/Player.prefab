@@ -104,7 +104,9 @@ MonoBehaviour:
   pulseRadius: 5
   pulseForce: 0.05
   pullForce: 2
-  InputManager: {fileID: 0}
+  im: {fileID: 0}
+  breathMeter: 0
+  breathMax: 0
 --- !u!61 &5385999855129319845
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -295,7 +297,9 @@ MonoBehaviour:
   pulseRadius: 5
   pulseForce: 0.05
   pullForce: 2
-  InputManager: {fileID: 0}
+  im: {fileID: 0}
+  breathMeter: 0
+  breathMax: 100
 --- !u!61 &4638336433469962771
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -193,6 +193,7 @@ MonoBehaviour:
   pullSpeed: 5
   damageOrHealing: 5
   myType: 1
+  playerDestroys: 1
 --- !u!1 &1423234306446043805
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,3 +386,4 @@ MonoBehaviour:
   pullSpeed: 5
   damageOrHealing: 5
   myType: 1
+  playerDestroys: 0

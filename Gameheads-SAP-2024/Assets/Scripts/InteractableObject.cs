@@ -18,6 +18,8 @@ public class InteractableObject : MonoBehaviour
     [SerializeField] private float pullSpeed;
     [SerializeField] private int damageOrHealing; //probably should change the name for this variable lol
     [SerializeField] private interActableObjectType myType;
+    //bool to determine if it dies on contact
+    [SerializeField] private bool playerDestroys;
 
     public void setPullSpeed(float sp)
     {
@@ -73,7 +75,9 @@ public class InteractableObject : MonoBehaviour
                 }
                 break;
         }
-        Destroy(gameObject);
+        if (playerDestroys){
+            Destroy(gameObject);
+        }
     }
 
 }
