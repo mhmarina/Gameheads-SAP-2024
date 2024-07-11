@@ -36,10 +36,14 @@ public class InteractableObject : MonoBehaviour
     {
         if (!playerObject)
         {
+            playerObject = GameObject.FindWithTag("Player");
             //place holder code. This allows the game not to crash if player dies.
             //include behavior that object should do when player dies here.
-            Debug.Log("Krilling myself now");
-            Destroy(gameObject);
+            if (!playerObject)
+            {
+                Debug.Log("Krilling myself now");
+                Destroy(gameObject);
+            }
         }
     }
 

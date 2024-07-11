@@ -115,11 +115,6 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.GetComponent<InteractableObject>())
         {
             collision.gameObject.GetComponent<InteractableObject>().Interact();
-            Debug.Log("Interacted");
-        }
-        else
-        {
-            Debug.Log("no go");
         }
     }
 
