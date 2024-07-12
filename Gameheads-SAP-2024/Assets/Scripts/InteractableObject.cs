@@ -18,6 +18,8 @@ public class InteractableObject : MonoBehaviour
     [SerializeField] private float pullSpeed;
     [SerializeField] private int damageOrHealing; //probably should change the name for this variable lol
     [SerializeField] private interActableObjectType myType;
+    //bool to determine if it dies on contact
+    [SerializeField] private bool playerDestroys;
 
     public void setPullSpeed(float sp)
     {
@@ -34,10 +36,14 @@ public class InteractableObject : MonoBehaviour
     {
         if (!playerObject)
         {
+            playerObject = GameObject.FindWithTag("Player");
             //place holder code. This allows the game not to crash if player dies.
             //include behavior that object should do when player dies here.
-            Debug.Log("Krilling myself now");
-            Destroy(gameObject);
+            if (!playerObject)
+            {
+                Debug.Log("Krilling myself now");
+                Destroy(gameObject);
+            }
         }
     }
 
@@ -73,7 +79,9 @@ public class InteractableObject : MonoBehaviour
                 }
                 break;
         }
-        Destroy(gameObject);
+        if (playerDestroys){
+            Destroy(gameObject);
+        }
     }
 
 }

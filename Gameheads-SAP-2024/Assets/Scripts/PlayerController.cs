@@ -14,6 +14,11 @@ public class PlayerController : MonoBehaviour
     private Health playerHealth;
     float horizontalInput;
     float verticalInput;
+
+
+    //one button controls - meter var
+    [SerializeField] private float breathMeter;
+    [SerializeField] private float breathMax;
     
 
     public float getMoveSpeed() {
@@ -44,14 +49,23 @@ public class PlayerController : MonoBehaviour
 
             //attacks
             //can only either inhale OR exhale
-            if (im.button_exhale)
+
+            //updated for breath meter - Rafa 7/11
+            if (im.button_inhale && breathMeter < breathMax)
             {
-                exhale();
+                inhale();
+                breathMeter += 1;
+                Debug.Log("Inhaled");
             }
 
             else if (im.button_inhale)
             {
-                inhale();
+                Debug.Log("Breath Maxed!");
+            }
+            else if (breathMeter > 0) {
+                exhale();
+                breathMeter -=1;
+                Debug.Log("exhaled");
             }
         }
         // Player death
@@ -101,11 +115,6 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.GetComponent<InteractableObject>())
         {
             collision.gameObject.GetComponent<InteractableObject>().Interact();
-            Debug.Log("Interacted");
-        }
-        else
-        {
-            Debug.Log("no go");
         }
     }
 
