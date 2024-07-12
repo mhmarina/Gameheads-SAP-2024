@@ -10,10 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 807075243396200919}
   - component: {fileID: 1770226867138698715}
-  - component: {fileID: 8246311959085739089}
-  - component: {fileID: 2594811801838589835}
-  - component: {fileID: 1105688073556060719}
-  - component: {fileID: 7529799343428649680}
   m_Layer: 9
   m_Name: MiniMapIcon
   m_TagString: InteractableObject
@@ -88,110 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8246311959085739089
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3799118549403496677}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae1dbcca69ec4d159179f857358a8df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 2
-  shootingSpeed: 0
---- !u!61 &2594811801838589835
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3799118549403496677}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.0008249283, y: 0.14353988}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.98328483, y: 0.87412876}
-  m_EdgeRadius: 0
---- !u!50 &1105688073556060719
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3799118549403496677}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 0.5
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &7529799343428649680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3799118549403496677}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d0a18d3265284bb4b137321476ed8fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canBePulled: 1
-  canBePushed: 1
-  pullSpeed: 2
-  damageOrHealing: 10
-  myType: 0
-  playerDestroys: 0
 --- !u!1 &7126311854603686905
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,10 +94,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1818470442037214531}
   - component: {fileID: 3706646522896280531}
-  - component: {fileID: 4963829443731536814}
   - component: {fileID: 7265675221390418208}
   - component: {fileID: 2270853058972301473}
-  - component: {fileID: 8818921298114018888}
+  - component: {fileID: 2110618614709758390}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: InteractableObject
@@ -281,20 +172,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4963829443731536814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7126311854603686905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae1dbcca69ec4d159179f857358a8df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 2
-  shootingSpeed: 0
 --- !u!61 &7265675221390418208
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -367,7 +244,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &8818921298114018888
+--- !u!114 &2110618614709758390
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -376,12 +253,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7126311854603686905}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d0a18d3265284bb4b137321476ed8fe, type: 3}
+  m_Script: {fileID: 11500000, guid: 62755670696b949ffa1408ddfba983c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBePulled: 1
-  canBePushed: 1
-  pullSpeed: 2
-  damageOrHealing: 10
-  myType: 0
-  playerDestroys: 0
+  moveSpeed: 2

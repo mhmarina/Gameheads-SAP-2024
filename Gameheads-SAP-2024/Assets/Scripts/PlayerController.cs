@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private const string INTERACTABLE_TAG = "InteractableObject";
-
+    private string INTERACTABLE_TAG = "InteractableObject";
     [SerializeField] private float moveSpeed;
     [SerializeField] private float pulseRadius;
     [SerializeField] private float pulseForce;
@@ -15,20 +14,9 @@ public class PlayerController : MonoBehaviour
     float horizontalInput;
     float verticalInput;
 
-
     //one button controls - meter var
     [SerializeField] private float breathMeter;
     [SerializeField] private float breathMax;
-    
-
-    public float getMoveSpeed() {
-        return moveSpeed;
-    }
-
-    public void setMoveSpeed(float speed)
-    {
-        moveSpeed = speed;
-    }
 
     private void Start()
     {
@@ -71,7 +59,17 @@ public class PlayerController : MonoBehaviour
         // Player death
         if (playerHealth.getHealth() <= 0)
         {
+            //event system maybe boradcast death
             Destroy(gameObject);
+        }
+    }
+
+    private void LogAllComponents(GameObject gameObject)
+    {
+        Component[] components = gameObject.GetComponents<Component>();
+        foreach (Component component in components)
+        {
+            Debug.Log(gameObject.name + " has component: " + component.GetType().Name);
         }
     }
 
@@ -82,12 +80,11 @@ public class PlayerController : MonoBehaviour
         {
             if (collider.CompareTag(INTERACTABLE_TAG))
             {
-                Vector2 direction = collider.transform.position - transform.position;
-                Rigidbody2D rb = collider.GetComponent<Rigidbody2D>();
-                InteractableObject io = collider.GetComponent<InteractableObject>();
-                if (rb != null && io.canBePushed)
+                InteractableObject iO = collider.GetComponent<InteractableObject>();
+                if (iO)
                 {
-                    rb.AddForce(direction.normalized * pulseForce, ForceMode2D.Impulse);
+                    // makes it so pulse force is proportional to breathMeter
+                    iO.onExhale(gameObject, pulseForce * (breathMeter / 100));
                 }
             }
         }
@@ -95,16 +92,18 @@ public class PlayerController : MonoBehaviour
 
     private void inhale()
     {
+        // TODO: tags are very expensive. remove this
+        // Use arrays in manager instead.
+        // check if they're within a certain range.
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(INTERACTABLE_TAG);
         if(enemies.Length > 0)
         {
             foreach(GameObject gO in enemies)
             {
                 InteractableObject iO = gO.GetComponent<InteractableObject>();
-                if (iO.canBePulled)
+                if (iO)
                 {
-                    iO.setPullSpeed(pullForce);
-                    iO.moveTowardsPlayer();
+                    iO.onInhale(gameObject, pullForce);
                 }
             }
         }
@@ -114,7 +113,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<InteractableObject>())
         {
-            collision.gameObject.GetComponent<InteractableObject>().Interact();
+            collision.gameObject.GetComponent<InteractableObject>().onCollisionWithPlayer();
         }
     }
 

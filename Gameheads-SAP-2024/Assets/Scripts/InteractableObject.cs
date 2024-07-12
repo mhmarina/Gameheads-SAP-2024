@@ -2,98 +2,57 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractableObject : MonoBehaviour
+public abstract class InteractableObject : MonoBehaviour
 {
+    /// <summary>
+    /// TODO: Create Enemy and Mana Managers.
+    /// This will hold an array of mana and enemy objects.
+    /// This allows us to control how many mana and enemies are in the scene
+    /// it'll also make accessing them from the player for example easier..
+    /// </summary>
 
-    enum interActableObjectType
+    public enum pushPullType
     {
-        enemy,
-        mana
-    }
+        CAN_PUSH,
+        CAN_PULL,
+        BOTH,
+        NONE,
+    };
 
-    private GameObject playerObject;
-    private Health playerHealth;
-    [SerializeField] public bool canBePulled;
-    [SerializeField] public bool canBePushed;
-    [SerializeField] private float pullSpeed;
-    [SerializeField] private int damageOrHealing; //probably should change the name for this variable lol
-    [SerializeField] private interActableObjectType myType;
-    //bool to determine if it dies on contact
-    [SerializeField] private bool playerDestroys;
+    protected string objectType;
+    protected pushPullType pushOrPull;
 
-    public void setPullSpeed(float sp)
+    public abstract void onCollisionWithPlayer();
+    public void onInhale(GameObject playerObject, float moveSpeed)
     {
-        this.pullSpeed = sp;
-    }
-
-    void Start()
-    {
-        playerObject = GameObject.FindWithTag("Player");
-        playerHealth = playerObject.GetComponent<Health>();
-    }
-
-    private void Update()
-    {
-        if (!playerObject)
+        Debug.Log($"inhale: {pushOrPull}");
+        if (pushOrPull == pushPullType.CAN_PULL || pushOrPull == pushPullType.BOTH)
         {
-            playerObject = GameObject.FindWithTag("Player");
-            //place holder code. This allows the game not to crash if player dies.
-            //include behavior that object should do when player dies here.
-            if (!playerObject)
-            {
-                Debug.Log("Krilling myself now");
-                Destroy(gameObject);
-            }
+            transform.position = (Vector2.MoveTowards(transform.position, playerObject.transform.position, moveSpeed * Time.deltaTime));
         }
     }
 
-    public void moveTowardsPlayer()
+    public void onExhale(GameObject playerObject, float moveSpeed)
     {
-        transform.position = (Vector2.MoveTowards(transform.position, playerObject.transform.position, pullSpeed * Time.deltaTime));
-    }
-
-    public void Interact()
-    {
-        switch (myType)
+        Debug.Log($"exhale: {pushOrPull}");
+        if (pushOrPull == pushPullType.CAN_PUSH || pushOrPull == pushPullType.BOTH)
         {
-            //enemy
-            case interActableObjectType.enemy:
-                if (playerHealth.getHealth() - damageOrHealing > 0)
-                {
-                    playerHealth.setHealth(playerHealth.getHealth() - damageOrHealing);
-                }
-                else
-                {
-                    playerHealth.setHealth(0);
-                }
-                break;
-            //mana
-            case interActableObjectType.mana:
-                if(playerHealth.getHealth() + damageOrHealing < playerHealth.MAX_HEALTH)
-                {
-                    playerHealth.setHealth(playerHealth.getHealth() + damageOrHealing);
-                }
-                else
-                {
-                    playerHealth.setHealth(playerHealth.MAX_HEALTH);
-                }
-                break;
-        }
-        if (playerDestroys){
-            Destroy(gameObject);
+            /*
+             this doesn't feel as good so will stick with forces.
+
+             */
+            //Vector2 direction = (Vector2)(transform.position - playerObject.transform.position).normalized;
+            //Vector2 targetPosition = (Vector2)transform.position + direction * moveSpeed * Time.deltaTime;
+            //transform.position = Vector2.MoveTowards(transform.position, targetPosition, 2 * Time.deltaTime);
+
+            Vector2 direction = transform.position - playerObject.transform.position;
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            rb.AddForce(direction.normalized * moveSpeed, ForceMode2D.Impulse);
         }
     }
 
     public string getObjectType()
     {
-        switch (myType)
-        {
-            case interActableObjectType.enemy:
-                return "enemy";
-            case interActableObjectType.mana:
-                return "mana";
-        }
-        //base case return empty string
-        return "";
+        return objectType;
     }
 }
