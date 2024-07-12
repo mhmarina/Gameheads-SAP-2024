@@ -46,7 +46,11 @@ public class Mana : InteractableObject
 
     public override void onCollisionWithPlayer(GameObject player)
     {
-        player.GetComponent<Health>().setHealth(player.GetComponent<Health>().getHealth()+healing);
-        Destroy(gameObject);
+        //makes it so player must pull mana in to get healed
+        if (im.button_inhale)
+        {
+            player.GetComponent<Health>().setHealth(player.GetComponent<Health>().getHealth() + healing);
+            Destroy(gameObject);
+        }
     }
 }
