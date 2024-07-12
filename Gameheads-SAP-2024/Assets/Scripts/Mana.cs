@@ -9,9 +9,9 @@ public class Mana : InteractableObject
     [SerializeField] int healing;
     [SerializeField] bool shouldOrbit;
     [SerializeField] private float smoothTime = 0.0f;
+    private InputManager im;
 
     private GameObject player;
-    private InputManager im;
     private Vector2 velocity = Vector2.zero;
     //angle in radians from 0 to 2pi
     private float angle;
@@ -25,7 +25,7 @@ public class Mana : InteractableObject
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        im = GameObject.FindGameObjectWithTag("InputManager").GetComponent<InputManager>();
+        im = InputManager.instance;
         angle = Random.Range(0, 2 * Mathf.PI);
     }
 
