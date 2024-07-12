@@ -61,15 +61,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void LogAllComponents(GameObject gameObject)
-    {
-        Component[] components = gameObject.GetComponents<Component>();
-        foreach (Component component in components)
-        {
-            Debug.Log(gameObject.name + " has component: " + component.GetType().Name);
-        }
-    }
-
     private void exhale()
     {
         Collider2D[] collidersWithinPulseRange = Physics2D.OverlapCircleAll(transform.position, pulseRadius);
@@ -89,13 +80,13 @@ public class PlayerController : MonoBehaviour
 
     private void inhale()
     {
-        // TODO: tags are very expensive. remove this
+        // TODO: finding by tags is very expensive. remove this
         // Use arrays in manager instead.
         // check if they're within a certain range.
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag(INTERACTABLE_TAG);
-        if(enemies.Length > 0)
+        GameObject[] objectsList = GameObject.FindGameObjectsWithTag(INTERACTABLE_TAG);
+        if(objectsList.Length > 0)
         {
-            foreach(GameObject gO in enemies)
+            foreach(GameObject gO in objectsList)
             {
                 InteractableObject iO = gO.GetComponent<InteractableObject>();
                 if (iO)

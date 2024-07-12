@@ -25,12 +25,12 @@ public class Mana : InteractableObject
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        im = InputManager.instance;
         angle = Random.Range(0, 2 * Mathf.PI);
     }
 
     void Update()
     {
+        im = InputManager.instance;
         if (!im.button_inhale && player && shouldOrbit)
         {
             angle += orbitSpeed * Time.deltaTime;
@@ -46,9 +46,11 @@ public class Mana : InteractableObject
 
     public override void onCollisionWithPlayer(GameObject player)
     {
+        im = InputManager.instance;
         //makes it so player must pull mana in to get healed
         if (im.button_inhale)
         {
+            Debug.Log("Collided!");
             player.GetComponent<Health>().setHealth(player.GetComponent<Health>().getHealth() + healing);
             Destroy(gameObject);
         }
