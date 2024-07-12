@@ -22,7 +22,7 @@ public abstract class InteractableObject : MonoBehaviour
     protected string objectType;
     protected pushPullType pushOrPull;
 
-    public abstract void onCollisionWithPlayer();
+    public abstract void onCollisionWithPlayer(GameObject player);
     public void onInhale(GameObject playerObject, float moveSpeed)
     {
         Debug.Log($"inhale: {pushOrPull}");

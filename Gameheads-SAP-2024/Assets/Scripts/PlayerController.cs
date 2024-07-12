@@ -113,7 +113,8 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<InteractableObject>())
         {
-            collision.gameObject.GetComponent<InteractableObject>().onCollisionWithPlayer();
+            Debug.Log("Collided!");
+            collision.gameObject.GetComponent<InteractableObject>().onCollisionWithPlayer(gameObject);
         }
     }
 

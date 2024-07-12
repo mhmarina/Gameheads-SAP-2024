@@ -7,6 +7,7 @@ public class Mana : InteractableObject
     [SerializeField] int radius;
     [SerializeField] float orbitSpeed;
     [SerializeField] int healing;
+    [SerializeField] bool shouldOrbit;
     [SerializeField] private float smoothTime = 0.0f;
 
     private GameObject player;
@@ -30,20 +31,20 @@ public class Mana : InteractableObject
 
     void Update()
     {
-        if (!im.button_inhale && player)
+        if (!im.button_inhale && player && shouldOrbit)
         {
             angle += orbitSpeed * Time.deltaTime;
             float h = player.transform.position.x - radius * Mathf.Cos(angle);
             float k = player.transform.position.y - radius * Mathf.Sin(angle);
             transform.position = Vector2.SmoothDamp(transform.position, new Vector2(h, k), ref velocity, smoothTime);
         }
-        else if(player)
+        else if(player && im.button_inhale)
         {
             onInhale(player, 5);
         }
     }
 
-    public override void onCollisionWithPlayer()
+    public override void onCollisionWithPlayer(GameObject player)
     {
         player.GetComponent<Health>().setHealth(player.GetComponent<Health>().getHealth()+healing);
         Destroy(gameObject);

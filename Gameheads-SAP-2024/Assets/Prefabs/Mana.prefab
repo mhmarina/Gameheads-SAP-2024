@@ -175,6 +175,7 @@ MonoBehaviour:
   radius: 2
   orbitSpeed: 1
   healing: 5
+  shouldOrbit: 1
   smoothTime: 0.1
 --- !u!1 &1423234306446043805
 GameObject:

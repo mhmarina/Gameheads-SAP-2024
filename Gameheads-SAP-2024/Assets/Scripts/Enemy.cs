@@ -14,7 +14,7 @@ public class Enemy : InteractableObject
         pushOrPull = pushPullType.BOTH;
     }
 
-    public override void onCollisionWithPlayer()
+    public override void onCollisionWithPlayer(GameObject player)
     {
         player.GetComponent<Health>().setHealth(player.GetComponent<Health>().getHealth()-damage);
     }
