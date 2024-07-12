@@ -6,6 +6,7 @@ public class Mana : InteractableObject
 {
     [SerializeField] int radius;
     [SerializeField] float orbitSpeed;
+    [SerializeField] int healing;
     [SerializeField] private float smoothTime = 0.0f;
 
     private GameObject player;
@@ -38,13 +39,13 @@ public class Mana : InteractableObject
         }
         else if(player)
         {
-            onInhale(player, 10);
+            onInhale(player, 5);
         }
     }
 
     public override void onCollisionWithPlayer()
     {
-        player.GetComponent<Health>().setHealth(player.GetComponent<Health>().getHealth()+5);
+        player.GetComponent<Health>().setHealth(player.GetComponent<Health>().getHealth()+healing);
         Destroy(gameObject);
     }
 }

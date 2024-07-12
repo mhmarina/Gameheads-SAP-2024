@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Enemy : InteractableObject
 {
-    [SerializeField] private float moveSpeed;
+    [SerializeField] float moveSpeed;
+    [SerializeField] int damage;
     private GameObject player;
 
     public Enemy()
@@ -15,7 +16,7 @@ public class Enemy : InteractableObject
 
     public override void onCollisionWithPlayer()
     {
-        player.GetComponent<Health>().setHealth(player.GetComponent<Health>().getHealth()-5);
+        player.GetComponent<Health>().setHealth(player.GetComponent<Health>().getHealth()-damage);
     }
 
     private void Awake()

@@ -173,7 +173,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 2
-  orbitSpeed: 2
+  orbitSpeed: 1
+  healing: 5
   smoothTime: 0.1
 --- !u!1 &1423234306446043805
 GameObject:
