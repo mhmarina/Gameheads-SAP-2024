@@ -31,7 +31,7 @@ public class Spawner : MonoBehaviour
     }
 
     private void Spawn() {
-        GameObject.Instantiate(spawnObject, transform.position, transform.rotation);
+        GameManager.instance.addToList(GameObject.Instantiate(spawnObject, transform.position, transform.rotation));
     }
 
     private void randomizePosition()
