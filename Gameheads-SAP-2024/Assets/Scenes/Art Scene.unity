@@ -245,7 +245,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eba2b62e41fa46e4cbe6f1b7b0a0620b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Controller: {fileID: 0}
+  Controller: {fileID: 1367516044}
+  canMove: 0
 --- !u!95 &1367516044
 Animator:
   serializedVersion: 5
