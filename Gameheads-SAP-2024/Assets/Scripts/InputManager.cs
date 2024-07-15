@@ -11,15 +11,19 @@ public class InputManager : MonoBehaviour
     public bool button_inhale;
     public bool button_exhale;
     public bool isMoving = true;
+    public static InputManager instance;
 
     private void Start()
     {
-        DontDestroyOnLoad(this.gameObject);
-        //kill input object if player does not exist
-        if (!GameObject.FindGameObjectWithTag("Player"))
+        if(instance == null)
         {
-            Destroy(this.gameObject);
+            instance = this;
         }
+        else if(instance != this)
+        {
+            Destroy(this);
+        }
+        DontDestroyOnLoad(this);
     }
     // Update is called once per frame
     void Update()

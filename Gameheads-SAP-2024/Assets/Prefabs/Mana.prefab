@@ -12,8 +12,7 @@ GameObject:
   - component: {fileID: 2352257415156403014}
   - component: {fileID: 4619738270260274429}
   - component: {fileID: 8453329983107196920}
-  - component: {fileID: 1764928014472476725}
-  - component: {fileID: 4260673034866182089}
+  - component: {fileID: 7563023634547928680}
   m_Layer: 6
   m_Name: Mana
   m_TagString: InteractableObject
@@ -161,7 +160,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.5}
   m_EdgeRadius: 0
---- !u!114 &1764928014472476725
+--- !u!114 &7563023634547928680
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -170,29 +169,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1351830361585359163}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b07c83412261a42a8a503273cc8d980a, type: 3}
+  m_Script: {fileID: 11500000, guid: b209df91d8bf74effa627c0dd0a3ac4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 2
   orbitSpeed: 1
+  healing: 5
+  shouldOrbit: 1
   smoothTime: 0.1
---- !u!114 &4260673034866182089
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1351830361585359163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d0a18d3265284bb4b137321476ed8fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canBePulled: 1
-  canBePushed: 0
-  pullSpeed: 5
-  damageOrHealing: 5
-  myType: 1
 --- !u!1 &1423234306446043805
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,10 +187,6 @@ GameObject:
   m_Component:
   - component: {fileID: 719174294886964969}
   - component: {fileID: 7765720387014534955}
-  - component: {fileID: 8395233155304023932}
-  - component: {fileID: 7850806035139289908}
-  - component: {fileID: 2802169141528465371}
-  - component: {fileID: 2885803321127487778}
   m_Layer: 9
   m_Name: MiniMapIcon
   m_TagString: InteractableObject
@@ -281,107 +261,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &8395233155304023932
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1423234306446043805}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 0.5
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!61 &7850806035139289908
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1423234306446043805}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 0.5}
-    newSize: {x: 1, y: 0.5}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 0.5}
-  m_EdgeRadius: 0
---- !u!114 &2802169141528465371
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1423234306446043805}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b07c83412261a42a8a503273cc8d980a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  radius: 2
-  orbitSpeed: 1
-  smoothTime: 0.1
---- !u!114 &2885803321127487778
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1423234306446043805}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d0a18d3265284bb4b137321476ed8fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canBePulled: 1
-  canBePushed: 0
-  pullSpeed: 5
-  damageOrHealing: 5
-  myType: 1

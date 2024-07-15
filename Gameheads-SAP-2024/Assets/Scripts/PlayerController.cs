@@ -4,59 +4,59 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private const string INTERACTABLE_TAG = "InteractableObject";
-
+    private string INTERACTABLE_TAG = "InteractableObject";
     [SerializeField] private float moveSpeed;
     [SerializeField] private float pulseRadius;
     [SerializeField] private float pulseForce;
     [SerializeField] private float pullForce;
-    [SerializeField] private InputManager im;
+    private InputManager im;
     private Health playerHealth;
     float horizontalInput;
     float verticalInput;
-    
 
-    public float getMoveSpeed() {
-        return moveSpeed;
-    }
-
-    public void setMoveSpeed(float speed)
-    {
-        moveSpeed = speed;
-    }
+    //one button controls - meter var
+    [SerializeField] private float breathMeter;
+    [SerializeField] private float breathMax;
 
     private void Start()
     {
-        /* We want this player to persist across levels. */
         playerHealth = GetComponent<Health>();
+        /* We want this player to persist across levels. */
         DontDestroyOnLoad(this.gameObject);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //movement
-        if (im)
-        {
+            im = InputManager.instance;
             horizontalInput = im.button_horizontalInput;
             verticalInput = im.button_verticalInput;
             transform.Translate(new Vector2(horizontalInput, verticalInput) * moveSpeed * Time.deltaTime);
 
             //attacks
             //can only either inhale OR exhale
-            if (im.button_exhale)
+
+            //updated for breath meter - Rafa 7/11
+            if (im.button_inhale && breathMeter < breathMax)
             {
-                exhale();
+                inhale();
+                breathMeter += 1;
+                Debug.Log("Inhaled");
             }
 
             else if (im.button_inhale)
             {
-                inhale();
+                Debug.Log("Breath Maxed!");
             }
+            else if (breathMeter > 0) {
+                exhale();
+                breathMeter -=1;
+                Debug.Log("exhaled");
         }
         // Player death
         if (playerHealth.getHealth() <= 0)
         {
+            //event system maybe boradcast death
             Destroy(gameObject);
         }
     }
@@ -68,12 +68,11 @@ public class PlayerController : MonoBehaviour
         {
             if (collider.CompareTag(INTERACTABLE_TAG))
             {
-                Vector2 direction = collider.transform.position - transform.position;
-                Rigidbody2D rb = collider.GetComponent<Rigidbody2D>();
-                InteractableObject io = collider.GetComponent<InteractableObject>();
-                if (rb != null && io.canBePushed)
+                InteractableObject iO = collider.GetComponent<InteractableObject>();
+                if (iO)
                 {
-                    rb.AddForce(direction.normalized * pulseForce, ForceMode2D.Impulse);
+                    // makes it so pulse force is proportional to breathMeter
+                    iO.onExhale(gameObject, pulseForce * (breathMeter / 100));
                 }
             }
         }
@@ -81,16 +80,18 @@ public class PlayerController : MonoBehaviour
 
     private void inhale()
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag(INTERACTABLE_TAG);
-        if(enemies.Length > 0)
+        // TODO: finding by tags is very expensive. remove this
+        // Use arrays in manager instead.
+        // check if they're within a certain range.
+        GameObject[] objectsList = GameObject.FindGameObjectsWithTag(INTERACTABLE_TAG);
+        if(objectsList.Length > 0)
         {
-            foreach(GameObject gO in enemies)
+            foreach(GameObject gO in objectsList)
             {
                 InteractableObject iO = gO.GetComponent<InteractableObject>();
-                if (iO.canBePulled)
+                if (iO)
                 {
-                    iO.setPullSpeed(pullForce);
-                    iO.moveTowardsPlayer();
+                    iO.onInhale(gameObject, pullForce);
                 }
             }
         }
@@ -100,12 +101,8 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<InteractableObject>())
         {
-            collision.gameObject.GetComponent<InteractableObject>().Interact();
-            Debug.Log("Interacted");
-        }
-        else
-        {
-            Debug.Log("no go");
+            Debug.Log("Collided!");
+            collision.gameObject.GetComponent<InteractableObject>().onCollisionWithPlayer(gameObject);
         }
     }
 
