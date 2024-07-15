@@ -5,7 +5,7 @@ using UnityEngine;
 public class AnimationControl : MonoBehaviour
 {
     public Animator Controller; 
-    public bool canMove = false; 
+    public bool canMove = true; 
 
     // Start is called before the first frame update
     void Start()
@@ -20,47 +20,76 @@ public class AnimationControl : MonoBehaviour
         //gotta find another way to make the animations temporary
         if (Input.GetKeyDown(KeyCode.Space)) //change this to something else
         {
-            canMove = true; 
+            
         }
         
-
-        if (canMove == true)
-        { 
             // left animation trigger
             if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow) ) 
             {
-                Controller.Play("Left Cycle");
+                Controller.SetBool("Walk Left", true);
+            }
+
+            else 
+            {
+                Controller.SetBool("Walk Left", false);
             }
 
             // right animation trigger
-            else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow) ) 
+            if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow) ) 
             {
-                Controller.Play("Right Cycle");
+                Controller.SetBool("Walk Right", true);
+            }
+
+            else 
+            {
+                Controller.SetBool("Walk Right", false);
             }
 
             //forward animation trigger
-            else if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) ) 
+            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) ) 
             {
-                Controller.Play("Player Back Cycle");
+                Controller.SetBool("Walk Back", true);
+            }
+
+            else 
+            {
+                Controller.SetBool("Walk Back", false);
             }
 
             //back animation trigger
-            else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow) ) 
+            if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow) ) 
             {
-                Controller.Play("Front Cycle");
+                Controller.SetBool("Walk Front Trigger", true);
+            }
+            
+            else {
+                Controller.SetBool("Walk Front Trigger", false);
             }
 
             //breathe in animation trigger
-            else if (Input.GetKeyDown(KeyCode.Space))
+            
+            while (Input.GetKeyDown(KeyCode.Space))
             {
-                Controller.Play("Breathe In");
-            }
+                    Controller.SetBool("Breathe In", true);
+                    Debug.Log("breathe in");
+            } 
+
+                //else 
+                //{
+                //    Controller.SetBool("Breathe In", false);
+                //    Debug.Log("Not breathing");
+                //}
 
             //breathe out animation trigger
-            else if (Input.GetKeyDown(KeyCode.M))
+            if (Input.GetKeyDown(KeyCode.M))
+                {
+                Controller.SetBool("Breathe Out", true);
+
+                }
+
+            else 
             {
-                Controller.Play("Breathe Out");
+                Controller.SetBool("Breathe Out", false);
             }
-        }
+            }
     }
-}
