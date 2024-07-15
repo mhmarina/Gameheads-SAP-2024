@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8453329983107196920}
   - component: {fileID: 7563023634547928680}
   m_Layer: 6
-  m_Name: Mana
+  m_Name: Mana (orbit)
   m_TagString: InteractableObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
