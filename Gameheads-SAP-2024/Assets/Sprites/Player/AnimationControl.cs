@@ -18,24 +18,31 @@ public class AnimationControl : MonoBehaviour
     void Update()
     {
         //gotta find another way to make the animations temporary
-        if (Input.GetKeyDown(KeyCode.Space)) //change this to something else
-        {
-            
-        }
+            if (Input.GetKey(KeyCode.Space)) 
+            {
+                Controller.SetBool("Breathe In", true);
+            }
+
+            else
+            {
+                Controller.SetBool("Breathe In", false);
+            }
         
             // left animation trigger
-            if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow) ) 
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow) ) 
             {
                 Controller.SetBool("Walk Left", true);
+                print("walking left");
             }
 
             else 
             {
                 Controller.SetBool("Walk Left", false);
+                print("not moving left");
             }
 
             // right animation trigger
-            if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow) ) 
+            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow) ) 
             {
                 Controller.SetBool("Walk Right", true);
             }
@@ -46,7 +53,7 @@ public class AnimationControl : MonoBehaviour
             }
 
             //forward animation trigger
-            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) ) 
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow) ) 
             {
                 Controller.SetBool("Walk Back", true);
             }
@@ -57,7 +64,7 @@ public class AnimationControl : MonoBehaviour
             }
 
             //back animation trigger
-            if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow) ) 
+            if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow) ) 
             {
                 Controller.SetBool("Walk Front Trigger", true);
             }
@@ -68,20 +75,9 @@ public class AnimationControl : MonoBehaviour
 
             //breathe in animation trigger
             
-            while (Input.GetKeyDown(KeyCode.Space))
-            {
-                    Controller.SetBool("Breathe In", true);
-                    Debug.Log("breathe in");
-            } 
-
-                //else 
-                //{
-                //    Controller.SetBool("Breathe In", false);
-                //    Debug.Log("Not breathing");
-                //}
 
             //breathe out animation trigger
-            if (Input.GetKeyDown(KeyCode.M))
+            if (Input.GetKey(KeyCode.M))
                 {
                 Controller.SetBool("Breathe Out", true);
 
