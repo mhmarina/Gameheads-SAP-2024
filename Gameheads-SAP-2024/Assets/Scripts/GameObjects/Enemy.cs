@@ -6,6 +6,7 @@ public class Enemy : InteractableObject
 {
     [SerializeField] float moveSpeed;
     [SerializeField] int damage;
+    [SerializeField] float attackRadius;
     private GameObject player;
 
     public Enemy()
@@ -26,7 +27,7 @@ public class Enemy : InteractableObject
     private void Update()
     {
         //continuously move towards player
-        if (player)
+        if (Vector3.Distance(player.transform.position, this.transform.position) < attackRadius)
         {
             onInhale(player, moveSpeed);
         }
