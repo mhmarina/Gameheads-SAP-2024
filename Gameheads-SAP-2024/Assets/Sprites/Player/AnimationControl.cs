@@ -32,13 +32,11 @@ public class AnimationControl : MonoBehaviour
             if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow) ) 
             {
                 Controller.SetBool("Walk Left", true);
-                print("walking left");
             }
 
             else 
             {
                 Controller.SetBool("Walk Left", false);
-                print("not moving left");
             }
 
             // right animation trigger
