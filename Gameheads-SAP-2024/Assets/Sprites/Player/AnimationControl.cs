@@ -5,8 +5,6 @@ using UnityEngine;
 public class AnimationControl : MonoBehaviour
 {
     public Animator Controller; 
-    public bool canMove = true; 
-
     // Start is called before the first frame update
     void Start()
     {
