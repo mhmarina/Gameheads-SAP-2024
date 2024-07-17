@@ -19,6 +19,7 @@ public class Health : MonoBehaviour
 
     public void setHealth(int h)
     {
-        this.currentHealth = h;
+        this.currentHealth = Mathf.Clamp(h, 0, MAX_HEALTH);
+        Debug.Log(this.currentHealth);
     }
 }
