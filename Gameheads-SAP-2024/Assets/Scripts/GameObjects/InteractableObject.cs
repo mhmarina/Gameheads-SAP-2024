@@ -19,6 +19,7 @@ public abstract class InteractableObject : MonoBehaviour
         NONE,
     };
 
+    protected bool canMoveTowardPlayer = true;
     protected string objectType;
     protected pushPullType pushOrPull;
 
@@ -29,18 +30,15 @@ public abstract class InteractableObject : MonoBehaviour
         Debug.Log($"inhale: {pushOrPull}");
         if (pushOrPull == pushPullType.CAN_PULL || pushOrPull == pushPullType.BOTH)
         {
-            Debug.Log($"Player Object is: {playerObject}");
-            Debug.Log($"Old Pos: {transform.position}");
             transform.position = (Vector2.MoveTowards(transform.position, playerObject.transform.position, pullSpeed * Time.deltaTime));
-            Debug.Log($"New Pos: {transform.position}");
         }
     }
 
     public void onExhale(GameObject playerObject, float pushForce)
     {
-        Debug.Log($"exhale: {pushOrPull}");
         if (pushOrPull == pushPullType.CAN_PUSH || pushOrPull == pushPullType.BOTH)
         {
+            canMoveTowardPlayer = false;
             Debug.Log($"Player Object is: {playerObject}");
             Vector2 direction = (Vector2)(transform.position - playerObject.transform.position).normalized;
             Vector2 targetPosition = (Vector2)direction * pushForce;

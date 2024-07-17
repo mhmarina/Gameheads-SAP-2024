@@ -50,7 +50,6 @@ public class Mana : InteractableObject
         //makes it so player must pull mana in to get healed
         if (im.button_inhale)
         {
-            Debug.Log("Collided!");
             player.GetComponent<Health>().setHealth(player.GetComponent<Health>().getHealth() + healing);
             Destroy(gameObject);
         }
