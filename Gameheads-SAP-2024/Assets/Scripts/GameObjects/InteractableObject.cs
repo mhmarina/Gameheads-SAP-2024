@@ -23,31 +23,32 @@ public abstract class InteractableObject : MonoBehaviour
     protected pushPullType pushOrPull;
 
     public abstract void onCollisionWithPlayer(GameObject player);
-    public void onInhale(GameObject playerObject, float moveSpeed)
+
+    public void onInhale(GameObject playerObject, float pullSpeed)
     {
         Debug.Log($"inhale: {pushOrPull}");
         if (pushOrPull == pushPullType.CAN_PULL || pushOrPull == pushPullType.BOTH)
         {
-            transform.position = (Vector2.MoveTowards(transform.position, playerObject.transform.position, moveSpeed * Time.deltaTime));
+            Debug.Log($"Player Object is: {playerObject}");
+            Debug.Log($"Old Pos: {transform.position}");
+            transform.position = (Vector2.MoveTowards(transform.position, playerObject.transform.position, pullSpeed * Time.deltaTime));
+            Debug.Log($"New Pos: {transform.position}");
         }
     }
 
-    public void onExhale(GameObject playerObject, float moveSpeed)
+    public void onExhale(GameObject playerObject, float pushForce)
     {
         Debug.Log($"exhale: {pushOrPull}");
         if (pushOrPull == pushPullType.CAN_PUSH || pushOrPull == pushPullType.BOTH)
         {
-            /*
-             this doesn't feel as good so will stick with forces.
+            Debug.Log($"Player Object is: {playerObject}");
+            Vector2 direction = (Vector2)(transform.position - playerObject.transform.position).normalized;
+            Vector2 targetPosition = (Vector2)direction * pushForce;
+            transform.position = Vector2.MoveTowards(transform.position, targetPosition, Time.deltaTime);
 
-             */
-            //Vector2 direction = (Vector2)(transform.position - playerObject.transform.position).normalized;
-            //Vector2 targetPosition = (Vector2)transform.position + direction * moveSpeed * Time.deltaTime;
-            //transform.position = Vector2.MoveTowards(transform.position, targetPosition, 2 * Time.deltaTime);
-
-            Vector2 direction = transform.position - playerObject.transform.position;
-            Rigidbody2D rb = GetComponent<Rigidbody2D>();
-            rb.AddForce(direction.normalized * moveSpeed, ForceMode2D.Impulse);
+            //Vector2 direction = transform.position - playerObject.transform.position;
+            //Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            //rb.AddForce(direction.normalized * pushForce, ForceMode2D.Impulse);
         }
     }
 
