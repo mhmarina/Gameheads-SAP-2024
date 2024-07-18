@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
                 if (iO)
                 {
                     // makes it so pulse force is proportional to breathMeter:  seemed to be causing issues, also not sure why we need it -Rafa
-                    iO.onExhale(gameObject, pulseForce /** (breathMeter / 100)*/);
+                    iO.onExhale(gameObject, pulseForce * (breathMeter / 100));
                 }
             }
         }

@@ -38,11 +38,9 @@ public abstract class InteractableObject : MonoBehaviour
     {
         if (pushOrPull == pushPullType.CAN_PUSH || pushOrPull == pushPullType.BOTH)
         {
-            canMoveTowardPlayer = false;
-            Debug.Log($"Player Object is: {playerObject}");
             Vector2 direction = (Vector2)(transform.position - playerObject.transform.position).normalized;
-            Vector2 targetPosition = (Vector2)direction * pushForce;
-            transform.position = Vector2.MoveTowards(transform.position, targetPosition, Time.deltaTime);
+            Vector2 targetPosition = (Vector2)transform.position + (direction * pushForce);
+            transform.position = Vector2.MoveTowards(transform.position, targetPosition, pushForce * Time.deltaTime);
 
             //Vector2 direction = transform.position - playerObject.transform.position;
             //Rigidbody2D rb = GetComponent<Rigidbody2D>();
