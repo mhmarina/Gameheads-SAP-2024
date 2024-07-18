@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnimationControl : MonoBehaviour
+public class PlayerAnimationControl : MonoBehaviour
 {
     public Animator Controller; 
     // Start is called before the first frame update
@@ -15,8 +15,8 @@ public class AnimationControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //gotta find another way to make the animations temporary
-            if (Input.GetKey(KeyCode.Space)) 
+        //breathe in trigger          
+        if (Input.GetKey(KeyCode.Space)) 
             {
                 Controller.SetBool("Breathe In", true);
             }
@@ -68,8 +68,6 @@ public class AnimationControl : MonoBehaviour
             else {
                 Controller.SetBool("Walk Front Trigger", false);
             }
-
-            //breathe in animation trigger
             
 
             //breathe out animation trigger
