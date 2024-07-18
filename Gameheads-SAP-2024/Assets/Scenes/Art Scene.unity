@@ -358,6 +358,7 @@ GameObject:
   - component: {fileID: 1071287977}
   - component: {fileID: 1071287976}
   - component: {fileID: 1071287980}
+  - component: {fileID: 1071287981}
   m_Layer: 0
   m_Name: walk
   m_TagString: Untagged
@@ -501,6 +502,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Controller: {fileID: 0}
+--- !u!111 &1071287981
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071287975}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: de5275820f43fe3498ce9cdf1e70465e, type: 2}
+  m_Animations:
+  - {fileID: 0}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1096941090
 GameObject:
   m_ObjectHideFlags: 0
