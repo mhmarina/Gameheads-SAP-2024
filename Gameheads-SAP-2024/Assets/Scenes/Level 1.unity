@@ -35088,6 +35088,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cave
       objectReference: {fileID: 0}
+    - target: {fileID: 2333548265868482882, guid: cbb905a0ab41449868944bd8169914b3, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4374966376026791576, guid: cbb905a0ab41449868944bd8169914b3, type: 3}
       propertyPath: m_LocalScale.x
       value: 5.7093754
