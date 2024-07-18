@@ -37,18 +37,18 @@ public class PlayerController : MonoBehaviour
             //can only either inhale OR exhale
 
             //updated for breath meter - Rafa 7/11
-            if (im.button_inhale && breathMeter < breathMax)
+            if (im.button_inhale)
             {
                 inhale();
-                breathMeter += 1;
+                if(breathMeter < breathMax)
+                {
+                    breathMeter += 1;
+
+                }
                 Debug.Log("Inhaled");
             }
 
-            else if (im.button_inhale)
-            {
-                Debug.Log("Breath Maxed!");
-            }
-            else if (breathMeter > 0) {
+            else if (breathMeter > 0 && !im.button_inhale) {
                 exhale();
                 breathMeter -=1;
                 Debug.Log("exhaled");
@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
                 if (iO)
                 {
                     // makes it so pulse force is proportional to breathMeter:  seemed to be causing issues, also not sure why we need it -Rafa
-                    iO.onExhale(gameObject, pulseForce /** (breathMeter / 100)*/);
+                    iO.onExhale(gameObject, pulseForce * (breathMeter / 100));
                 }
             }
         }
@@ -101,7 +101,6 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<InteractableObject>())
         {
-            Debug.Log("Collided!");
             collision.gameObject.GetComponent<InteractableObject>().onCollisionWithPlayer(gameObject);
         }
     }
