@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8493141761757763412}
-  - component: {fileID: 3255710223571259278}
+  - component: {fileID: 8834715724520000076}
   m_Layer: 9
   m_Name: MiniMapIcon
   m_TagString: Player
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 86500880369762646}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &3255710223571259278
+--- !u!212 &8834715724520000076
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -73,12 +73,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 829147616, guid: 819c1a7dfba92104280300096241396e, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Color: {r: 0.4575472, g: 0.5427247, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.5, y: 1.5}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -191,7 +191,7 @@ MonoBehaviour:
   pulseForce: 0.05
   pullForce: 2
   breathMeter: 0
-  breathMax: 100
+  breathMax: 50
 --- !u!61 &4638336433469962771
 BoxCollider2D:
   m_ObjectHideFlags: 0
