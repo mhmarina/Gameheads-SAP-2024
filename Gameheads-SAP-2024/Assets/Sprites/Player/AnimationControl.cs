@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAnimationController : MonoBehaviour
+public class PlayerAnimationControl : MonoBehaviour
 {
     public Animator Controller; 
     // Start is called before the first frame update
