@@ -260,7 +260,7 @@ GameObject:
   m_Component:
   - component: {fileID: 931765948}
   m_Layer: 0
-  m_Name: ;lizard
+  m_Name: Lizard Walk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -687,6 +687,7 @@ GameObject:
   - component: {fileID: 1367516045}
   - component: {fileID: 1367516044}
   - component: {fileID: 1367516043}
+  - component: {fileID: 1367516047}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -795,6 +796,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1367516047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367516042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3db56fa6a0f4af9aa3187f5583a0fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  pulseRadius: 5
+  pulseForce: 0.05
+  pullForce: 2
+  breathMeter: 0
+  breathMax: 100
 --- !u!1 &1881647201
 GameObject:
   m_ObjectHideFlags: 0
