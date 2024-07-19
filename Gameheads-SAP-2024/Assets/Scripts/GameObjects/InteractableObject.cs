@@ -22,21 +22,26 @@ public abstract class InteractableObject : MonoBehaviour
     protected bool canMoveTowardPlayer = true;
     protected string objectType;
     protected pushPullType pushOrPull;
+    [SerializeField] float pushPullRange;
 
     public abstract void onCollisionWithPlayer(GameObject player);
 
     public void onInhale(GameObject playerObject, float pullSpeed)
     {
+        float distance = Vector2.Distance(playerObject.transform.position, transform.position);
         //Debug.Log($"inhale: {pushOrPull}");
-        if (pushOrPull == pushPullType.CAN_PULL || pushOrPull == pushPullType.BOTH)
+        if ((pushOrPull == pushPullType.CAN_PULL || pushOrPull == pushPullType.BOTH) && distance <= pushPullRange)
         {
             transform.position = (Vector2.MoveTowards(transform.position, playerObject.transform.position, pullSpeed * Time.deltaTime));
         }
     }
 
+    //work on this more
+    //maybe apply some velocity to push the object away idk..
     public void onExhale(GameObject playerObject, float pushForce)
     {
-        if (pushOrPull == pushPullType.CAN_PUSH || pushOrPull == pushPullType.BOTH)
+        float distance = Vector2.Distance(playerObject.transform.position, transform.position);
+        if ((pushOrPull == pushPullType.CAN_PUSH || pushOrPull == pushPullType.BOTH) && distance <= pushPullRange)
         {
             Vector2 direction = (Vector2)(transform.position - playerObject.transform.position).normalized;
             Vector2 targetPosition = (Vector2)transform.position + (direction * pushForce);
