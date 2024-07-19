@@ -172,6 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b209df91d8bf74effa627c0dd0a3ac4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pushPullRange: 5
   radius: 2
   orbitSpeed: 1
   healing: 5
