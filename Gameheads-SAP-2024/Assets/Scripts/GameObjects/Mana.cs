@@ -19,7 +19,7 @@ public class Mana : InteractableObject
     public Mana()
     {
         objectType = "mana";
-        pushOrPull = pushPullType.CAN_PULL;
+        pushOrPull = pushPullType.BOTH;
     }
 
     void Awake()

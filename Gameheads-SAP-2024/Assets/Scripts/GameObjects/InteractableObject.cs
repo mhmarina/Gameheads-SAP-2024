@@ -27,7 +27,7 @@ public abstract class InteractableObject : MonoBehaviour
 
     public void onInhale(GameObject playerObject, float pullSpeed)
     {
-        Debug.Log($"inhale: {pushOrPull}");
+        //Debug.Log($"inhale: {pushOrPull}");
         if (pushOrPull == pushPullType.CAN_PULL || pushOrPull == pushPullType.BOTH)
         {
             transform.position = (Vector2.MoveTowards(transform.position, playerObject.transform.position, pullSpeed * Time.deltaTime));
@@ -40,7 +40,7 @@ public abstract class InteractableObject : MonoBehaviour
         {
             Vector2 direction = (Vector2)(transform.position - playerObject.transform.position).normalized;
             Vector2 targetPosition = (Vector2)transform.position + (direction * pushForce);
-            transform.position = Vector2.MoveTowards(transform.position, targetPosition, pushForce * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, targetPosition, pushForce * Time.deltaTime/4); //Pushed objects moving too fast. TO-DO: make this a variable
 
             //Vector2 direction = transform.position - playerObject.transform.position;
             //Rigidbody2D rb = GetComponent<Rigidbody2D>();
