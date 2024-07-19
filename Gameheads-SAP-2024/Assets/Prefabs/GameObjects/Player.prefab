@@ -187,11 +187,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  pulseRadius: 5
-  pulseForce: 0.05
-  pullForce: 2
+  pulseRadius: 7
+  pulseForce: 30
+  pullForce: 3
   breathMeter: 0
-  breathMax: 50
+  breathMax: 200
 --- !u!61 &4638336433469962771
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -276,7 +276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c435462dde2d47808368a2b25cf6ace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MAX_HEALTH: 10000000
+  MAX_HEALTH: 80
 --- !u!114 &1557716071398835054
 MonoBehaviour:
   m_ObjectHideFlags: 0

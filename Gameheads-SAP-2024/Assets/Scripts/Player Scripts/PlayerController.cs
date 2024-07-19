@@ -39,9 +39,10 @@ public class PlayerController : MonoBehaviour
             //updated for breath meter - Rafa 7/11
             if (im.button_inhale)
             {
-                inhale();
+                
                 if(breathMeter < breathMax)
                 {
+                    inhale();
                     breathMeter += 1;
 
                 }
