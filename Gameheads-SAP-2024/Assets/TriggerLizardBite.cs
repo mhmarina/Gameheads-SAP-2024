@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TriggerLizardBite : MonoBehaviour
 {
-    public Animator Controller; 
+    private Animator Controller; 
     // Start is called before the first frame update
     void Start()
     {
@@ -15,14 +15,11 @@ public class TriggerLizardBite : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Controller.GetBool("IsBiting") == true) 
-        {
-
-        }
+       
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         //Check to see if the tag on the collider is equal to Enemy
         if (other.tag == "Player")
@@ -36,5 +33,16 @@ public class TriggerLizardBite : MonoBehaviour
         {
             Controller.SetBool("IsBiting", false); 
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+      if (other.tag == "Player")
+        {
+            Debug.Log("Triggered by Enemy");
+            Controller.SetBool("IsBiting", false); 
+ 
+        }
+
     }
 }
