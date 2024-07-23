@@ -172,9 +172,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b209df91d8bf74effa627c0dd0a3ac4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pushPullRange: 0
   radius: 2
   orbitSpeed: 1
-  healing: 5
+  healing: 10
   shouldOrbit: 0
   smoothTime: 0.1
 --- !u!1 &1423234306446043805
