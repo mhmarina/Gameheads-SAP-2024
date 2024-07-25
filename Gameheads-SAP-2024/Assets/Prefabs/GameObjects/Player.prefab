@@ -187,9 +187,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  pulseRadius: 7
-  pulseForce: 30
-  pullForce: 3
+  pulseRadius: 14
+  pulseForce: 230
+  pullForce: 5
   breathMeter: 0
   breathMax: 200
 --- !u!61 &4638336433469962771
