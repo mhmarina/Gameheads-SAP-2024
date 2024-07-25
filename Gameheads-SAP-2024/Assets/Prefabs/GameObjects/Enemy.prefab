@@ -256,7 +256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62755670696b949ffa1408ddfba983c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pushPullRange: 15
+  pullRange: 15
   moveSpeed: 3
   damage: 10
   attackRadius: 15
