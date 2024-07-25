@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using BarthaSzabolcs.Tutorial_SpriteFlash;
 using UnityEngine;
 
 public class Enemy : InteractableObject
@@ -18,6 +19,8 @@ public class Enemy : InteractableObject
     public override void onCollisionWithPlayer(GameObject player)
     {
         player.GetComponent<Health>().setHealth(player.GetComponent<Health>().getHealth()-damage);
+        player.GetComponent<SimpleFlash>().Flash();
+
     }
 
     private void Awake()
@@ -32,4 +35,6 @@ public class Enemy : InteractableObject
             onInhale(player, moveSpeed);
         }
     }
+
+  
 }
