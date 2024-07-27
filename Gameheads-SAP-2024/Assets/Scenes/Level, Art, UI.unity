@@ -540,6 +540,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2110618614709758390, guid: 7fa30402ab051416d88ae8dd1e402299, type: 3}
+      propertyPath: attackRadius
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7126311854603686905, guid: 7fa30402ab051416d88ae8dd1e402299, type: 3}
       propertyPath: m_Name
       value: Enemy (RIGHT SIZE)
@@ -33709,6 +33713,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2110618614709758390, guid: 7fa30402ab051416d88ae8dd1e402299, type: 3}
+      propertyPath: attackRadius
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3706646522896280531, guid: 7fa30402ab051416d88ae8dd1e402299, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -34264,6 +34272,10 @@ PrefabInstance:
     - target: {fileID: 1818470442037214531, guid: 7fa30402ab051416d88ae8dd1e402299, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110618614709758390, guid: 7fa30402ab051416d88ae8dd1e402299, type: 3}
+      propertyPath: attackRadius
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7126311854603686905, guid: 7fa30402ab051416d88ae8dd1e402299, type: 3}
       propertyPath: m_Name
@@ -58314,6 +58326,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2110618614709758390, guid: 7fa30402ab051416d88ae8dd1e402299, type: 3}
+      propertyPath: attackRadius
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7126311854603686905, guid: 7fa30402ab051416d88ae8dd1e402299, type: 3}
       propertyPath: m_Name
       value: Enemy (2)
@@ -60015,6 +60031,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2110618614709758390, guid: 7fa30402ab051416d88ae8dd1e402299, type: 3}
+      propertyPath: attackRadius
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7126311854603686905, guid: 7fa30402ab051416d88ae8dd1e402299, type: 3}
       propertyPath: m_Name
       value: Enemy (3)
@@ -61371,6 +61391,10 @@ PrefabInstance:
     - target: {fileID: 2110618614709758390, guid: 7fa30402ab051416d88ae8dd1e402299, type: 3}
       propertyPath: pullRange
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110618614709758390, guid: 7fa30402ab051416d88ae8dd1e402299, type: 3}
+      propertyPath: attackRadius
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7126311854603686905, guid: 7fa30402ab051416d88ae8dd1e402299, type: 3}
       propertyPath: m_Name
