@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour
     private Health playerHealth;
     float horizontalInput;
     float verticalInput;
+    [SerializeField] float maxTimeStopped;
+    private float timeStopped;
+    private bool canMove;
 
     //one button controls - meter var
     [SerializeField] private float breathMeter;
@@ -23,36 +26,50 @@ public class PlayerController : MonoBehaviour
         playerHealth = GetComponent<Health>();
         /* We want this player to persist across levels. */
         DontDestroyOnLoad(this.gameObject);
+        canMove = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-            im = InputManager.instance;
-            horizontalInput = im.button_horizontalInput;
-            verticalInput = im.button_verticalInput;
+        im = InputManager.instance;
+        horizontalInput = im.button_horizontalInput;
+        verticalInput = im.button_verticalInput;
+        if (canMove)
+        {
             transform.Translate(new Vector2(horizontalInput, verticalInput) * moveSpeed * Time.deltaTime);
-
-            //attacks
-            //can only either inhale OR exhale
-
-            //updated for breath meter - Rafa 7/11
-            if (im.button_inhale)
-            {
+        }
+        //attacks
+        //can only either inhale OR exhale
+        //updated for breath meter - Rafa 7/11
+        if (im.button_inhale)
+        {
                 
-                if(breathMeter < breathMax)
-                {
-                    inhale();
-                    breathMeter += 1;
+            if(breathMeter < breathMax)
+            {
+                inhale();
+                breathMeter += 1;
 
-                }
-                Debug.Log("Inhaled");
             }
+            Debug.Log("Inhaled");
+        }
 
-            else if (breathMeter > 0 && !im.button_inhale) {
-                exhale();
-                breathMeter -=1;
-                Debug.Log("exhaled");
+        else if (breathMeter > 0 && !im.button_inhale) {
+            exhale();
+            breathMeter -=1;
+            Debug.Log("exhaled");
+        }
+
+        //player movement logic
+        if(!canMove && timeStopped > 0)
+        {
+            timeStopped -= 1 * Time.deltaTime;
+            Debug.Log("Stopped");
+        }
+        else if(timeStopped <= 0)
+        {
+            timeStopped = 0;
+            canMove = true;
         }
         // Player death
         if (playerHealth.getHealth() <= 0)
@@ -103,6 +120,12 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.GetComponent<InteractableObject>())
         {
             collision.gameObject.GetComponent<InteractableObject>().onCollisionWithPlayer(gameObject);
+            if(collision.gameObject.GetComponent<InteractableObject>().getObjectType() == "enemy" && canMove)
+            {
+                canMove = false;
+                timeStopped = maxTimeStopped;
+                Debug.Log(timeStopped);
+            }
         }
     }
 
