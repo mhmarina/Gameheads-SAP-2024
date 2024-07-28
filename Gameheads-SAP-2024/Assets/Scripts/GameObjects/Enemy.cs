@@ -30,6 +30,10 @@ public class Enemy : InteractableObject
         if (Vector3.Distance(player.transform.position, this.transform.position) < attackRadius)
         {
             onInhale(player, moveSpeed);
+            //find angle based on difference vector
+            Vector2 direction = player.transform.position - transform.position;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 270f;
+            transform.rotation = Quaternion.Euler(0, 0, angle);
         }
     }
 }
