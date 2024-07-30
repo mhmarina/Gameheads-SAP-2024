@@ -32,6 +32,16 @@ public abstract class InteractableObject : MonoBehaviour
         //Debug.Log($"inhale: {pushOrPull}");
         if ((pushOrPull == pushPullType.CAN_PULL || pushOrPull == pushPullType.BOTH) && distance <= pullRange)
         {
+            if (getObjectType() == "enemy")
+            {
+                Vector2 rayDirection = (playerObject.transform.position - this.transform.position).normalized;
+                RaycastHit2D hit = Physics2D.Raycast(this.transform.position, rayDirection, distance, LayerMask.GetMask("TransparentFX"));
+                Debug.DrawRay(this.transform.position, rayDirection * distance, Color.red);
+                if (hit.collider != null)
+                {
+                    return;
+                }
+            }
             transform.position = (Vector2.MoveTowards(transform.position, playerObject.transform.position, pullSpeed * Time.deltaTime));
         }
     }
@@ -40,12 +50,23 @@ public abstract class InteractableObject : MonoBehaviour
     //maybe apply some velocity to push the object away idk..
     public void onExhale(GameObject playerObject, float pushForce)
     {
-        float distance = Vector2.Distance(playerObject.transform.position, transform.position);
+        //raycast logic:
         if ((pushOrPull == pushPullType.CAN_PUSH || pushOrPull == pushPullType.BOTH))
         {
+            if (getObjectType() == "enemy")
+            {
+                float distance = Vector2.Distance(playerObject.transform.position, this.transform.position);
+                Vector2 rayDirection = (playerObject.transform.position - this.transform.position).normalized;
+                RaycastHit2D hit = Physics2D.Raycast(this.transform.position, rayDirection, distance, LayerMask.GetMask("TransparentFX"));
+                Debug.DrawRay(this.transform.position, rayDirection * distance, Color.red);
+                if (hit.collider != null)
+                {
+                    return;
+                }
+            }
             Vector2 direction = (Vector2)(transform.position - playerObject.transform.position).normalized;
             Vector2 targetPosition = (Vector2)transform.position + (direction * pushForce);
-            transform.position = Vector2.MoveTowards(transform.position, targetPosition, pushForce * Time.deltaTime/10); //Pushed objects moving too fast. TO-DO: make this a variable
+            transform.position = Vector2.MoveTowards(transform.position, targetPosition, pushForce * Time.deltaTime / 10);
 
             //Vector2 direction = transform.position - playerObject.transform.position;
             //Rigidbody2D rb = GetComponent<Rigidbody2D>();
