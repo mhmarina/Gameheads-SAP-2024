@@ -19,10 +19,10 @@ public class TriggerLizardBite : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
         //Check to see if the tag on the collider is equal to Enemy
-        if (other.tag == "Player")
+        if (other.gameObject.CompareTag("Player")) 
         {
             Debug.Log("Triggered by Enemy");
             Controller.SetBool("IsBiting", true); 
@@ -35,9 +35,9 @@ public class TriggerLizardBite : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    private void OnCollisionExit2D(Collision2D other)
     {
-      if (other.tag == "Player")
+      if (other.gameObject.CompareTag("Player")) 
         {
             Debug.Log("Triggered by Enemy");
             Controller.SetBool("IsBiting", false); 
