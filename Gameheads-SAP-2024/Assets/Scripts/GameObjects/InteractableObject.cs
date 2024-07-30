@@ -35,7 +35,7 @@ public abstract class InteractableObject : MonoBehaviour
             if (getObjectType() == "enemy")
             {
                 Vector2 rayDirection = (playerObject.transform.position - this.transform.position).normalized;
-                RaycastHit2D hit = Physics2D.Raycast(this.transform.position, rayDirection, distance, LayerMask.GetMask("Wall"));
+                RaycastHit2D hit = Physics2D.Raycast(this.transform.position, rayDirection, distance, LayerMask.GetMask("TransparentFX"));
                 Debug.DrawRay(this.transform.position, rayDirection * distance, Color.red);
                 if (hit.collider != null)
                 {
@@ -57,7 +57,7 @@ public abstract class InteractableObject : MonoBehaviour
             {
                 float distance = Vector2.Distance(playerObject.transform.position, this.transform.position);
                 Vector2 rayDirection = (playerObject.transform.position - this.transform.position).normalized;
-                RaycastHit2D hit = Physics2D.Raycast(this.transform.position, rayDirection, distance, LayerMask.GetMask("Wall"));
+                RaycastHit2D hit = Physics2D.Raycast(this.transform.position, rayDirection, distance, LayerMask.GetMask("TransparentFX"));
                 Debug.DrawRay(this.transform.position, rayDirection * distance, Color.red);
                 if (hit.collider != null)
                 {

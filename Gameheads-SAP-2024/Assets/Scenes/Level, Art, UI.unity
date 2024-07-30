@@ -35197,7 +35197,7 @@ GameObject:
   - component: {fileID: 881673554}
   - component: {fileID: 881673553}
   - component: {fileID: 881673552}
-  m_Layer: 10
+  m_Layer: 1
   m_Name: collider
   m_TagString: wall
   m_Icon: {fileID: 0}
