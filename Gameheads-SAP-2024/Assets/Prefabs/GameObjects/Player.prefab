@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 3479199613892123550}
   - component: {fileID: 4527886243868513862}
   - component: {fileID: 1557716071398835054}
+  - component: {fileID: -5689150837342561161}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -290,3 +291,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goalNumEnemies: 10
+--- !u!114 &-5689150837342561161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6300087415271049751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98759cdd81f257046bdc8f729b5da6c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 2100000, guid: 627533d1430196e41822219a4f575c76, type: 2}
+  duration: 0.5
