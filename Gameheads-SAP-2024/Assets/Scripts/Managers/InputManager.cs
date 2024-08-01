@@ -32,13 +32,13 @@ public class InputManager : MonoBehaviour
     {
         button_verticalInput = Input.GetAxis("Vertical");
         button_horizontalInput = Input.GetAxis("Horizontal");
-        button_inhale = Input.GetKey(KeyCode.Space);
-        button_exhale = Input.GetKey(KeyCode.M);
+        button_inhale = Input.GetKey(KeyCode.Space) || Input.GetButton("Fire1");
+        button_exhale = Input.GetKey(KeyCode.M) || Input.GetButton("Fire2");
         if(button_verticalInput == 0 && button_horizontalInput == 0)
         {
             isMoving = false;
         }
         mouse_clicked = Input.GetMouseButtonDown(0);
-        pauseKey = Input.GetKeyDown(KeyCode.Escape);
+        pauseKey = Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Cancel");
     }
 }
