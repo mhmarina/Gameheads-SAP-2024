@@ -46,8 +46,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b32119fa8472b45e8a4531b3906e2a8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicSounds: []
-  sfxSounds: []
+  musicSounds:
+  - clipName: Background sounds
+    clip: {fileID: 8300000, guid: b9c21e5ada04748c781ede8b9ef236e5, type: 3}
+  sfxSounds:
+  - clipName: Player footsteps
+    clip: {fileID: 8300000, guid: dc175dd41097246adbed6e4f51137aa6, type: 3}
+  - clipName: Breathe in sound
+    clip: {fileID: 8300000, guid: b34ccdb4925944b96961854e56a2f50a, type: 3}
+  - clipName: Breathe out sound
+    clip: {fileID: 8300000, guid: 79f42a1867e9f444cbb5ae3cfede818f, type: 3}
+  - clipName: Mo'o sound
+    clip: {fileID: 8300000, guid: fbc9a97b462da49ec97cbd203cfb869a, type: 3}
+  - clipName: Kahuna VL 1
+    clip: {fileID: 8300000, guid: ce1653c000c2a434eae46768113f2935, type: 3}
+  - clipName: Kahuna VL 2
+    clip: {fileID: 8300000, guid: dd1ee00909fe54dc3ba5dd2794e4a3f7, type: 3}
+  - clipName: Kahuna VL 3
+    clip: {fileID: 8300000, guid: 5e008ceb6117b4427aa28547b9d0fdaf, type: 3}
+  - clipName: Kahuna VL 4
+    clip: {fileID: 8300000, guid: cb4b596c06bc1444d80b1f57204dc770, type: 3}
+  - clipName: Kahuna VL 5
+    clip: {fileID: 8300000, guid: a5f64a618221a44d2aa8c65e5623a53c, type: 3}
+  - clipName: Kahuna Final VL
+    clip: {fileID: 8300000, guid: dd2c0176fae6d46149cd1403c0fb2339, type: 3}
   musicSource: {fileID: 9178902131003446579}
   sfxSource: {fileID: 1352635589576737566}
   playerSource: {fileID: 0}
