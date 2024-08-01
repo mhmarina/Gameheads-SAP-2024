@@ -31,7 +31,17 @@ public class CutsceneManager : MonoBehaviour
             }
             else
             {
-                SceneManager.LoadScene("Level, Art, UI");
+                if(SceneManager.GetActiveScene().name == "Opening Cutscene")
+                {
+                    SceneManager.LoadScene("Level, Art, UI");
+                }
+                else
+                {
+                    //could also load credits here
+                    //when we have credits ready.
+                    //credits could then go to main menu
+                    SceneManager.LoadScene("Main Menu");
+                }
             }
         }
     }
