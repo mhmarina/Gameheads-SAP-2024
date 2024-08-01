@@ -44,13 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df8f73754cd8b445190bb9be6c09cda7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainMenuScene:
-    m_Handle: 0
-  StartCutscene:
-    m_Handle: 0
-  Level1Scene:
-    m_Handle: 0
-  FinalCutscene:
-    m_Handle: 0
-  Credits:
-    m_Handle: 0
+  MainMenuScene: Main Menu
+  StartCutscene: Opening Cutscene
+  Level1Scene: Level, Art, UI
+  FinalCutscene: 
+  Credits: 

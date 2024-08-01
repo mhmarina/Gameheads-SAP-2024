@@ -25,21 +25,11 @@ public class GameManager : MonoBehaviour
     ///     - Exact same structure as Start Scene
     ///4: Credits (?) ... moves to main menu directly after end or if player clicks anywhere
     
-    public static GameManager instance;
     [SerializeField] string MainMenuScene;
     [SerializeField] string StartCutscene;
     [SerializeField] string Level1Scene;
     [SerializeField] string FinalCutscene;
     [SerializeField] string Credits;
-
-    private void Start()
-    {
-        if(!instance)
-        {
-            instance = this;
-        }
-        DontDestroyOnLoad(this);
-    }
 
     public void goToMainMenu()
     {
@@ -64,5 +54,10 @@ public class GameManager : MonoBehaviour
     public void playCredits()
     {
         SceneManager.LoadScene(Credits);
+    }
+    public void resetScene()
+    {
+        Debug.Log(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

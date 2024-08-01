@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CutsceneManager : MonoBehaviour
 {
@@ -30,7 +31,7 @@ public class CutsceneManager : MonoBehaviour
             }
             else
             {
-                GameManager.instance.startGame();
+                SceneManager.LoadScene("Level, Art, UI");
             }
         }
     }
