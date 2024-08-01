@@ -10,6 +10,7 @@ public class InputManager : MonoBehaviour
     public float button_horizontalInput;
     public bool button_inhale;
     public bool button_exhale;
+    public bool mouse_clicked;
     public bool isMoving = true;
     public static InputManager instance;
 
@@ -36,5 +37,6 @@ public class InputManager : MonoBehaviour
         {
             isMoving = false;
         }
+        mouse_clicked = Input.GetMouseButtonDown(0);
     }
 }

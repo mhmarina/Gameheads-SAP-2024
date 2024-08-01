@@ -25,7 +25,6 @@ public class PlayerController : MonoBehaviour
     {
         playerHealth = GetComponent<Health>();
         /* We want this player to persist across levels. */
-        DontDestroyOnLoad(this.gameObject);
         canMove = true;
     }
 

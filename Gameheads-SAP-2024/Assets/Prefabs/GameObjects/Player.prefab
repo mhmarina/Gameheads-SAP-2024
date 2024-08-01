@@ -191,6 +191,7 @@ MonoBehaviour:
   pulseRadius: 7
   pulseForce: 30
   pullForce: 3
+  maxTimeStopped: 0
   breathMeter: 0
   breathMax: 200
 --- !u!61 &4638336433469962771
