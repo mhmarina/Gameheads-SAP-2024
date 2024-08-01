@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2866c6a987e2b8141acfdaa6b07660a7
+guid: d2647686e259ac14299be7c1e7edda68
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Updated Breathe 2_0
+      name: Breathe In 3_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f26c8c87ade5a5b4a92ec168f1356fac
-      internalID: -1350494612
+      spriteID: 8bf19a0e44e7ca6459c80b14503ce0a6
+      internalID: 1165101088
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Updated Breathe 2_1
+      name: Breathe In 3_1
       rect:
         serializedVersion: 2
         x: 450
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 809343d645b92e54c8b8bb61aad65eb3
-      internalID: 658278186
+      spriteID: e8327eb4a5c6b314a829bd2fd7c181fd
+      internalID: -48903933
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Updated Breathe 2_2
+      name: Breathe In 3_2
       rect:
         serializedVersion: 2
         x: 900
@@ -166,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b729665a9641d54a83dc84371cdd581
-      internalID: -1165036622
+      spriteID: 4de90b0dfc3be4e4da9ca7ffc3b90c14
+      internalID: 1117739270
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Updated Breathe 2_3
+      name: Breathe In 3_3
       rect:
         serializedVersion: 2
         x: 1350
@@ -187,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 241be0a641876f34eb65545a019634ba
-      internalID: 691803576
+      spriteID: 87d4efa3b22539d4a881eda746928105
+      internalID: 1785486877
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Updated Breathe 2_4
+      name: Breathe In 3_4
       rect:
         serializedVersion: 2
         x: 1800
@@ -208,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 52304d41f61f3974b952d631c517aa5f
-      internalID: -1335803499
+      spriteID: 3c5b03f39b35b5b4ea0b84f838bb53cf
+      internalID: -1447501749
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Updated Breathe 2_5
+      name: Breathe In 3_5
       rect:
         serializedVersion: 2
         x: 0
@@ -229,14 +229,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 19dd24b671ac6f4439a8ccfa53ac2bd7
-      internalID: -92488664
+      spriteID: 3d4e3566bade2d54ebd2f8881a556f54
+      internalID: 443567243
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Updated Breathe 2_6
+      name: Breathe In 3_6
       rect:
         serializedVersion: 2
         x: 450
@@ -250,14 +250,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5179d4710e807ca49aa9dbfaadbeef48
-      internalID: -1974572450
+      spriteID: 70258240cbe8598469559e92a66f5627
+      internalID: 1048989603
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Updated Breathe 2_7
+      name: Breathe In 3_7
       rect:
         serializedVersion: 2
         x: 900
@@ -271,14 +271,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 592d53cf343328f448d461931b182de4
-      internalID: 2030039143
+      spriteID: 846112a3122461c4ebe5a6ef5bcbd10a
+      internalID: -351530118
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Updated Breathe 2_8
+      name: Breathe In 3_8
       rect:
         serializedVersion: 2
         x: 1350
@@ -292,14 +292,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d8a0ad4eac343d7479160fd9c8a6f710
-      internalID: 1615358812
+      spriteID: 779d35ac34431894082b41d978f3c3bc
+      internalID: -1962772977
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Updated Breathe 2_9
+      name: Breathe In 3_9
       rect:
         serializedVersion: 2
         x: 1800
@@ -313,14 +313,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 553ab9ba05640a341a126d69e3f63f6d
-      internalID: -1148033918
+      spriteID: 4904b44abcbb20047a0c0c6b72f35100
+      internalID: 2105034995
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Updated Breathe 2_10
+      name: Breathe In 3_10
       rect:
         serializedVersion: 2
         x: 0
@@ -334,14 +334,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc880544959049845b69b6340f2d8e17
-      internalID: -224685292
+      spriteID: 18700d9e3d5be3e41a478faa39d29a24
+      internalID: 729394600
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Updated Breathe 2_11
+      name: Breathe In 3_11
       rect:
         serializedVersion: 2
         x: 450
@@ -355,14 +355,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61e1c2f4d5580d84eac71347cc0e49ad
-      internalID: 629124601
+      spriteID: 30d8e9c13bb960a4a852b17e4908e17a
+      internalID: -1479674718
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Updated Breathe 2_12
+      name: Breathe In 3_12
       rect:
         serializedVersion: 2
         x: 900
@@ -376,14 +376,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df6c6a0ded030484fbbdad6da287bd16
-      internalID: -1676964418
+      spriteID: a1d64448d58fd8347b5a77f99861e4e0
+      internalID: 1285183981
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Updated Breathe 2_13
+      name: Breathe In 3_13
       rect:
         serializedVersion: 2
         x: 1350
@@ -397,14 +397,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 477bde209254458468bba73ab7ad6c99
-      internalID: -380347048
+      spriteID: fb30cac67c2a5d347a3fe4d167e005ed
+      internalID: -1419849711
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Updated Breathe 2_14
+      name: Breathe In 3_14
       rect:
         serializedVersion: 2
         x: 1800
@@ -418,14 +418,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9922b7c2c27d6f64faa5eddc00bd9f63
-      internalID: 1255341618
+      spriteID: ab2a753c79b071344b1835e7e49d5d58
+      internalID: 1799433567
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Updated Breathe 2_15
+      name: Breathe In 3_15
       rect:
         serializedVersion: 2
         x: 0
@@ -439,14 +439,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d04509ce39ad8c41a2ecbce838d4925
-      internalID: -678481061
+      spriteID: 4d3087125b4195647b519e7c097bd6bb
+      internalID: 289120914
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Updated Breathe 2_16
+      name: Breathe In 3_16
       rect:
         serializedVersion: 2
         x: 450
@@ -460,14 +460,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1aa7d1d15a6bef74b88f8791fa0b28ed
-      internalID: 1414629800
+      spriteID: 1e831eb5e0d78d14f8412f1bb8ee66f6
+      internalID: -1343540893
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Updated Breathe 2_17
+      name: Breathe In 3_17
       rect:
         serializedVersion: 2
         x: 900
@@ -481,14 +481,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: daec048c31d3ba94f88ab1c38b885915
-      internalID: -2048146879
+      spriteID: 114462270f569b148ba238e94be1bb51
+      internalID: 230951945
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Updated Breathe 2_18
+      name: Breathe In 3_18
       rect:
         serializedVersion: 2
         x: 1350
@@ -502,8 +502,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad804a8c5d7058b45a8a98d90804558c
-      internalID: 103793062
+      spriteID: 6de495b0aeb450443bc8f62f931ea3aa
+      internalID: 1373440146
       vertices: []
       indices: 
       edges: []
@@ -519,25 +519,25 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Updated Breathe 2_0: -1350494612
-      Updated Breathe 2_1: 658278186
-      Updated Breathe 2_10: -224685292
-      Updated Breathe 2_11: 629124601
-      Updated Breathe 2_12: -1676964418
-      Updated Breathe 2_13: -380347048
-      Updated Breathe 2_14: 1255341618
-      Updated Breathe 2_15: -678481061
-      Updated Breathe 2_16: 1414629800
-      Updated Breathe 2_17: -2048146879
-      Updated Breathe 2_18: 103793062
-      Updated Breathe 2_2: -1165036622
-      Updated Breathe 2_3: 691803576
-      Updated Breathe 2_4: -1335803499
-      Updated Breathe 2_5: -92488664
-      Updated Breathe 2_6: -1974572450
-      Updated Breathe 2_7: 2030039143
-      Updated Breathe 2_8: 1615358812
-      Updated Breathe 2_9: -1148033918
+      Breathe In 3_0: 1165101088
+      Breathe In 3_1: -48903933
+      Breathe In 3_10: 729394600
+      Breathe In 3_11: -1479674718
+      Breathe In 3_12: 1285183981
+      Breathe In 3_13: -1419849711
+      Breathe In 3_14: 1799433567
+      Breathe In 3_15: 289120914
+      Breathe In 3_16: -1343540893
+      Breathe In 3_17: 230951945
+      Breathe In 3_18: 1373440146
+      Breathe In 3_2: 1117739270
+      Breathe In 3_3: 1785486877
+      Breathe In 3_4: -1447501749
+      Breathe In 3_5: 443567243
+      Breathe In 3_6: 1048989603
+      Breathe In 3_7: -351530118
+      Breathe In 3_8: -1962772977
+      Breathe In 3_9: 2105034995
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
