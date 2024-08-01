@@ -122,6 +122,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &9936204 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 84796486881074200, guid: 5ec9c32940a1df64e9da2efe1a6ea7b7, type: 3}
+  m_PrefabInstance: {fileID: 879876630}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &45470397
 GameObject:
   m_ObjectHideFlags: 0
@@ -32980,6 +32991,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8593342438753809665, guid: 5e69c009ce3464836baabd90fcc94e77, type: 3}
   m_PrefabInstance: {fileID: 629302754}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &576080738 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3765450626385574148, guid: 1deb81c38c5db40f58610e8a91705571, type: 3}
+  m_PrefabInstance: {fileID: 2061051920}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &629302754
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58099,8 +58121,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minimap: {fileID: 1427436356}
-  scoreText: {fileID: 1438313451}
+  inventory: {fileID: 1438313451}
   lossCanvas: {fileID: 966878715}
+  currentScore: {fileID: 576080738}
+  lossScore: {fileID: 9936204}
 --- !u!4 &2141276440
 Transform:
   m_ObjectHideFlags: 0
