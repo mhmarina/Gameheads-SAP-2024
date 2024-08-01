@@ -15,7 +15,6 @@ public class LevelUIManager : MonoBehaviour
             player = GameObject.FindGameObjectWithTag("Player");
             if (!player)
             {
-                Time.timeScale = 0;
                 scoreText.SetActive(false);
                 minimap.SetActive(false);
                 lossCanvas.SetActive(true);
