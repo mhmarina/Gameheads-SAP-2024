@@ -13,6 +13,7 @@ public class InputManager : MonoBehaviour
     public bool mouse_clicked;
     public bool isMoving = true;
     public static InputManager instance;
+    public bool pauseKey;
 
     private void Start()
     {
@@ -38,5 +39,6 @@ public class InputManager : MonoBehaviour
             isMoving = false;
         }
         mouse_clicked = Input.GetMouseButtonDown(0);
+        pauseKey = Input.GetKeyDown(KeyCode.Escape);
     }
 }
