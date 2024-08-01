@@ -1657,18 +1657,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ==GameManager==
       objectReference: {fileID: 0}
-    - target: {fileID: 3568364843147957535, guid: 1c9d3401045be4639812c480cffb3de8, type: 3}
-      propertyPath: Level1Scene
-      value: Level, Art, UI
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568364843147957535, guid: 1c9d3401045be4639812c480cffb3de8, type: 3}
-      propertyPath: MainMenuScene
-      value: Main Menu
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568364843147957535, guid: 1c9d3401045be4639812c480cffb3de8, type: 3}
-      propertyPath: StartCutscene
-      value: Opening Cutscene
-      objectReference: {fileID: 0}
     - target: {fileID: 5694777697888971798, guid: 1c9d3401045be4639812c480cffb3de8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 311.38208
