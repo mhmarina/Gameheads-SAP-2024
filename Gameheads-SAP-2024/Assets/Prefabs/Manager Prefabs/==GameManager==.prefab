@@ -47,5 +47,5 @@ MonoBehaviour:
   MainMenuScene: Main Menu
   StartCutscene: Opening Cutscene
   Level1Scene: Level, Art, UI
-  FinalCutscene: 
+  FinalCutscene: Final Cutscene
   Credits: 

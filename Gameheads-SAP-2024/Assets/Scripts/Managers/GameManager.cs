@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
 
     public void goToMainMenu()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(MainMenuScene);
     }
 
@@ -57,7 +58,10 @@ public class GameManager : MonoBehaviour
     }
     public void resetScene()
     {
-        Debug.Log(SceneManager.GetActiveScene().name);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    public void quitGame()
+    {
+        Application.Quit();
     }
 }
