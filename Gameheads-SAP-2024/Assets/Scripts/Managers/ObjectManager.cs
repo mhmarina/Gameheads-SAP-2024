@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class ObjectManager : MonoBehaviour
 {
     // Singleton Class
     // Maybe move logic regarding mana and emeis to separate script
     // to avoid mess
-    public static GameManager instance;
+    public static ObjectManager instance;
     private ArrayList manaList;
     private ArrayList enemyList;
 
