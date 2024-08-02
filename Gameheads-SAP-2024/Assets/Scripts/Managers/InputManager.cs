@@ -14,6 +14,8 @@ public class InputManager : MonoBehaviour
     public bool isMoving = true;
     public static InputManager instance;
     public bool pauseKey;
+    bool go_next;
+    bool go_back;
 
     private void Start()
     {
@@ -38,7 +40,23 @@ public class InputManager : MonoBehaviour
         {
             isMoving = false;
         }
-        mouse_clicked = Input.GetMouseButtonDown(0);
+        if(button_horizontalInput < 0)
+        {
+            go_back = true;
+        }
+        else
+        {
+            go_back = false;
+        }
+        if(button_horizontalInput > 0)
+        {
+            go_next = true;
+        }
+        else
+        {
+            go_next = false;
+        }
+        mouse_clicked = Input.GetMouseButtonDown(0) || Input.GetButtonDown("Fire1");
         pauseKey = Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Cancel");
     }
 }
