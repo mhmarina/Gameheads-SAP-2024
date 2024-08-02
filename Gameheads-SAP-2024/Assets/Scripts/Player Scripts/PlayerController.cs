@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float maxTimeStopped;
     private float timeStopped;
     private bool canMove;
+    [SerializeField] float damageInterval;
+    private float damageTimer;
 
     //one button controls - meter var
     [SerializeField] private float breathMeter;
@@ -76,6 +78,12 @@ public class PlayerController : MonoBehaviour
             //event system maybe boradcast death
             Destroy(gameObject);
         }
+
+        //enemy damage interval logic
+        if(damageTimer < damageInterval)
+        {
+            damageTimer += 1 * Time.deltaTime;
+        }
     }
 
     private void exhale()
@@ -121,6 +129,7 @@ public class PlayerController : MonoBehaviour
             collision.gameObject.GetComponent<InteractableObject>().onCollisionWithPlayer(gameObject);
             if(collision.gameObject.GetComponent<InteractableObject>().getObjectType() == "enemy" && canMove)
             {
+                damageTimer = damageInterval;
                 canMove = false;
                 timeStopped = maxTimeStopped;
                 Debug.Log(timeStopped);
@@ -128,4 +137,19 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.GetComponent<InteractableObject>())
+        {
+            if (collision.gameObject.GetComponent<InteractableObject>().getObjectType() == "enemy")
+            {
+                if (damageTimer >= damageInterval)
+                {
+                    collision.gameObject.GetComponent<InteractableObject>().onCollisionWithPlayer(gameObject);
+                    damageTimer = 0f; // Reset the timer
+                }
+            }
+        }
+
+    }
 }
