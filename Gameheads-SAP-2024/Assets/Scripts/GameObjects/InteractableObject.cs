@@ -28,7 +28,6 @@ public abstract class InteractableObject : MonoBehaviour
 
     public void onInhale(GameObject playerObject, float pullSpeed)
     {
-        isPushed = false;
         float distance = Vector2.Distance(playerObject.transform.position, transform.position);
         //Debug.Log($"inhale: {pushOrPull}");
         if ((pushOrPull == pushPullType.CAN_PULL || pushOrPull == pushPullType.BOTH) && distance <= pullRange)
@@ -51,6 +50,7 @@ public abstract class InteractableObject : MonoBehaviour
     //maybe apply some velocity to push the object away idk..
     public void onExhale(GameObject playerObject, float pushForce)
     {
+        isPushed = true;
         //raycast logic:
         if ((pushOrPull == pushPullType.CAN_PUSH || pushOrPull == pushPullType.BOTH))
         {
@@ -69,7 +69,6 @@ public abstract class InteractableObject : MonoBehaviour
             Vector2 targetPosition = (Vector2)transform.position + (direction * pushForce * Time.deltaTime);
             transform.position = Vector2.MoveTowards(transform.position, targetPosition, pushForce * Time.deltaTime / 10);
 
-            isPushed = true;
             //Vector2 direction = transform.position - playerObject.transform.position;
             //Rigidbody2D rb = GetComponent<Rigidbody2D>();
             //rb.AddForce(direction.normalized * pushForce, ForceMode2D.Impulse);
