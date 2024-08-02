@@ -401,6 +401,10 @@ PrefabInstance:
       propertyPath: pulseRadius
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 9188518994893437824, guid: 7d037850cbbae489d83e0ab5c63b4606, type: 3}
+      propertyPath: damageInterval
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 232053300825717309, guid: 7d037850cbbae489d83e0ab5c63b4606, type: 3}
     m_RemovedGameObjects: []
