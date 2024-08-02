@@ -45,7 +45,7 @@ public class LevelUIManager : MonoBehaviour
         }
 
         //handle pause
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (InputManager.instance.pauseKey)
         {
             if (!isPaused)
             {
