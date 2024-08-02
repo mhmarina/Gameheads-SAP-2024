@@ -65,7 +65,7 @@ public abstract class InteractableObject : MonoBehaviour
                 }
             }
             Vector2 direction = (Vector2)(transform.position - playerObject.transform.position).normalized;
-            Vector2 targetPosition = (Vector2)transform.position + (direction * pushForce);
+            Vector2 targetPosition = (Vector2)transform.position + (direction * pushForce * Time.deltaTime);
             transform.position = Vector2.MoveTowards(transform.position, targetPosition, pushForce * Time.deltaTime / 10);
 
             //Vector2 direction = transform.position - playerObject.transform.position;
