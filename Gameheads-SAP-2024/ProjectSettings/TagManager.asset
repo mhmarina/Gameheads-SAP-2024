@@ -8,6 +8,7 @@ TagManager:
   - InteractableObject
   - InputManager
   - wall
+  - boulder
   layers:
   - Default
   - TransparentFX
