@@ -10,7 +10,6 @@ public abstract class InteractableObject : MonoBehaviour
     /// This allows us to control how many mana and enemies are in the scene
     /// it'll also make accessing them from the player for example easier..
     /// </summary>
-
     public enum pushPullType
     {
         CAN_PUSH,
@@ -23,6 +22,7 @@ public abstract class InteractableObject : MonoBehaviour
     protected string objectType;
     protected pushPullType pushOrPull;
     [SerializeField] float pullRange;
+    public bool isPushed;
 
     public abstract void onCollisionWithPlayer(GameObject player);
 
@@ -50,6 +50,7 @@ public abstract class InteractableObject : MonoBehaviour
     //maybe apply some velocity to push the object away idk..
     public void onExhale(GameObject playerObject, float pushForce)
     {
+        isPushed = true;
         //raycast logic:
         if ((pushOrPull == pushPullType.CAN_PUSH || pushOrPull == pushPullType.BOTH))
         {
@@ -65,12 +66,25 @@ public abstract class InteractableObject : MonoBehaviour
                 }
             }
             Vector2 direction = (Vector2)(transform.position - playerObject.transform.position).normalized;
-            Vector2 targetPosition = (Vector2)transform.position + (direction * pushForce);
+            Vector2 targetPosition = (Vector2)transform.position + (direction * pushForce * Time.deltaTime);
             transform.position = Vector2.MoveTowards(transform.position, targetPosition, pushForce * Time.deltaTime / 10);
 
             //Vector2 direction = transform.position - playerObject.transform.position;
             //Rigidbody2D rb = GetComponent<Rigidbody2D>();
             //rb.AddForce(direction.normalized * pushForce, ForceMode2D.Impulse);
+        }
+    }
+
+    private void Update()
+    {
+        if (isPushed)
+        {
+            float time = 0;
+            while (time < 5)
+            {
+                time += 1 * Time.deltaTime;
+            }
+            isPushed = false;
         }
     }
 

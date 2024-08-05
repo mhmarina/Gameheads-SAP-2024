@@ -31,6 +31,10 @@ public class Mana : InteractableObject
 
     void Update()
     {
+        if (!player)
+        {
+            return;
+        }
         im = InputManager.instance;
         if (!im.button_inhale && player && shouldOrbit)
         {
