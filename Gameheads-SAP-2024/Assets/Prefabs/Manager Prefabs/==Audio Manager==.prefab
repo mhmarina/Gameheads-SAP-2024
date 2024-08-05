@@ -49,6 +49,8 @@ MonoBehaviour:
   musicSounds:
   - clipName: Background sounds
     clip: {fileID: 8300000, guid: b9c21e5ada04748c781ede8b9ef236e5, type: 3}
+  - clipName: Main Menu Song
+    clip: {fileID: 8300000, guid: 9fa3469a87fc942ef8b341e964c31e52, type: 3}
   sfxSounds:
   - clipName: Player footsteps
     clip: {fileID: 8300000, guid: 96e2bacf739974f05bda7a451fb4a808, type: 3}
