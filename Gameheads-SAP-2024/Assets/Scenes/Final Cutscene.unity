@@ -202,18 +202,6 @@ MonoBehaviour:
     - line: 'Pretty nuts huh what some people can do if they work together? Eh Kaika?  '
       voiceLine: {fileID: 0}
       charSprite: {fileID: 21300000, guid: 2806bb1c7e42c3a4396deb6f2a23c3cc, type: 3}
-  - sprite: {fileID: 21300000, guid: 0be84bab703bee14c8e5ee64bddc0573, type: 3}
-    dialogueLines:
-    - line: 'To this day, if you were to walk down to that boulder, down by Waimanu
-        trail, '
-      voiceLine: {fileID: 0}
-      charSprite: {fileID: 21300000, guid: 2806bb1c7e42c3a4396deb6f2a23c3cc, type: 3}
-    - line: 'and put your ear up against em, you''d hear something from behind it.  '
-      voiceLine: {fileID: 0}
-      charSprite: {fileID: 21300000, guid: 2806bb1c7e42c3a4396deb6f2a23c3cc, type: 3}
-    - line: 'Pretty nuts huh what some people can do if they work together? Eh Kaika?  '
-      voiceLine: {fileID: 0}
-      charSprite: {fileID: 21300000, guid: 2806bb1c7e42c3a4396deb6f2a23c3cc, type: 3}
   cutSceneImage: {fileID: 819222417}
   characterSpriteImage: {fileID: 1534420608}
   dialogueBox: {fileID: 1239034692}
