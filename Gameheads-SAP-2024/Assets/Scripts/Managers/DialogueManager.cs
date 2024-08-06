@@ -16,7 +16,6 @@ public class DialogueManager : MonoBehaviour
 
     [SerializeField] Image characterSpriteImage;
     [SerializeField] TextMeshProUGUI dialogueText;
-    [SerializeField] Dialogue dialogue;
 
     void Start()
     {
