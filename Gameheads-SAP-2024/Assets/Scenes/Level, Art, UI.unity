@@ -143,6 +143,8 @@ GameObject:
   m_Component:
   - component: {fileID: 28495324}
   - component: {fileID: 28495323}
+  - component: {fileID: 28495326}
+  - component: {fileID: 28495325}
   m_Layer: 0
   m_Name: Dead Relative
   m_TagString: Untagged
@@ -217,6 +219,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &28495325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28495322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f3a827ff36084d50ac89d28ca9fe3dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &28495326
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28495322}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 3.146375}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.56, y: 2.56}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.56, y: 19.00947}
+  m_EdgeRadius: 0
 --- !u!1 &45470397
 GameObject:
   m_ObjectHideFlags: 0
@@ -37538,6 +37597,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b092faedfb5f93548bf9c494788fff44, type: 3}
+--- !u!1 &815623108 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4981982434657736974, guid: 1deb81c38c5db40f58610e8a91705571, type: 3}
+  m_PrefabInstance: {fileID: 2061051920}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &868811589
 GameObject:
   m_ObjectHideFlags: 0
@@ -60476,6 +60540,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8593342438753809665, guid: 5e69c009ce3464836baabd90fcc94e77, type: 3}
   m_PrefabInstance: {fileID: 1132520319}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1196861159 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3084704743771218581, guid: 1deb81c38c5db40f58610e8a91705571, type: 3}
+  m_PrefabInstance: {fileID: 2061051920}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1258299222
 GameObject:
   m_ObjectHideFlags: 0
@@ -61080,9 +61155,35 @@ MonoBehaviour:
   inhaleTrigger: 0
   releaseTrigger: 0
   targetNumReachedTrigger: 0
-  characterSpriteImage: {fileID: 0}
-  dialogueText: {fileID: 0}
-  dialogue: {fileID: 11400000, guid: f402b8eaad95b4eb79bd2135909d6776, type: 2}
+  characterSpriteImage: {fileID: 1196861159}
+  dialogueText: {fileID: 1648314335}
+  dialogueBox: {fileID: 815623108}
+  tutorialLines:
+  - line: "Ay Kia\u2019i over here! Move with [WASD]"
+    voiceLine: {fileID: 0}
+    charSprite: {fileID: 21300000, guid: 14f72158d8e406144861c7ef1855d23e, type: 3}
+  - line: "Kahuna\u2026  "
+    voiceLine: {fileID: 0}
+    charSprite: {fileID: 21300000, guid: fb37a5226f3561745a926569fa2c3cad, type: 3}
+  - line: "Terrible. The Mo\u2019o took too many people."
+    voiceLine: {fileID: 0}
+    charSprite: {fileID: 21300000, guid: 10973b49046c4a24398f00fd88d3e037, type: 3}
+  - line: "Kia\u2019i, use your Hanu to gather mana for us both! Press [SPACE]"
+    voiceLine: {fileID: 0}
+    charSprite: {fileID: 21300000, guid: 10973b49046c4a24398f00fd88d3e037, type: 3}
+  - line: "Now release the breath of life! H\u0101!! Release [SPACE]"
+    voiceLine: {fileID: 0}
+    charSprite: {fileID: 21300000, guid: 14f72158d8e406144861c7ef1855d23e, type: 3}
+  - line: "Breathe and relax. It will all be okay, Kia\u2019i"
+    voiceLine: {fileID: 0}
+    charSprite: {fileID: 21300000, guid: 14f72158d8e406144861c7ef1855d23e, type: 3}
+  - line: "Keep pushing! There\u2019s a cave down Waimanu trail!"
+    voiceLine: {fileID: 0}
+    charSprite: {fileID: 21300000, guid: 8291b535742344d43b526854776e0929, type: 3}
+  - line: Aue!! They stay breaking free! Get us something to cover the hole!
+    voiceLine: {fileID: 0}
+    charSprite: {fileID: 21300000, guid: 10973b49046c4a24398f00fd88d3e037, type: 3}
+  playerInventory: {fileID: 1091420874}
 --- !u!4 &1474540270
 Transform:
   m_ObjectHideFlags: 0
@@ -61362,6 +61463,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4325938152496861014, guid: b853945f4df7296429f3ee45b0807f9e, type: 3}
   m_PrefabInstance: {fileID: 1404784607}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1648314335 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8665751095879982470, guid: 1deb81c38c5db40f58610e8a91705571, type: 3}
+  m_PrefabInstance: {fileID: 2061051920}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1691846780 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8593342438753809665, guid: 5e69c009ce3464836baabd90fcc94e77, type: 3}
