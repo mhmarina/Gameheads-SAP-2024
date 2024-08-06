@@ -14,21 +14,6 @@ public class DialogueManager : MonoBehaviour
     public bool releaseTrigger = false;
     public bool targetNumReachedTrigger = false;
 
-    [CreateAssetMenu(fileName = "Dialogue", menuName = "Scriptable Objects/Dialogue")]
-    public class Dialogue : ScriptableObject
-    {
-        public List<DialogueLine> levelDialogue;
-        public List<DialogueLine> openingCutsceneDialogue;
-        public List<DialogueLine> finalCutsceneDialogue;
-    }
-
-    [System.Serializable]
-    public class DialogueLine
-    {
-        public string line;
-        public Sprite playerSprite;
-    }
-
     [SerializeField] Image characterSpriteImage;
     [SerializeField] TextMeshProUGUI dialogueText;
     [SerializeField] Dialogue dialogue;
@@ -41,5 +26,10 @@ public class DialogueManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void playVoiceLine(DialogueLine voiceLine)
+    {
+        gameObject.GetComponent<AudioSource>().PlayOneShot(voiceLine.voiceLine);
     }
 }
