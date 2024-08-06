@@ -61082,7 +61082,6 @@ MonoBehaviour:
   targetNumReachedTrigger: 0
   characterSpriteImage: {fileID: 0}
   dialogueText: {fileID: 0}
-  dialogue: {fileID: 11400000, guid: f402b8eaad95b4eb79bd2135909d6776, type: 2}
 --- !u!4 &1474540270
 Transform:
   m_ObjectHideFlags: 0
