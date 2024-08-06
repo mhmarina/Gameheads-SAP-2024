@@ -155,18 +155,30 @@ MonoBehaviour:
   cutSceneFrames:
   - sprite: {fileID: 21300000, guid: b37e681cebb4dfe49aa9b71a4c0c4be0, type: 3}
     dialogueLines:
-    - line: "So what did Kia\u2019i do? He and the kahuna gada togeda, and made one
-        plan for trap em, you see, so they told some of the men to dig a cave to
-        put the Mo\u2019o inside.  "
+    - line: 
+      voiceLine: {fileID: 0}
+      charSprite: {fileID: 0}
+    - line: "So what did Kia\u2019i do?   "
       voiceLine: {fileID: 0}
       charSprite: {fileID: 21300000, guid: e0e7d4d9178bef94aafd57bee0a941d4, type: 3}
-    - line: "After that, the kahuna went chant from the start of the valley, all
-        da way down da bay, and when the chant went reach em, they went push da Mo\u2019o
-        straight into the cave they went make.  "
+    - line: 'He and the kahuna gada togeda, and made one plan for trap em, you see. '
+      voiceLine: {fileID: 0}
+      charSprite: {fileID: 21300000, guid: 2806bb1c7e42c3a4396deb6f2a23c3cc, type: 3}
+    - line: "So they told some of the men to dig a cave to put the Mo\u2019o inside."
+      voiceLine: {fileID: 0}
+      charSprite: {fileID: 21300000, guid: 2806bb1c7e42c3a4396deb6f2a23c3cc, type: 3}
+    - line: 'After that, the kahuna went chant from the start of the valley, '
+      voiceLine: {fileID: 0}
+      charSprite: {fileID: 21300000, guid: 2806bb1c7e42c3a4396deb6f2a23c3cc, type: 3}
+    - line: "all da way down da bay, and when the chant went reach em, they went
+        push da Mo\u2019o straight into the cave they went make. "
       voiceLine: {fileID: 0}
       charSprite: {fileID: 21300000, guid: 2806bb1c7e42c3a4396deb6f2a23c3cc, type: 3}
   - sprite: {fileID: 21300000, guid: 500f59d6d4eb9cb468278cf86f27d6b9, type: 3}
     dialogueLines:
+    - line: 
+      voiceLine: {fileID: 0}
+      charSprite: {fileID: 0}
     - line: Wasn't that easy though.. cause what they went use for close em?
       voiceLine: {fileID: 0}
       charSprite: {fileID: 21300000, guid: e0e7d4d9178bef94aafd57bee0a941d4, type: 3}
@@ -181,8 +193,10 @@ MonoBehaviour:
   - sprite: {fileID: 21300000, guid: 0be84bab703bee14c8e5ee64bddc0573, type: 3}
     dialogueLines:
     - line: 'To this day, if you were to walk down to that boulder, down by Waimanu
-        trail, and put your ear up against em, you''d hear something from behind
-        it.  '
+        trail, '
+      voiceLine: {fileID: 0}
+      charSprite: {fileID: 21300000, guid: 2806bb1c7e42c3a4396deb6f2a23c3cc, type: 3}
+    - line: 'and put your ear up against em, you''d hear something from behind it.  '
       voiceLine: {fileID: 0}
       charSprite: {fileID: 21300000, guid: 2806bb1c7e42c3a4396deb6f2a23c3cc, type: 3}
     - line: 'Pretty nuts huh what some people can do if they work together? Eh Kaika?  '
