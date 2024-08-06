@@ -14,7 +14,10 @@ public class Debugger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerHealthBar.fillAmount = playerHealth.getHealth() / (float)playerHealth.MAX_HEALTH;
-        inventoryText.text = $"{inventory.getNumEnemiesCollected()} / {inventory.getGoalNumEnemies()}";
+        if(playerHealth && inventory)
+        {
+            playerHealthBar.fillAmount = playerHealth.getHealth() / (float)playerHealth.MAX_HEALTH;
+            inventoryText.text = $"{inventory.getNumEnemiesCollected()} / {inventory.getGoalNumEnemies()}";
+        }
     }
 }

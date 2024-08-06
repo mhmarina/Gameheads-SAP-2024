@@ -1,83 +1,67 @@
+﻿using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    // Singleton Class
-    // Maybe move logic regarding mana and emeis to separate script
-    // to avoid mess
-    public static GameManager instance;
-    private ArrayList manaList;
-    private ArrayList enemyList;
 
-    [SerializeField] int maxNumMana;
-    [SerializeField] int maxNumEnemies;
+    //This is very rough, would need these actual scenes to map and test
 
-    // Start is called before the first frame update
-    void Awake()
+    ///This is how we want to organize our build:
+    ///0: Main Menu:
+    ///     This may have the following canvasses:
+    ///     - Title Screen
+    ///     - Settings
+    ///     - Controls, etc
+    ///1: Start Cutscene
+    ///     - This will have its own dialogue manager
+    ///     - Different canvas for each frame, tied to the dialogue manager
+    ///2: Level 1
+    ///     The following canvases can be toggled here:
+    ///     - Pause Menu
+    ///     - Loss Screen
+    ///     - Win Screen
+    ///3: Final Cutscene
+    ///     - Exact same structure as Start Scene
+    ///4: Credits (?) ... moves to main menu directly after end or if player clicks anywhere
+    
+    [SerializeField] string MainMenuScene;
+    [SerializeField] string StartCutscene;
+    [SerializeField] string Level1Scene;
+    [SerializeField] string FinalCutscene;
+    [SerializeField] string Credits;
+
+    public void goToMainMenu()
     {
-        if (!instance)
-        {
-            instance = this;
-        }
-        else if(instance != this)
-        {
-            Destroy(this);
-        }
-        DontDestroyOnLoad(this);
-
-        manaList = new ArrayList();
-        enemyList = new ArrayList();
+        Time.timeScale = 1;
+        SceneManager.LoadScene(MainMenuScene);
     }
 
-    public void addToList(GameObject gO)
+    public void playStartCutscene()
     {
-        cleanUpLists();
-        if(gO.GetComponent<InteractableObject>().getObjectType() == "enemy")
-        {
-            if(enemyList.Count < maxNumEnemies)
-            {
-                enemyList.Add(gO);
-            }
-            else
-            {
-                Destroy(gO);
-            }
-        }
-        if (gO.GetComponent<InteractableObject>().getObjectType() == "mana")
-        {
-            if(manaList.Count < maxNumMana)
-            {
-                manaList.Add(gO);
-            }
-            else
-            {
-                Destroy(gO);
-            }
-        }
+        SceneManager.LoadScene(StartCutscene);
     }
 
-    private void cleanUpLists()
+    public void startGame()
     {
-        // Remove destroyed objects from manaList
-        for (int i = manaList.Count - 1; i >= 0; i--)
-        {
-            GameObject obj = (GameObject)manaList[i];
-            if (obj == null || obj.Equals(null))
-            {
-                manaList.RemoveAt(i);
-            }
-        }
+        SceneManager.LoadScene(Level1Scene);
+    }
 
-        // Remove destroyed objects from enemyList
-        for (int i = enemyList.Count - 1; i >= 0; i--)
-        {
-            GameObject obj = (GameObject)enemyList[i];
-            if (obj == null || obj.Equals(null))
-            {
-                enemyList.RemoveAt(i);
-            }
-        }
+    public void playFinalCutScene()
+    {
+        SceneManager.LoadScene(FinalCutscene);
+    }
+
+    public void playCredits()
+    {
+        SceneManager.LoadScene(Credits);
+    }
+    public void resetScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    public void quitGame()
+    {
+        Application.Quit();
     }
 }

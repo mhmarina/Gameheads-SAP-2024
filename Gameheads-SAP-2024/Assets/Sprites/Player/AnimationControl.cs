@@ -16,7 +16,7 @@ public class PlayerAnimationControl : MonoBehaviour
     void Update()
     {
         //breathe in trigger          
-        if (Input.GetKey(KeyCode.Space)) 
+        if (InputManager.instance.button_inhale) 
             {
                 Controller.SetBool("Breathe In", true);
             }
@@ -27,7 +27,7 @@ public class PlayerAnimationControl : MonoBehaviour
             }
         
             // left animation trigger
-            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow) ) 
+            if (InputManager.instance.button_horizontalInput < 0) 
             {
                 Controller.SetBool("Walk Left", true);
             }
@@ -38,7 +38,7 @@ public class PlayerAnimationControl : MonoBehaviour
             }
 
             // right animation trigger
-            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow) ) 
+            if (InputManager.instance.button_horizontalInput > 0) 
             {
                 Controller.SetBool("Walk Right", true);
             }
@@ -49,7 +49,7 @@ public class PlayerAnimationControl : MonoBehaviour
             }
 
             //forward animation trigger
-            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow) ) 
+            if (InputManager.instance.button_verticalInput > 0) 
             {
                 Controller.SetBool("Walk Back", true);
             }
@@ -60,7 +60,7 @@ public class PlayerAnimationControl : MonoBehaviour
             }
 
             //back animation trigger
-            if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow) ) 
+            if (InputManager.instance.button_verticalInput < 0) 
             {
                 Controller.SetBool("Walk Front Trigger", true);
             }
@@ -71,7 +71,7 @@ public class PlayerAnimationControl : MonoBehaviour
             
 
             //breathe out animation trigger
-            if (Input.GetKey(KeyCode.M))
+            if (InputManager.instance.button_exhale)
                 {
                 Controller.SetBool("Breathe Out", true);
 
