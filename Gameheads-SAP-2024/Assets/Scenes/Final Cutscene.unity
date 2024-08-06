@@ -155,7 +155,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b37e681cebb4dfe49aa9b71a4c0c4be0, type: 3}
   - {fileID: 21300000, guid: 500f59d6d4eb9cb468278cf86f27d6b9, type: 3}
   - {fileID: 21300000, guid: bbf0af9d8747bf147bc02aaf6bdac4d5, type: 3}
-  - {fileID: 21300000, guid: 7703136efca110347a98cfb3f9dfa753, type: 3}
+  - {fileID: 21300000, guid: db7ad385f4e882b4987fe357d2798fe5, type: 3}
   - {fileID: 21300000, guid: 0be84bab703bee14c8e5ee64bddc0573, type: 3}
   cutSceneImage: {fileID: 1240073620}
 --- !u!4 &327890577
