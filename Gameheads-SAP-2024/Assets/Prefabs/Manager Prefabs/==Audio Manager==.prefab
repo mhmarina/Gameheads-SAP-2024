@@ -57,7 +57,7 @@ MonoBehaviour:
   - clipName: Breathe in sound
     clip: {fileID: 8300000, guid: b34ccdb4925944b96961854e56a2f50a, type: 3}
   - clipName: Breathe out sound
-    clip: {fileID: 8300000, guid: 79f42a1867e9f444cbb5ae3cfede818f, type: 3}
+    clip: {fileID: 8300000, guid: 17e62a4fb689f4b9185213bc9c4d0afa, type: 3}
   - clipName: Mo'o sound
     clip: {fileID: 8300000, guid: fbc9a97b462da49ec97cbd203cfb869a, type: 3}
   - clipName: Kahuna VL 1
