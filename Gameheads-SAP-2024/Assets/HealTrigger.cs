@@ -15,22 +15,30 @@ public class HealTrigger : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (InputManager.instance.button_inhale) {
+
+    private void OnCollisionEnter2D(Collision2D collision) {
+
+         if (collision.gameObject.GetComponent<InteractableObject>().getObjectType() == "mana"
+         ) {
             healTrigger.SetBool("healing", true);
+            Debug.Log("heal");
+
+            if (Time.deltaTime > 2f){
+               healTrigger.SetBool("healing", false); 
+            }
         }
 
-        else{
-            healTrigger.SetBool("healing", false);
-        }
+        
     }
+}
 
 
-   // private void OnCollisionEnter2D(Collision2D collision){
+//   private void OnCollisionEnter2D(Collision2D collision){
 
-
-   //         healTrigger.SetBool("healing", true);
+   // if (collision.LayerMask.LayerToName == "Mana"){
+    //     healTrigger.SetBool("healing", true);
         
    // }
-}
+//}
+   
+//}
