@@ -12458,6 +12458,7 @@ GameObject:
   - component: {fileID: 211768762}
   - component: {fileID: 211768761}
   - component: {fileID: 211768760}
+  - component: {fileID: 211768763}
   m_Layer: 8
   m_Name: Heal Trigger
   m_TagString: Untagged
@@ -12567,6 +12568,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healTrigger: {fileID: 211768761}
   layerName: 
+  startTime: 0
+--- !u!58 &211768763
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211768758}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1001 &216359865
 PrefabInstance:
   m_ObjectHideFlags: 0
