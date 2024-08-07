@@ -181,6 +181,10 @@ MonoBehaviour:
         called Waimanu trail.  '
       voiceLine: {fileID: 0}
       charSprite: {fileID: 21300000, guid: 2806bb1c7e42c3a4396deb6f2a23c3cc, type: 3}
+    - line: "Kia\u2019i, a kid like you, stay visiting the island to see family,
+        when he sees one big Mo\u2019o wandering the island"
+      voiceLine: {fileID: 0}
+      charSprite: {fileID: 21300000, guid: e0e7d4d9178bef94aafd57bee0a941d4, type: 3}
     - line: "The Mo\u2019o walked the island, leaving chaos behind em, killing plenty
         things you know?  "
       voiceLine: {fileID: 0}
