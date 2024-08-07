@@ -19,10 +19,11 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] GameObject dialogueBox;
     [SerializeField] List<DialogueLine> tutorialLines;
     [SerializeField] PlayerInventory playerInventory;
+    [SerializeField] AudioSource audioSource;
     public static DialogueManager instance;
     private int dialogueIndex;
 
-    private void Start()
+    private void Awake()
     {
         instance = this;
         movementTrigger = true;
@@ -73,7 +74,7 @@ public class DialogueManager : MonoBehaviour
             characterSpriteImage.sprite = line.charSprite;
             dialogueText.text = line.line;
             dialogueBox.SetActive(true);
-            playVoiceLine(line);
+            line.playVoiceLine(audioSource);
         }
     }
 
@@ -90,10 +91,5 @@ public class DialogueManager : MonoBehaviour
         }
         yield return new WaitForSeconds(3);
         dialogueBox.SetActive(false);
-    }
-
-    public void playVoiceLine(DialogueLine voiceLine)
-    {
-        gameObject.GetComponent<AudioSource>().PlayOneShot(voiceLine.voiceLine);
     }
 }
