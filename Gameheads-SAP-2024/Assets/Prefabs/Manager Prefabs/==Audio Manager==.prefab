@@ -73,7 +73,21 @@ MonoBehaviour:
   - clipName: Kahuna Final VL
     clip: {fileID: 8300000, guid: dd2c0176fae6d46149cd1403c0fb2339, type: 3}
   - clipName: Aunty Voice Line
-    clip: {fileID: 8300000, guid: d86a5c84d48104034ad345ac400b7d5d, type: 3}
+    clip: {fileID: 8300000, guid: 3ce09129d1d7d44179c30d1b359fb6c7, type: 3}
+  - clipName: Aunty Voice Line 2
+    clip: {fileID: 8300000, guid: 99732200342fd4206a3a867d81049aaf, type: 3}
+  - clipName: Aunty Voice Line 3
+    clip: {fileID: 8300000, guid: d6a9e6bffc23d4c9883f253abf54184f, type: 3}
+  - clipName: Aunty Voice Line 4
+    clip: {fileID: 8300000, guid: c22a7bd34d894474dba7ee225f184066, type: 3}
+  - clipName: Aunty Voice Line 5
+    clip: {fileID: 8300000, guid: f60c9d45d653e4ae691a15c88dca14e5, type: 3}
+  - clipName: Aunty Voice Line 6
+    clip: {fileID: 8300000, guid: 95c0d0635dc024fdf85e3cc705e286a6, type: 3}
+  - clipName: Aunty Voice Line 7
+    clip: {fileID: 8300000, guid: dfee4a08d72174031a7b03689f166a2d, type: 3}
+  - clipName: Aunty Voice Line 8
+    clip: {fileID: 8300000, guid: f6a71ba0c86b04eb486589603048777c, type: 3}
   musicSource: {fileID: 9178902131003446579}
   sfxSource: {fileID: 1352635589576737566}
   playerSource: {fileID: 0}
