@@ -20,8 +20,8 @@ public class PlayerController : MonoBehaviour
     private float damageTimer;
 
     //one button controls - meter var
-    [SerializeField] private float breathMeter;
-    [SerializeField] private float breathMax;
+    [SerializeField] public float breathMeter;
+    [SerializeField] public float breathMax;
 
     private void Start()
     {
