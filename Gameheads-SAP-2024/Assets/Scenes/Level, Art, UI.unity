@@ -61192,25 +61192,25 @@ MonoBehaviour:
   dialogueBox: {fileID: 815623108}
   tutorialLines:
   - line: "Ay Kia\u2019i over here! Move with [WASD]"
-    voiceLine: {fileID: 0}
+    voiceLine: {fileID: 8300000, guid: ce1653c000c2a434eae46768113f2935, type: 3}
     charSprite: {fileID: 21300000, guid: 14f72158d8e406144861c7ef1855d23e, type: 3}
   - line: "Kahuna\u2026  "
     voiceLine: {fileID: 0}
     charSprite: {fileID: 21300000, guid: fb37a5226f3561745a926569fa2c3cad, type: 3}
   - line: "Terrible. The Mo\u2019o took too many people."
-    voiceLine: {fileID: 0}
+    voiceLine: {fileID: 8300000, guid: dd1ee00909fe54dc3ba5dd2794e4a3f7, type: 3}
     charSprite: {fileID: 21300000, guid: 10973b49046c4a24398f00fd88d3e037, type: 3}
   - line: "Kia\u2019i, use your Hanu to gather mana for us both! Press [SPACE]"
-    voiceLine: {fileID: 0}
+    voiceLine: {fileID: 8300000, guid: 5e008ceb6117b4427aa28547b9d0fdaf, type: 3}
     charSprite: {fileID: 21300000, guid: 10973b49046c4a24398f00fd88d3e037, type: 3}
   - line: "Now release the breath of life! H\u0101!! Release [SPACE]"
     voiceLine: {fileID: 0}
     charSprite: {fileID: 21300000, guid: 14f72158d8e406144861c7ef1855d23e, type: 3}
   - line: "Breathe and relax. It will all be okay, Kia\u2019i"
-    voiceLine: {fileID: 0}
+    voiceLine: {fileID: 8300000, guid: cb4b596c06bc1444d80b1f57204dc770, type: 3}
     charSprite: {fileID: 21300000, guid: 14f72158d8e406144861c7ef1855d23e, type: 3}
   - line: "Keep pushing! There\u2019s a cave down Waimanu trail!"
-    voiceLine: {fileID: 0}
+    voiceLine: {fileID: 8300000, guid: a5f64a618221a44d2aa8c65e5623a53c, type: 3}
     charSprite: {fileID: 21300000, guid: 8291b535742344d43b526854776e0929, type: 3}
   - line: Aue!! They stay breaking free! Get us something to cover the hole!
     voiceLine: {fileID: 0}

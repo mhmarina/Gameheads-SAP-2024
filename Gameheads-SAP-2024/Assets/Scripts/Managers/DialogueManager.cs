@@ -35,7 +35,6 @@ public class DialogueManager : MonoBehaviour
     {
         if (!inhaleTrigger && dialogueIndex == 2 && !dialogueBox.activeSelf)
         {
-            handleDelay(0);
             inhaleTrigger = true;
             dialogueIndex = 3;
             ShowDialogueLine();
@@ -45,7 +44,7 @@ public class DialogueManager : MonoBehaviour
             releaseTrigger = true;
             dialogueIndex = 4;
             ShowDialogueLine();
-            StartCoroutine(handleDelay(1));
+            StartCoroutine(handleDelay(1, 5));
         }
         if(dialogueIndex == 5 && !dialogueBox.activeSelf)
         {
@@ -67,7 +66,7 @@ public class DialogueManager : MonoBehaviour
             deadBodyTrigger = true;
             dialogueIndex = 1;
             ShowDialogueLine();
-            StartCoroutine(handleDelay(1));
+            StartCoroutine(handleDelay(1, 3));
         }
     }
 
@@ -83,7 +82,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    private IEnumerator handleDelay(int numFrames)
+    private IEnumerator handleDelay(int numFrames, int numSeconds)
     {
         if(numFrames > 0)
         {
@@ -94,7 +93,7 @@ public class DialogueManager : MonoBehaviour
                 ShowDialogueLine();
             }
         }
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(numSeconds);
         dialogueBox.SetActive(false);
     }
 }
