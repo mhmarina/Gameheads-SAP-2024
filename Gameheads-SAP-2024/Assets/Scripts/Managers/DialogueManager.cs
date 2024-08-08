@@ -45,7 +45,12 @@ public class DialogueManager : MonoBehaviour
             releaseTrigger = true;
             dialogueIndex = 4;
             ShowDialogueLine();
-            StartCoroutine(handleDelay(2));
+            StartCoroutine(handleDelay(1));
+        }
+        if(dialogueIndex == 5 && !dialogueBox.activeSelf)
+        {
+            dialogueIndex = 6;
+            ShowDialogueLine();
         }
         if (playerInventory.getNumEnemiesCollected() == playerInventory.getGoalNumEnemies() && !targetNumReachedTrigger)
         {
