@@ -14,8 +14,8 @@ Kaika is a teenage boy who’s starting his first day of school. <br>
 - **Gameplay:** A 2D top down adventure game where the player is trapping Mo’o lizards in caves. Breathe in to suck in mana and the Mo’o, and breathe out to push the Mo’o into the cave. <br>
 ## Controls 🕹️ 
 This game is compatible with pc and xbox controls.
-- **Movement:** WASD <br>
-- **Breathe In:** Space, sucks enemies and mana towards you <br>
-- **Breathe Out:** letting go of Space but only applicable after you’ve breathed in. Pushes away enemies and mana alike.
+- **Movement:** WASD (keyboard) or Joystick (controller) <br>
+- **Breathe In:** Space (keyboard) or A button (controller), sucks enemies and mana towards you <br>
+- **Breathe Out:** letting go of Space or A button but only applicable after you’ve breathed in. Pushes away enemies and mana alike.
 <br><br>
 
