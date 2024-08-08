@@ -7,9 +7,7 @@ using UnityEngine.AI;
 public class HealTrigger : MonoBehaviour
 {
 
-    public Animator healTrigger; 
-    public string layerName; 
-    public float startTime = 0f; 
+    public Animator healTrigger;  
     // Start is called before the first frame update
     void Start()
     {
