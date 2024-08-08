@@ -1,11 +1,36 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameAudioManager : MonoBehaviour
 {
     public static GameAudioManager instance;
     public Sounds[] musicSounds, sfxSounds;
     public AudioSource musicSource, sfxSource, playerSource;
+
+    void OnEnable()
+    {
+        Debug.Log("OnEnable called");
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (SceneManager.GetActiveScene().name == "Level, Art, UI")
+        {
+            instance.PlayMusic("Background Music");
+            musicSource.volume = 0.25f;
+        }
+        else if (SceneManager.GetActiveScene().name == "Main Menu")
+        {
+            musicSource.volume = 1f;
+            instance.PlayMusic("Main Menu Song");
+        }
+        else
+        {
+            musicSource.Stop();
+        }
+    }
 
     private void Awake()
     {
@@ -16,6 +41,7 @@ public class GameAudioManager : MonoBehaviour
         else if (instance != this)
         {
             Destroy(this);
+            return;
         }
         DontDestroyOnLoad(this);
     }

@@ -67,7 +67,7 @@ public class CutsceneManager : MonoBehaviour
         {
             dialogueText.text = cutSceneFrames[imageIndex].dialogueLines[dialogueIndex].line;
             characterSpriteImage.sprite = cutSceneFrames[imageIndex].dialogueLines[dialogueIndex].charSprite;
-            cutSceneFrames[imageIndex].dialogueLines[dialogueIndex].playVoiceLine(audioSource);
+            cutSceneFrames[imageIndex].dialogueLines[dialogueIndex].playVoiceLine(audioSource, this);
         }
     }
 }
