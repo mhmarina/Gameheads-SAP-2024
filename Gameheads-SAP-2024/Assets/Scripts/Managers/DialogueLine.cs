@@ -15,6 +15,7 @@ public class DialogueLine
     {
         if (voiceLine)
         {
+            audioSource.Stop();
             audioSource.PlayOneShot(voiceLine);
         }
     }
