@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
             if(breathMeter < breathMax)
             {
                 inhale();
-                breathMeter += 1;
+                breathMeter += Mathf.Ceil(breathMax/3.0f) * Time.deltaTime;
 
             }
             Debug.Log("Inhaled");
@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour
 
         else if (breathMeter > 0 && !im.button_inhale) {
             exhale();
-            breathMeter -=1;
+            breathMeter -= (breathMax/1.5f) * Time.deltaTime;
             Debug.Log("exhaled");
         }
 
