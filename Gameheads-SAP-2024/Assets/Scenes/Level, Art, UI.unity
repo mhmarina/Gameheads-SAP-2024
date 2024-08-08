@@ -61213,7 +61213,7 @@ MonoBehaviour:
     voiceLine: {fileID: 8300000, guid: a5f64a618221a44d2aa8c65e5623a53c, type: 3}
     charSprite: {fileID: 21300000, guid: 8291b535742344d43b526854776e0929, type: 3}
   - line: Aue!! They stay breaking free! Get us something to cover the hole!
-    voiceLine: {fileID: 0}
+    voiceLine: {fileID: 8300000, guid: dd2c0176fae6d46149cd1403c0fb2339, type: 3}
     charSprite: {fileID: 21300000, guid: 10973b49046c4a24398f00fd88d3e037, type: 3}
   playerInventory: {fileID: 1091420874}
   audioSource: {fileID: 1474540271}
