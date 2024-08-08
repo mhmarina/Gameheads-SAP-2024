@@ -19,9 +19,11 @@ public class GameAudioManager : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "Level, Art, UI")
         {
             instance.PlayMusic("Background Music");
+            musicSource.volume = 0.25f;
         }
         else if (SceneManager.GetActiveScene().name == "Main Menu")
         {
+            musicSource.volume = 1f;
             instance.PlayMusic("Main Menu Song");
         }
         else

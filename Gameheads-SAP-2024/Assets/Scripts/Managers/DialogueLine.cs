@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using UnityEditor.SearchService;
 using UnityEngine;
 
 [System.Serializable]
@@ -16,19 +17,20 @@ public class DialogueLine
             audioSource.PlayOneShot(voiceLine);
             if (GameAudioManager.instance != null)
             {
+                float currentVol = GameAudioManager.instance.musicSource.volume;
                 Debug.Log("Voice line playing");
                 GameAudioManager.instance.musicSource.volume = 0.25f;
-                caller.StartCoroutine(ResetVolumeAfterVoiceLine(voiceLine.length));
+                caller.StartCoroutine(ResetVolumeAfterVoiceLine(voiceLine.length, currentVol));
             }
         }
     }
 
-    private IEnumerator ResetVolumeAfterVoiceLine(float delay)
+    private IEnumerator ResetVolumeAfterVoiceLine(float delay, float currentVol)
     {
         yield return new WaitForSeconds(delay);
         if (GameAudioManager.instance != null)
         {
-            GameAudioManager.instance.musicSource.volume = 1f;
+            GameAudioManager.instance.musicSource.volume = currentVol;
         }
     }
 }
