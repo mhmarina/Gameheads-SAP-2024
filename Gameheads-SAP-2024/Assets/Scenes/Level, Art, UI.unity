@@ -482,6 +482,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1091420871}
   m_SourcePrefab: {fileID: 100100000, guid: 7d037850cbbae489d83e0ab5c63b4606, type: 3}
+--- !u!114 &56945761 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6395998433662924256, guid: 1deb81c38c5db40f58610e8a91705571, type: 3}
+  m_PrefabInstance: {fileID: 2061051920}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &161413869
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -60422,6 +60433,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c435462dde2d47808368a2b25cf6ace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1091420879 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9188518994893437824, guid: 7d037850cbbae489d83e0ab5c63b4606, type: 3}
+  m_PrefabInstance: {fileID: 54100636}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091420870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3db56fa6a0f4af9aa3187f5583a0fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1105138935
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62246,6 +62268,14 @@ PrefabInstance:
       propertyPath: playerHealth
       value: 
       objectReference: {fileID: 1091420875}
+    - target: {fileID: 4698169485025135959, guid: 1deb81c38c5db40f58610e8a91705571, type: 3}
+      propertyPath: playerBreathBar
+      value: 
+      objectReference: {fileID: 56945761}
+    - target: {fileID: 4698169485025135959, guid: 1deb81c38c5db40f58610e8a91705571, type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 1091420879}
     - target: {fileID: 5163688049303361524, guid: 1deb81c38c5db40f58610e8a91705571, type: 3}
       propertyPath: m_Pivot.x
       value: 0
