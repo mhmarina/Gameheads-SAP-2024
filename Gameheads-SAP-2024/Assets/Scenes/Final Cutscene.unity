@@ -159,7 +159,7 @@ MonoBehaviour:
       voiceLine: {fileID: 0}
       charSprite: {fileID: 0}
     - line: "So what did Kia\u2019i do?   "
-      voiceLine: {fileID: 0}
+      voiceLine: {fileID: 8300000, guid: f60c9d45d653e4ae691a15c88dca14e5, type: 3}
       charSprite: {fileID: 21300000, guid: e0e7d4d9178bef94aafd57bee0a941d4, type: 3}
     - line: 'He and the kahuna gada togeda, and made one plan for trap em, you see. '
       voiceLine: {fileID: 0}
@@ -168,7 +168,7 @@ MonoBehaviour:
       voiceLine: {fileID: 0}
       charSprite: {fileID: 21300000, guid: 2806bb1c7e42c3a4396deb6f2a23c3cc, type: 3}
     - line: 'After that, the kahuna went chant from the start of the valley, '
-      voiceLine: {fileID: 0}
+      voiceLine: {fileID: 8300000, guid: 95c0d0635dc024fdf85e3cc705e286a6, type: 3}
       charSprite: {fileID: 21300000, guid: 2806bb1c7e42c3a4396deb6f2a23c3cc, type: 3}
     - line: "all da way down da bay, and when the chant went reach em, they went
         push da Mo\u2019o straight into the cave they went make. "
@@ -180,7 +180,7 @@ MonoBehaviour:
       voiceLine: {fileID: 0}
       charSprite: {fileID: 0}
     - line: Wasn't that easy though.. cause what they went use for close em?
-      voiceLine: {fileID: 0}
+      voiceLine: {fileID: 8300000, guid: dfee4a08d72174031a7b03689f166a2d, type: 3}
       charSprite: {fileID: 21300000, guid: e0e7d4d9178bef94aafd57bee0a941d4, type: 3}
     - line: 'One big boulda, hurried, they pushed the boulder over the cave, and
         blocked the entrance entirely.  '
@@ -194,7 +194,7 @@ MonoBehaviour:
     dialogueLines:
     - line: 'To this day, if you were to walk down to that boulder, down by Waimanu
         trail, '
-      voiceLine: {fileID: 0}
+      voiceLine: {fileID: 8300000, guid: f6a71ba0c86b04eb486589603048777c, type: 3}
       charSprite: {fileID: 21300000, guid: 2806bb1c7e42c3a4396deb6f2a23c3cc, type: 3}
     - line: 'and put your ear up against em, you''d hear something from behind it.  '
       voiceLine: {fileID: 0}
@@ -212,7 +212,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1257932816}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: goToMainMenu
+        m_MethodName: playCredits
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

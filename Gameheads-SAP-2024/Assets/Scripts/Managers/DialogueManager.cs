@@ -35,7 +35,6 @@ public class DialogueManager : MonoBehaviour
     {
         if (!inhaleTrigger && dialogueIndex == 2 && !dialogueBox.activeSelf)
         {
-            handleDelay(0);
             inhaleTrigger = true;
             dialogueIndex = 3;
             ShowDialogueLine();
@@ -45,7 +44,12 @@ public class DialogueManager : MonoBehaviour
             releaseTrigger = true;
             dialogueIndex = 4;
             ShowDialogueLine();
-            StartCoroutine(handleDelay(2));
+            StartCoroutine(handleDelay(1, 5));
+        }
+        if(dialogueIndex == 5 && !dialogueBox.activeSelf)
+        {
+            dialogueIndex = 6;
+            ShowDialogueLine();
         }
         if (playerInventory.getNumEnemiesCollected() == playerInventory.getGoalNumEnemies() && !targetNumReachedTrigger)
         {
@@ -62,7 +66,7 @@ public class DialogueManager : MonoBehaviour
             deadBodyTrigger = true;
             dialogueIndex = 1;
             ShowDialogueLine();
-            StartCoroutine(handleDelay(1));
+            StartCoroutine(handleDelay(1, 3));
         }
     }
 
@@ -74,11 +78,11 @@ public class DialogueManager : MonoBehaviour
             characterSpriteImage.sprite = line.charSprite;
             dialogueText.text = line.line;
             dialogueBox.SetActive(true);
-            line.playVoiceLine(audioSource);
+            line.playVoiceLine(audioSource, this);
         }
     }
 
-    private IEnumerator handleDelay(int numFrames)
+    private IEnumerator handleDelay(int numFrames, int numSeconds)
     {
         if(numFrames > 0)
         {
@@ -89,7 +93,7 @@ public class DialogueManager : MonoBehaviour
                 ShowDialogueLine();
             }
         }
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(numSeconds);
         dialogueBox.SetActive(false);
     }
 }
