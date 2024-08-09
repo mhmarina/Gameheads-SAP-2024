@@ -414,7 +414,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4527886243868513862, guid: 7d037850cbbae489d83e0ab5c63b4606, type: 3}
       propertyPath: MAX_HEALTH
-      value: 200000
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 4638336433469962771, guid: 7d037850cbbae489d83e0ab5c63b4606, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
