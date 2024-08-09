@@ -414,7 +414,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4527886243868513862, guid: 7d037850cbbae489d83e0ab5c63b4606, type: 3}
       propertyPath: MAX_HEALTH
-      value: 200
+      value: 200000
       objectReference: {fileID: 0}
     - target: {fileID: 4638336433469962771, guid: 7d037850cbbae489d83e0ab5c63b4606, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
@@ -12655,7 +12655,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.12, y: -0.14, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 686180561}
