@@ -18,14 +18,15 @@ public class HealTrigger : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision) {
 
-         if (collision.gameObject.GetComponent<InteractableObject>().getObjectType() == "mana") {
-            healTrigger.Play("Heal");
-            Debug.Log("heal");
-            
-    
+        if (collision.gameObject.GetComponent<InteractableObject>())
+        {
+            Debug.Log(collision.gameObject.GetComponent<InteractableObject>().getObjectType());
+            if (collision.gameObject.GetComponent<InteractableObject>().getObjectType() == "mana")
+            {
+                healTrigger.Play("Heal");
+                Debug.Log("heal");
+            }
         }
-
-        
     }
 }
 
