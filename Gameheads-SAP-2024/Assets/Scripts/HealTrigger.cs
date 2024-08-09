@@ -21,7 +21,7 @@ public class HealTrigger : MonoBehaviour
         if (collision.gameObject.GetComponent<InteractableObject>())
         {
             Debug.Log(collision.gameObject.GetComponent<InteractableObject>().getObjectType());
-            if (collision.gameObject.GetComponent<InteractableObject>().getObjectType() == "mana")
+            if (collision.gameObject.GetComponent<InteractableObject>().getObjectType() == "mana" && InputManager.instance.button_inhale)
             {
                 healTrigger.Play("Heal");
                 Debug.Log("heal");
