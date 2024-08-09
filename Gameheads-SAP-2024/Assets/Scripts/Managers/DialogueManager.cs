@@ -78,7 +78,7 @@ public class DialogueManager : MonoBehaviour
             characterSpriteImage.sprite = line.charSprite;
             dialogueText.text = line.line;
             dialogueBox.SetActive(true);
-            line.playVoiceLine(audioSource);
+            line.playVoiceLine(audioSource, this);
         }
     }
 
