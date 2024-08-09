@@ -26,6 +26,11 @@ public class GameAudioManager : MonoBehaviour
             musicSource.volume = 1f;
             instance.PlayMusic("Main Menu Song");
         }
+        else if (SceneManager.GetActiveScene().name == "Credits")
+        {
+            musicSource.volume = 1f;
+            instance.PlayMusic("Credits Music");
+        }
         else
         {
             musicSource.Stop();
