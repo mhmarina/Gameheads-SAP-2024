@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI; 
+using UnityEngine.AI;
+
 
 public class HealTrigger : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class HealTrigger : MonoBehaviour
 
     // Update is called once per frame
 
-    private void OnCollisionEnter2D(Collision2D collision) {
+    private void OnTriggerEnter2D(Collider2D collision) {
 
         if (collision.gameObject.GetComponent<InteractableObject>())
         {
@@ -28,3 +29,14 @@ public class HealTrigger : MonoBehaviour
         }
     }
 }
+
+
+//   private void OnCollisionEnter2D(Collision2D collision){
+
+   // if (collision.LayerMask.LayerToName == "Mana"){
+    //     healTrigger.SetBool("healing", true);
+        
+   // }
+//}
+   
+//}
