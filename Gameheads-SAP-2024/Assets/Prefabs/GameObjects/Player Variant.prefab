@@ -72,6 +72,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 8493141761757763412, guid: 7d037850cbbae489d83e0ab5c63b4606, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8493141761757763412, guid: 7d037850cbbae489d83e0ab5c63b4606, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 232053300825717309, guid: 7d037850cbbae489d83e0ab5c63b4606, type: 3}
     m_RemovedGameObjects: []
@@ -157,6 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Controller: {fileID: 3776253216370272770}
+  elapsedTime: 0
 --- !u!95 &3776253216370272770
 Animator:
   serializedVersion: 5

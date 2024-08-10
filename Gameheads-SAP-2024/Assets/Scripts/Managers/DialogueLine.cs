@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using UnityEditor.SearchService;
 using UnityEngine;
 
 [System.Serializable]
@@ -18,8 +17,9 @@ public class DialogueLine
             if (GameAudioManager.instance != null)
             {
                 float currentVol = GameAudioManager.instance.musicSource.volume;
+                Debug.Log(currentVol);
                 Debug.Log("Voice line playing");
-                GameAudioManager.instance.musicSource.volume = 0.25f;
+                GameAudioManager.instance.musicSource.volume = 0.1f;
                 caller.StartCoroutine(ResetVolumeAfterVoiceLine(voiceLine.length, currentVol));
             }
         }

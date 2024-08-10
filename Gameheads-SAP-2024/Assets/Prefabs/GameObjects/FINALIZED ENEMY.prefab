@@ -242,11 +242,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62755670696b949ffa1408ddfba983c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pullRange: 15
+  pullRange: 10
   isPushed: 0
   moveSpeed: 3
   damage: 10
-  attackRadius: 10
+  attackRadius: 8
 --- !u!95 &3223602917127212197
 Animator:
   serializedVersion: 5
@@ -583,7 +583,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.1149316, y: 3.1149316, z: 3.1149316}
+  m_LocalScale: {x: 6.114932, y: 6.114932, z: 6.114932}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7642936126555644689}

@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 86500880369762646}
@@ -192,6 +192,7 @@ MonoBehaviour:
   pulseForce: 30
   pullForce: 3
   maxTimeStopped: 0
+  damageInterval: 0
   breathMeter: 0
   breathMax: 200
 --- !u!61 &4638336433469962771
