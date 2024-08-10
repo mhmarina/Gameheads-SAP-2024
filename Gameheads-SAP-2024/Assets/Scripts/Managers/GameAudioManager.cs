@@ -18,8 +18,8 @@ public class GameAudioManager : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "Level, Art, UI")
         {
+            musicSource.volume = 0.1f;
             instance.PlayMusic("Background Music");
-            musicSource.volume = 0.25f;
         }
         else if (SceneManager.GetActiveScene().name == "Main Menu")
         {
