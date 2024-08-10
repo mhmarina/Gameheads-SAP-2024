@@ -446,15 +446,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9188518994893437824, guid: 7d037850cbbae489d83e0ab5c63b4606, type: 3}
       propertyPath: breathMax
-      value: 200
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 9188518994893437824, guid: 7d037850cbbae489d83e0ab5c63b4606, type: 3}
       propertyPath: pullForce
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9188518994893437824, guid: 7d037850cbbae489d83e0ab5c63b4606, type: 3}
       propertyPath: pulseForce
-      value: 230
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 9188518994893437824, guid: 7d037850cbbae489d83e0ab5c63b4606, type: 3}
       propertyPath: pulseRadius
@@ -51330,11 +51330,11 @@ PrefabInstance:
       objectReference: {fileID: 686180561}
     - target: {fileID: 2910333418608905753, guid: 5b373ffbc138745f09812b7ff10fa9f7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1.8
       objectReference: {fileID: 0}
     - target: {fileID: 2910333418608905753, guid: 5b373ffbc138745f09812b7ff10fa9f7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 12.36
       objectReference: {fileID: 0}
     - target: {fileID: 2910333418608905753, guid: 5b373ffbc138745f09812b7ff10fa9f7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -51374,7 +51374,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7764813669885934146, guid: 5b373ffbc138745f09812b7ff10fa9f7, type: 3}
       propertyPath: field of view
-      value: 75
+      value: 98
       objectReference: {fileID: 0}
     - target: {fileID: 7764813669885934146, guid: 5b373ffbc138745f09812b7ff10fa9f7, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
