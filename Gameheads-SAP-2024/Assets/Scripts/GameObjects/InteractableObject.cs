@@ -22,7 +22,7 @@ public abstract class InteractableObject : MonoBehaviour
     protected string objectType;
     protected pushPullType pushOrPull;
     [SerializeField] float pullRange;
-    public bool isPushed;
+    public bool isPushed = false;
 
     public abstract void onCollisionWithPlayer(GameObject player);
 
@@ -64,6 +64,7 @@ public abstract class InteractableObject : MonoBehaviour
                 {
                     return;
                 }
+                StartCoroutine(handlePush(1.5f));
             }
             Vector2 direction = (Vector2)(transform.position - playerObject.transform.position).normalized;
             Vector2 targetPosition = (Vector2)transform.position + (direction * pushForce * Time.deltaTime);
@@ -75,17 +76,10 @@ public abstract class InteractableObject : MonoBehaviour
         }
     }
 
-    private void Update()
+    private IEnumerator handlePush(float seconds)
     {
-        if (isPushed)
-        {
-            float time = 0;
-            while (time < 5)
-            {
-                time += 1 * Time.deltaTime;
-            }
-            isPushed = false;
-        }
+        yield return new WaitForSeconds(seconds);
+        isPushed = false;
     }
 
     public string getObjectType()
