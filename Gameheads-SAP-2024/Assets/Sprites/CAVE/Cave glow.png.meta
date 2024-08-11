@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b6d0d70c11d9c1e42bb3c325342a303e
+guid: f745e9e0a4bd06f4e860bfd174745076
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CAVE REDOOO_0
+      name: Cave glow_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 300
-        width: 300
-        height: 300
+        y: 512
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53a0b112cfd5271419e8f502cb482a89
-      internalID: -1765719388
+      spriteID: 9cd9cc59c32de894490d28ec7c67a5da
+      internalID: 1250006058
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CAVE REDOOO_1
+      name: Cave glow_1
       rect:
         serializedVersion: 2
-        x: 300
-        y: 300
-        width: 300
-        height: 300
+        x: 256
+        y: 512
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,104 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d5bfbbc2fe0a574d80c17b859429ccd
-      internalID: -80187006
+      spriteID: f1f4bbf77423f8247a141e785e4e60dc
+      internalID: -683855134
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CAVE REDOOO_2
+      name: Cave glow_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2324b856845914e48a1c9ec2b03131d6
+      internalID: 2064328897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cave glow_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 271f897809d91da4fb5517cf5d4cc24b
+      internalID: -937189604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cave glow_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 238384b7e26e566408cfdadcf4ab796c
+      internalID: 977090443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cave glow_5
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 730da847b89e2f14fbbe3822cff4ad15
+      internalID: 170415375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cave glow_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 300
-        height: 300
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +250,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d87f3711665a5544a0347dae7aa08c6
-      internalID: -263580331
+      spriteID: 601295e9dbffea84da0a083da21192bf
+      internalID: -353405160
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CAVE REDOOO_3
+      name: Cave glow_7
       rect:
         serializedVersion: 2
-        x: 300
+        x: 256
         y: 0
-        width: 300
-        height: 300
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,8 +271,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66b950a9a1d6c2f46a78c8d3c5e7da87
-      internalID: 1504510022
+      spriteID: a0a123dd5562aa8459de8a6095e27ff7
+      internalID: 1860560063
       vertices: []
       indices: 
       edges: []
@@ -204,10 +288,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      CAVE REDOOO_0: -1765719388
-      CAVE REDOOO_1: -80187006
-      CAVE REDOOO_2: -263580331
-      CAVE REDOOO_3: 1504510022
+      Cave glow_0: 1250006058
+      Cave glow_1: -683855134
+      Cave glow_2: 2064328897
+      Cave glow_3: -937189604
+      Cave glow_4: 977090443
+      Cave glow_5: 170415375
+      Cave glow_6: -353405160
+      Cave glow_7: 1860560063
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
