@@ -556,6 +556,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: The Rock
       objectReference: {fileID: 0}
+    - target: {fileID: 9031432356539965364, guid: 4a155febd5a8c4fcda98ad5ddafdb000, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -93307,11 +93311,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7642936126555644689, guid: b092faedfb5f93548bf9c494788fff44, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.2
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 7642936126555644689, guid: b092faedfb5f93548bf9c494788fff44, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.2
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 7642936126555644689, guid: b092faedfb5f93548bf9c494788fff44, type: 3}
       propertyPath: m_LocalPosition.x
@@ -94502,7 +94506,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1788027995
 SpriteRenderer:
   m_ObjectHideFlags: 0
