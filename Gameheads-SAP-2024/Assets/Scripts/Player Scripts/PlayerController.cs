@@ -137,6 +137,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.GetComponent<InteractableObject>())
+        {
+            collision.gameObject.GetComponent<InteractableObject>().onCollisionWithPlayer(gameObject);
+        }
+    }
+
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.GetComponent<InteractableObject>())
