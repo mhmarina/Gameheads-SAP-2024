@@ -48,11 +48,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSounds:
   - clipName: Background sounds
-    clip: {fileID: 8300000, guid: b9c21e5ada04748c781ede8b9ef236e5, type: 3}
+    clip: {fileID: 8300000, guid: 16dce79333b9a4a0a9102c4e39c267f0, type: 3}
   - clipName: Main Menu Song
     clip: {fileID: 8300000, guid: 9fa3469a87fc942ef8b341e964c31e52, type: 3}
   - clipName: Credits Music
     clip: {fileID: 8300000, guid: 9f8e7aca5a6944f1cb746805c1a9d9d1, type: 3}
+  - clipName: hallway music
+    clip: {fileID: 8300000, guid: f7875146048de485196a47913738a893, type: 3}
   sfxSounds:
   - clipName: Player footsteps
     clip: {fileID: 8300000, guid: 96e2bacf739974f05bda7a451fb4a808, type: 3}
