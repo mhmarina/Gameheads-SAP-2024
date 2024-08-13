@@ -19,6 +19,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] GameObject dialogueBox;
     [SerializeField] List<DialogueLine> tutorialLines;
     [SerializeField] PlayerInventory playerInventory;
+    [SerializeField] GameObject tutorialCollider;
     [SerializeField] AudioSource audioSource;
     public static DialogueManager instance;
     private int dialogueIndex;
@@ -50,6 +51,10 @@ public class DialogueManager : MonoBehaviour
         {
             dialogueIndex = 6;
             ShowDialogueLine();
+        }
+        if(playerInventory.getNumEnemiesCollected() == 1)
+        {
+            Destroy(tutorialCollider);
         }
         if (playerInventory.getNumEnemiesCollected() == playerInventory.getGoalNumEnemies() && !targetNumReachedTrigger)
         {
