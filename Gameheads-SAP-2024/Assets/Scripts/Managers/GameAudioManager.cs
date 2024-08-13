@@ -35,6 +35,7 @@ public class GameAudioManager : MonoBehaviour
         {
             //TODO: add final cutscene music here.
             musicSource.volume = 0.5f;
+            musicSource.Stop();
         }
         else
         {
