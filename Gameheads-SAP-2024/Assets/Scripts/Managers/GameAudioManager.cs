@@ -16,12 +16,7 @@ public class GameAudioManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (SceneManager.GetActiveScene().name == "Level, Art, UI")
-        {
-            musicSource.volume = 0.1f;
-            instance.PlayMusic("Background Music");
-        }
-        else if (SceneManager.GetActiveScene().name == "Main Menu")
+        if (SceneManager.GetActiveScene().name == "Main Menu")
         {
             musicSource.volume = 1f;
             instance.PlayMusic("Main Menu Song");
@@ -30,11 +25,29 @@ public class GameAudioManager : MonoBehaviour
         {
             musicSource.volume = 1f;
             instance.PlayMusic("Credits Music");
+        } 
+        else if (SceneManager.GetActiveScene().name == "Opening Cutscene")
+        {
+            musicSource.volume = 0.5f;
+            instance.PlayMusic("hallway music");
         }
+        else if(SceneManager.GetActiveScene().name == "Final Cutscene")
+        {
+            //TODO: add final cutscene music here.
+            musicSource.volume = 0.5f;
+            musicSource.Stop();
+        }
+        else
+        {
+            musicSource.volume = 0.1f;
+            instance.PlayMusic("Background Music");
+        }
+        /*
         else
         {
             musicSource.Stop();
         }
+        */
     }
 
     private void Awake()
