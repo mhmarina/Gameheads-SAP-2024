@@ -39,6 +39,17 @@ public class PlayerController : MonoBehaviour
         if (canMove)
         {
             transform.Translate(new Vector2(horizontalInput, verticalInput) * moveSpeed * Time.deltaTime);
+            if(horizontalInput != 0 || verticalInput != 0)
+            {
+                GameAudioManager.instance.PlaySFX("Player footsteps");
+            }
+            else 
+            {
+                if (GameAudioManager.instance.sfxSource.clip != null && GameAudioManager.instance.sfxSource.clip.name.Contains("footstep"))
+                {
+                    GameAudioManager.instance.sfxSource.clip = null;
+                }
+            }
         }
         //attacks
         //can only either inhale OR exhale
@@ -88,6 +99,7 @@ public class PlayerController : MonoBehaviour
 
     private void exhale()
     {
+        GameAudioManager.instance.PlaySFXFromPlayer("Breathe out sound");
         Collider2D[] collidersWithinPulseRange = Physics2D.OverlapCircleAll(transform.position, pulseRadius);
         foreach(Collider2D collider in collidersWithinPulseRange)
         {
@@ -108,6 +120,7 @@ public class PlayerController : MonoBehaviour
         // TODO: finding by tags is very expensive. remove this
         // Use arrays in manager instead.
         // check if they're within a certain range.
+        GameAudioManager.instance.PlaySFXFromPlayer("Breathe in sound");
         GameObject[] objectsList = GameObject.FindGameObjectsWithTag(INTERACTABLE_TAG);
         if(objectsList.Length > 0)
         {
