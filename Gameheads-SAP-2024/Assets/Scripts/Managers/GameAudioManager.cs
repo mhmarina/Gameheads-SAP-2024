@@ -28,6 +28,7 @@ public class GameAudioManager : MonoBehaviour
             musicSource.clip = mySound.clip;
             musicSource.loop = true;
             musicSource.Play();
+            musicSource.volume = mySound.volume;
         }
         else
         {
