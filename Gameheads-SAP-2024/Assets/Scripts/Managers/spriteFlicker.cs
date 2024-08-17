@@ -6,7 +6,7 @@ using UnityEngine;
 public class spriteFlicker : MonoBehaviour
 {
 
-    public GameObject flickerIcon;
+    [SerializeField] GameObject flickerIcon;
 
     // Start is called before the first frame update
     void Start()
