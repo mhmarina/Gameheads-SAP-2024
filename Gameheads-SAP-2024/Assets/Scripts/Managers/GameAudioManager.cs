@@ -7,6 +7,7 @@ public class GameAudioManager : MonoBehaviour
     public static GameAudioManager instance;
     public Sounds[] musicSounds, sfxSounds;
     public AudioSource musicSource, sfxSource, playerSource;
+    public float musicVol, sfxVol, playerVol;
 
     void OnEnable()
     {
@@ -40,6 +41,8 @@ public class GameAudioManager : MonoBehaviour
         else
         {
             musicSource.volume = 0.1f;
+            playerSource.volume = 0.5f;
+            sfxSource.volume = 0.3f;
             instance.PlayMusic("Background Music");
         }
         /*
@@ -48,6 +51,9 @@ public class GameAudioManager : MonoBehaviour
             musicSource.Stop();
         }
         */
+        musicVol = musicSource.volume;
+        playerVol = playerSource.volume;
+        sfxVol = sfxSource.volume;
     }
 
     private void Awake()
@@ -62,6 +68,9 @@ public class GameAudioManager : MonoBehaviour
             return;
         }
         DontDestroyOnLoad(this);
+        musicVol = musicSource.volume;
+        playerVol = playerSource.volume;
+        sfxVol = sfxSource.volume;
     }
 
     public void PlayMusic(string name)
@@ -82,7 +91,7 @@ public class GameAudioManager : MonoBehaviour
     public void PlaySFX(string name)
     {
         Sounds mySound = Array.Find(sfxSounds, x => x.clipName == name);
-        if (mySound != null)
+        if (mySound != null && sfxSource.clip?.name != mySound.clip.name)
         {
             sfxSource.clip = mySound.clip;
             sfxSource.Play();
@@ -96,7 +105,7 @@ public class GameAudioManager : MonoBehaviour
     public void PlaySFXFromPlayer(string name)
     {
         Sounds mySound = Array.Find(sfxSounds, x => x.clipName == name);
-        if (mySound != null)
+        if (mySound != null && playerSource.clip?.name != mySound.clip.name)
         {
             playerSource.clip = mySound.clip;
             playerSource.Play();

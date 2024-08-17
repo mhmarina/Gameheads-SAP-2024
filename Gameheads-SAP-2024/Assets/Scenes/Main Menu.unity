@@ -326,7 +326,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1352635589576737566, guid: a624bc81bd1c342f5aa18ca008a76b1f, type: 3}
       propertyPath: m_Volume
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2315629192673574506, guid: a624bc81bd1c342f5aa18ca008a76b1f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -371,6 +371,14 @@ PrefabInstance:
     - target: {fileID: 7183731722047825362, guid: a624bc81bd1c342f5aa18ca008a76b1f, type: 3}
       propertyPath: m_Name
       value: ==Audio Manager==
+      objectReference: {fileID: 0}
+    - target: {fileID: 8821457740537391041, guid: a624bc81bd1c342f5aa18ca008a76b1f, type: 3}
+      propertyPath: Priority
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 8821457740537391041, guid: a624bc81bd1c342f5aa18ca008a76b1f, type: 3}
+      propertyPath: m_Volume
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 9178902131003446579, guid: a624bc81bd1c342f5aa18ca008a76b1f, type: 3}
       propertyPath: Priority
