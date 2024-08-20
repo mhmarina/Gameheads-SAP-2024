@@ -104076,7 +104076,7 @@ MonoBehaviour:
   - line: "Now release the breath of life! H\u0101!! Release [SPACE] // [A button]"
     voiceLine: {fileID: 8300000, guid: ddaa641a1567c4396ab2b81852572ea3, type: 3}
     charSprite: {fileID: 21300000, guid: 14f72158d8e406144861c7ef1855d23e, type: 3}
-  - line: "Breathe and relax. It will all be okay, Kia\u2019i"
+  - line: "Breathe and relax. It will all be okay, Kia\u2019i [PUSH MO'O INTO CAVE]"
     voiceLine: {fileID: 8300000, guid: 4ca99aad5a06045398e884855b14d273, type: 3}
     charSprite: {fileID: 21300000, guid: 14f72158d8e406144861c7ef1855d23e, type: 3}
   - line: "Keep pushing! There\u2019s a cave down Waimanu trail!"
