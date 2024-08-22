@@ -508,11 +508,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9188518994893437824, guid: 7d037850cbbae489d83e0ab5c63b4606, type: 3}
       propertyPath: pulseMin
-      value: 125
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9188518994893437824, guid: 7d037850cbbae489d83e0ab5c63b4606, type: 3}
       propertyPath: breathMax
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 9188518994893437824, guid: 7d037850cbbae489d83e0ab5c63b4606, type: 3}
+      propertyPath: breathMin
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 9188518994893437824, guid: 7d037850cbbae489d83e0ab5c63b4606, type: 3}
       propertyPath: pullForce
@@ -520,7 +524,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9188518994893437824, guid: 7d037850cbbae489d83e0ab5c63b4606, type: 3}
       propertyPath: pulseForce
-      value: 500
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9188518994893437824, guid: 7d037850cbbae489d83e0ab5c63b4606, type: 3}
       propertyPath: pulseRadius

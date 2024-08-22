@@ -9,7 +9,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float pulseRadius;
     [SerializeField] private float pulseForce;
     [SerializeField] private float pullForce;
-    [SerializeField] private float pulseMin;
+    [SerializeField] private float breathMin;
+    private bool exhaleStarted = false;
     private InputManager im;
     private Health playerHealth;
     float horizontalInput;
@@ -60,14 +61,21 @@ public class PlayerController : MonoBehaviour
                 
             if(breathMeter < breathMax)
             {
+                exhaleStarted = false;
                 inhale();
                 breathMeter += Mathf.Ceil(breathMax/3.0f) * Time.deltaTime;
 
             }
             Debug.Log("Inhaled");
         }
-
+        
         else if (breathMeter > 0 && !im.button_inhale) {
+            if (!exhaleStarted) {
+                exhaleStarted = true;
+                if (breathMeter < breathMin) {
+                    breathMeter = breathMin;
+                }
+            }
             exhale();
             breathMeter -= (breathMax/1.5f) * Time.deltaTime;
             Debug.Log("exhaled");
@@ -109,14 +117,10 @@ public class PlayerController : MonoBehaviour
                 InteractableObject iO = collider.GetComponent<InteractableObject>();
                 if (iO)
                 {
-                    float thisPulseForce = pulseForce * (breathMeter / 100);
+                    float thisPulseForce = pulseForce;
                     // makes it so pulse force is proportional to breathMeter
-                    if (thisPulseForce > pulseMin) {
-                        iO.onExhale(gameObject, thisPulseForce);
-                    }
-                    else {
-                        iO.onExhale(gameObject, pulseMin);
-                    }
+                        Debug.Log("BIG PUSH " + thisPulseForce * breathMeter);
+                        iO.onExhale(gameObject, thisPulseForce * breathMeter);
                 }
             }
         }
