@@ -59,26 +59,35 @@ public class PlayerController : MonoBehaviour
         if (im.button_inhale)
         {
                 
-            if(breathMeter < breathMax)
+            if(breathMeter < breathMax && !exhaleStarted)
             {
                 exhaleStarted = false;
                 inhale();
                 breathMeter += Mathf.Ceil(breathMax/3.0f) * Time.deltaTime;
-
+                Debug.Log("Breath Meter: " + breathMeter);
             }
-            Debug.Log("Inhaled");
+            else {
+                exhaleStarted = true;
+            }
         }
         
-        else if (breathMeter > 0 && !im.button_inhale) {
-            if (!exhaleStarted) {
-                exhaleStarted = true;
-                if (breathMeter < breathMin) {
-                    breathMeter = breathMin;
+        //can't exhale if breath meter is 0
+        if (breathMeter > 0 ){
+            
+            if (!im.button_inhale || exhaleStarted) {
+                if (!exhaleStarted) {
+                    exhaleStarted = true;
+                    if (breathMeter < breathMin) {
+                        breathMeter = breathMin;
+                    }
                 }
+                exhale();
+                breathMeter -= (breathMax/1.5f) * Time.deltaTime;
+                Debug.Log("exhaled");
             }
-            exhale();
-            breathMeter -= (breathMax/1.5f) * Time.deltaTime;
-            Debug.Log("exhaled");
+        }
+        else {
+            exhaleStarted = false;
         }
 
         //player movement logic
@@ -119,7 +128,6 @@ public class PlayerController : MonoBehaviour
                 {
                     float thisPulseForce = pulseForce;
                     // makes it so pulse force is proportional to breathMeter
-                        Debug.Log("BIG PUSH " + thisPulseForce * breathMeter);
                         iO.onExhale(gameObject, thisPulseForce * breathMeter);
                 }
             }
@@ -131,6 +139,7 @@ public class PlayerController : MonoBehaviour
         // TODO: finding by tags is very expensive. remove this
         // Use arrays in manager instead.
         // check if they're within a certain range.
+        Debug.Log("Inhaled");
         GameAudioManager.instance.PlaySFXFromPlayer("Breathe in sound");
         GameObject[] objectsList = GameObject.FindGameObjectsWithTag(INTERACTABLE_TAG);
         if(objectsList.Length > 0)
