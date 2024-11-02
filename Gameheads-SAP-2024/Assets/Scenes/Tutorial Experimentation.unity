@@ -524,7 +524,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9188518994893437824, guid: 7d037850cbbae489d83e0ab5c63b4606, type: 3}
       propertyPath: pulseForce
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 9188518994893437824, guid: 7d037850cbbae489d83e0ab5c63b4606, type: 3}
       propertyPath: pulseRadius
@@ -9966,6 +9966,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4188663540538389234, guid: b092faedfb5f93548bf9c494788fff44, type: 3}
+      propertyPath: moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4950065075065474856, guid: b092faedfb5f93548bf9c494788fff44, type: 3}
       propertyPath: m_Name
       value: Fully Animated Enemy
@@ -59156,6 +59160,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4188663540538389234, guid: b092faedfb5f93548bf9c494788fff44, type: 3}
+      propertyPath: moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4950065075065474856, guid: b092faedfb5f93548bf9c494788fff44, type: 3}
       propertyPath: m_Name
       value: Fully Animated Enemy (1)
@@ -103984,6 +103992,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4188663540538389234, guid: b092faedfb5f93548bf9c494788fff44, type: 3}
+      propertyPath: moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4950065075065474856, guid: b092faedfb5f93548bf9c494788fff44, type: 3}
       propertyPath: m_Name
       value: Fully Animated Enemy (1)
@@ -104463,7 +104475,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4188663540538389234, guid: b092faedfb5f93548bf9c494788fff44, type: 3}
       propertyPath: moveSpeed
-      value: 2.75
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4950065075065474856, guid: b092faedfb5f93548bf9c494788fff44, type: 3}
       propertyPath: m_Name
@@ -105849,6 +105861,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4188663540538389234, guid: b092faedfb5f93548bf9c494788fff44, type: 3}
+      propertyPath: moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4950065075065474856, guid: b092faedfb5f93548bf9c494788fff44, type: 3}
       propertyPath: m_Name
       value: Fully Animated Enemy (3)
@@ -106761,6 +106777,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4188663540538389234, guid: b092faedfb5f93548bf9c494788fff44, type: 3}
+      propertyPath: moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4950065075065474856, guid: b092faedfb5f93548bf9c494788fff44, type: 3}
       propertyPath: m_Name
       value: Fully Animated Enemy (2)
