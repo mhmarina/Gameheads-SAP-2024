@@ -46,6 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainMenuScene: Main Menu
   StartCutscene: Opening Cutscene
-  Level1Scene: Tutorial Experimentation
+  Level1Scene: RevampingLevel1
   FinalCutscene: Final Cutscene
   Credits: Credits
