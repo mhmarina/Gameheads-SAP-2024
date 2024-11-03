@@ -10,7 +10,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float pulseForce;
     [SerializeField] private float pullForce;
     [SerializeField] private float breathMin;
+    [SerializeField] private float timeBeforeExhale;
     private bool exhaleStarted = false;
+    //tracks whether the player has reached max exhale already)
+    private bool exhaleFinished = false;
     private InputManager im;
     private Health playerHealth;
     float horizontalInput;
@@ -56,10 +59,10 @@ public class PlayerController : MonoBehaviour
         //attacks
         //can only either inhale OR exhale
         //updated for breath meter - Rafa 7/11
-        if (im.button_inhale)
+        if (im.button_inhale && !exhaleStarted)
         {
                 
-            if(breathMeter < breathMax && !exhaleStarted)
+            if(breathMeter < breathMax)
             {
                 exhaleStarted = false;
                 inhale();
@@ -67,7 +70,9 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("Breath Meter: " + breathMeter);
             }
             else {
-                exhaleStarted = true;
+                if (!exhaleFinished) {
+                    StartCoroutine(PauseBeforeExhale(timeBeforeExhale));
+                }
             }
         }
         
@@ -193,4 +198,13 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+
+    private IEnumerator PauseBeforeExhale(float seconds) {
+        yield return new WaitForSeconds(seconds);
+            exhaleStarted = true;
+            exhaleFinished = false;
+    }
 }
+
+
+
