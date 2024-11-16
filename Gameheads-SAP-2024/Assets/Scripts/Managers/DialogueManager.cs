@@ -46,7 +46,7 @@ public class DialogueManager : MonoBehaviour
             dialogueIndex = 4;
             ShowDialogueLine();
             StartCoroutine(handleDelay(1, 5));
-            Debug.Log("dialogue index is" + dialogueIndex);
+            //Debug.Log("dialogue index is" + dialogueIndex);
         }
         if(dialogueIndex == 5 && !dialogueBox.activeSelf)
         {
@@ -95,7 +95,7 @@ public class DialogueManager : MonoBehaviour
         {
             for (int i = 1; i <= numFrames; i++)
             {
-                yield return new WaitForSeconds(2);
+                yield return new WaitForSeconds(4);
                 dialogueIndex++;
                 ShowDialogueLine();
             }
