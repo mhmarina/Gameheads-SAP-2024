@@ -52,11 +52,7 @@ public class DialogueManager : MonoBehaviour
         {
             dialogueIndex = 6; 
             ShowDialogueLine(); 
-            Debug.Log("dialogue index is" + dialogueIndex);
-            handleDelay(1, 5); //lingers on frame 6 for 2 secs, increments index to 7 and lingers for 5 seconds 
-            dialogueIndex = 7;
-            ShowDialogueLine();
-            Debug.Log("dialogue index is" + dialogueIndex);
+            StartCoroutine(handleDelay(1, 30)); //lingers on frame 6 for 2 secs, increments index to 7 and lingers for 5 seconds 
         }
         if(playerInventory.getNumEnemiesCollected() == 1)
         {
