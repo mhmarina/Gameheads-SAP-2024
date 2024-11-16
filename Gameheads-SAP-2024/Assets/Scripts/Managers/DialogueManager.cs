@@ -46,11 +46,17 @@ public class DialogueManager : MonoBehaviour
             dialogueIndex = 4;
             ShowDialogueLine();
             StartCoroutine(handleDelay(1, 5));
+            Debug.Log("dialogue index is" + dialogueIndex);
         }
         if(dialogueIndex == 5 && !dialogueBox.activeSelf)
         {
+            dialogueIndex = 6; 
+            ShowDialogueLine(); 
+            Debug.Log("dialogue index is" + dialogueIndex);
+            handleDelay(1, 5); //lingers on frame 6 for 2 secs, increments index to 7 and lingers for 5 seconds 
             dialogueIndex = 7;
             ShowDialogueLine();
+            Debug.Log("dialogue index is" + dialogueIndex);
         }
         if(playerInventory.getNumEnemiesCollected() == 1)
         {
