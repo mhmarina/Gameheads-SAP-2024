@@ -49,7 +49,7 @@ public class DialogueManager : MonoBehaviour
         }
         if(dialogueIndex == 5 && !dialogueBox.activeSelf)
         {
-            dialogueIndex = 6;
+            dialogueIndex = 7;
             ShowDialogueLine();
         }
         if(playerInventory.getNumEnemiesCollected() == 1)
@@ -59,7 +59,7 @@ public class DialogueManager : MonoBehaviour
         if (playerInventory.getNumEnemiesCollected() == playerInventory.getGoalNumEnemies() && !targetNumReachedTrigger)
         {
             targetNumReachedTrigger = true;
-            dialogueIndex = 7;
+            dialogueIndex = 8;
             ShowDialogueLine();
         }
     }
