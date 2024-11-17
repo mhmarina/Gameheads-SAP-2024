@@ -1,6 +1,9 @@
 ﻿using System;
+using UnityEditor.Media;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameAudioManager : MonoBehaviour
 {
@@ -8,6 +11,10 @@ public class GameAudioManager : MonoBehaviour
     public Sounds[] musicSounds, sfxSounds;
     public AudioSource musicSource, sfxSource, playerSource;
     public float musicVol, sfxVol, playerVol;
+
+
+    [SerializeField] private Slider volumeSlider;
+    [SerializeField] private float userVol;
 
     void OnEnable()
     {
@@ -19,30 +26,30 @@ public class GameAudioManager : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "Main Menu")
         {
-            musicSource.volume = 1f;
+            musicVol = 1f;
             instance.PlayMusic("Main Menu Song");
         }
         else if (SceneManager.GetActiveScene().name == "Credits")
         {
-            musicSource.volume = 1f;
+            musicVol = 1f;
             instance.PlayMusic("Credits Music");
         } 
         else if (SceneManager.GetActiveScene().name == "Opening Cutscene")
         {
-            musicSource.volume = 0.5f;
+            musicVol = 0.5f;
             instance.PlayMusic("hallway music");
         }
         else if(SceneManager.GetActiveScene().name == "Final Cutscene")
         {
             //TODO: add final cutscene music here.
-            musicSource.volume = 0.5f;
+            musicVol = 0.5f;
             instance.PlayMusic("drums music");
         }
         else
         {
-            musicSource.volume = 0.1f;
-            playerSource.volume = 0.5f;
-            sfxSource.volume = 0.3f;
+            musicVol = 0.1f;
+            playerVol = 0.5f;
+            sfxVol = 0.3f;
             instance.PlayMusic("Background Music");
         }
         /*
@@ -51,9 +58,9 @@ public class GameAudioManager : MonoBehaviour
             musicSource.Stop();
         }
         */
-        musicVol = musicSource.volume;
-        playerVol = playerSource.volume;
-        sfxVol = sfxSource.volume;
+        musicSource.volume = musicVol * userVol;
+        playerSource.volume = playerVol * userVol;
+        sfxSource.volume = sfxVol * userVol;
     }
 
     private void Awake()
@@ -68,9 +75,11 @@ public class GameAudioManager : MonoBehaviour
             return;
         }
         DontDestroyOnLoad(this);
-        musicVol = musicSource.volume;
-        playerVol = playerSource.volume;
-        sfxVol = sfxSource.volume;
+        volumeSlider = GameObject.FindWithTag("VolumeSlider").GetComponent<Slider>();
+        musicSource.volume = musicVol * userVol;
+        playerSource.volume = playerVol * userVol;
+        sfxSource.volume = sfxVol * userVol;
+        Debug.Log(userVol);
     }
 
     public void PlayMusic(string name)
@@ -115,4 +124,18 @@ public class GameAudioManager : MonoBehaviour
             Debug.Log($"Sound \"{name}\" not found (Possible Misspelling?)");
         }
     }
+
+    /// <summary>
+    /// Sets user volume to value on volume slider. called by the volume slider.
+    /// </summary>
+    public void ChangeVolume() {
+        //TO-DO: the below throws an object reference exception. fix.
+        Debug.Log(volumeSlider + " " + volumeSlider.value);    
+        userVol = volumeSlider.value;
+        musicSource.volume = musicVol * userVol;
+        playerSource.volume = playerVol * userVol;
+        sfxSource.volume = sfxVol * userVol;
+        Debug.Log(userVol);
+    }
+
 }
