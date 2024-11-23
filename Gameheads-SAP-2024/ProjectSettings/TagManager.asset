@@ -9,6 +9,7 @@ TagManager:
   - InputManager
   - wall
   - boulder
+  - VolumeSlider
   layers:
   - Default
   - TransparentFX

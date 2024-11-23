@@ -101,6 +101,7 @@ MonoBehaviour:
   musicVol: 0
   sfxVol: 0
   playerVol: 0
+  userVol: 1
 --- !u!82 &9178902131003446579
 AudioSource:
   m_ObjectHideFlags: 0

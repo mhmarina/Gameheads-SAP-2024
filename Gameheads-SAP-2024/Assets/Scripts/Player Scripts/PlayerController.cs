@@ -90,6 +90,7 @@ public class PlayerController : MonoBehaviour
                 breathMeter -= (breathMax/1.5f) * Time.deltaTime;
                 Debug.Log("exhaled");
             }
+
         }
         else {
             exhaleStarted = false;
