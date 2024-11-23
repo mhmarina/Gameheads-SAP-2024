@@ -10,7 +10,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float pulseForce;
     [SerializeField] private float pullForce;
     [SerializeField] private float breathMin;
+    [SerializeField] private float timeBeforeExhale;
     private bool exhaleStarted = false;
+    //tracks whether the player has reached max exhale already)
+    private bool exhaleFinished = false;
     private InputManager im;
     private Health playerHealth;
     float horizontalInput;
@@ -56,7 +59,7 @@ public class PlayerController : MonoBehaviour
         //attacks
         //can only either inhale OR exhale
         //updated for breath meter - Rafa 7/11
-        if (im.button_inhale)
+        if (im.button_inhale && !exhaleStarted)
         {
                 
             if(breathMeter < breathMax)
@@ -64,20 +67,33 @@ public class PlayerController : MonoBehaviour
                 exhaleStarted = false;
                 inhale();
                 breathMeter += Mathf.Ceil(breathMax/3.0f) * Time.deltaTime;
-
+                Debug.Log("Breath Meter: " + breathMeter);
             }
-            Debug.Log("Inhaled");
-        }
-        
-        else if (breathMeter > 0 && !im.button_inhale) {
-            if (!exhaleStarted) {
-                exhaleStarted = true;
-                if (breathMeter < breathMin) {
-                    breathMeter = breathMin;
+            else {
+                if (!exhaleFinished) {
+                    StartCoroutine(PauseBeforeExhale(timeBeforeExhale));
                 }
             }
-            exhale();
-            breathMeter -= (breathMax/1.5f) * Time.deltaTime;
+        }
+        
+        //can't exhale if breath meter is 0
+        if (breathMeter > 0 ){
+            
+            if (!im.button_inhale || exhaleStarted) {
+                if (!exhaleStarted) {
+                    exhaleStarted = true;
+                    if (breathMeter < breathMin) {
+                        breathMeter = breathMin;
+                    }
+                }
+                exhale();
+                breathMeter -= (breathMax/1.5f) * Time.deltaTime;
+                Debug.Log("exhaled");
+            }
+
+        }
+        else {
+            exhaleStarted = false;
         }
 
         //player movement logic
@@ -129,6 +145,7 @@ public class PlayerController : MonoBehaviour
         // TODO: finding by tags is very expensive. remove this
         // Use arrays in manager instead.
         // check if they're within a certain range.
+        Debug.Log("Inhaled");
         GameAudioManager.instance.PlaySFXFromPlayer("Breathe in sound");
         GameObject[] objectsList = GameObject.FindGameObjectsWithTag(INTERACTABLE_TAG);
         if(objectsList.Length > 0)
@@ -182,4 +199,13 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+
+    private IEnumerator PauseBeforeExhale(float seconds) {
+        yield return new WaitForSeconds(seconds);
+            exhaleStarted = true;
+            exhaleFinished = false;
+    }
 }
+
+
+
