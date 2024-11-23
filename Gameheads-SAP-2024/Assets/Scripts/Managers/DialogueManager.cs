@@ -37,31 +37,34 @@ public class DialogueManager : MonoBehaviour
         if (!inhaleTrigger && dialogueIndex == 2 && !dialogueBox.activeSelf)
         {
             inhaleTrigger = true;
-            dialogueIndex = 3;
+            dialogueIndex = 3;//breathe in
             ShowDialogueLine();
         }
         if (inhaleTrigger && InputManager.instance.button_inhale && !releaseTrigger)
         {
             releaseTrigger = true;
-            dialogueIndex = 4;
+            dialogueIndex = 4; //breathe out
             ShowDialogueLine();
             StartCoroutine(handleDelay(1, 5));
-            //Debug.Log("dialogue index is" + dialogueIndex);
+            StartCoroutine(handleDelay(1, 5));
         }
-        if(dialogueIndex == 5 && !dialogueBox.activeSelf)
+
+        if(dialogueIndex == 6 && !dialogueBox.activeSelf) //relax it will all be okay
         {
-            dialogueIndex = 6; 
+            //dialogueIndex = 6; //keep pushing
+            dialogueIndex = 7; //objective
             ShowDialogueLine(); 
-            StartCoroutine(handleDelay(1, 30)); //lingers on frame 6 for 2 secs, increments index to 7 and lingers for 5 seconds 
         }
+
         if(playerInventory.getNumEnemiesCollected() == 1)
         {
             Destroy(tutorialCollider);
         }
+        
         if (playerInventory.getNumEnemiesCollected() == playerInventory.getGoalNumEnemies() && !targetNumReachedTrigger)
         {
             targetNumReachedTrigger = true;
-            dialogueIndex = 8;
+            dialogueIndex = 8; //aue they breaking free
             ShowDialogueLine();
         }
     }
@@ -95,7 +98,7 @@ public class DialogueManager : MonoBehaviour
         {
             for (int i = 1; i <= numFrames; i++)
             {
-                yield return new WaitForSeconds(4);
+                yield return new WaitForSeconds(2);
                 dialogueIndex++;
                 ShowDialogueLine();
             }

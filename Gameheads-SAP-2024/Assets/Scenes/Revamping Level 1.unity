@@ -89883,7 +89883,7 @@ MonoBehaviour:
   - line: 'Objective: [PUSH MO''O INTO CAVE USING YOUR BREATH] by holding and releasing
       [SPACE] // [A button]'
     voiceLine: {fileID: 0}
-    charSprite: {fileID: 21300000, guid: 10973b49046c4a24398f00fd88d3e037, type: 3}
+    charSprite: {fileID: 21300000, guid: b6df68e569255304fb5c0237258e4e24, type: 3}
   - line: Aue!! They stay breaking free! Get us something to cover the hole!
     voiceLine: {fileID: 8300000, guid: db728f2777c2949afbc4cf7e26a27055, type: 3}
     charSprite: {fileID: 21300000, guid: 10973b49046c4a24398f00fd88d3e037, type: 3}
