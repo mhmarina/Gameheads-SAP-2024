@@ -78,7 +78,6 @@ public class PlayerController : MonoBehaviour
             }
             exhale();
             breathMeter -= (breathMax/1.5f) * Time.deltaTime;
-            Debug.Log("exhaled");
         }
 
         //player movement logic
@@ -119,7 +118,6 @@ public class PlayerController : MonoBehaviour
                 {
                     float thisPulseForce = pulseForce;
                     // makes it so pulse force is proportional to breathMeter
-                        Debug.Log("BIG PUSH " + thisPulseForce * breathMeter);
                         iO.onExhale(gameObject, thisPulseForce * breathMeter);
                 }
             }
