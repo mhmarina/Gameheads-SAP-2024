@@ -79,7 +79,7 @@ public class LevelUIManager : MonoBehaviour
         }
         if (levelNumber == 1)
         {
-            SceneManager.LoadScene("Proto Level 2")
+            SceneManager.LoadScene("Proto Level 2");
         }
         else if (levelNumber == 2) {
             SceneManager.LoadScene("Final Cutscene");
