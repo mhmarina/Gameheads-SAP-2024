@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Revamping Level 1.unity
     guid: 04f7b4c6599b9fa46b446f91148cb98c
+  - enabled: 1
+    path: Assets/Scenes/Proto Level 2.unity
+    guid: 624caa8c9478a8547b5e1543a206b309
   m_configObjects: {}
