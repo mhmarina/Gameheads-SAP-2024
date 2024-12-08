@@ -95,12 +95,15 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: dfee4a08d72174031a7b03689f166a2d, type: 3}
   - clipName: Aunty Voice Line 8
     clip: {fileID: 8300000, guid: f6a71ba0c86b04eb486589603048777c, type: 3}
+  - clipName: Cave SFX
+    clip: {fileID: 8300000, guid: 82dd4c9812f384bb582e5fb232884d04, type: 3}
   musicSource: {fileID: 9178902131003446579}
   sfxSource: {fileID: 1352635589576737566}
   playerSource: {fileID: 8821457740537391041}
   musicVol: 0
   sfxVol: 0
   playerVol: 0
+  volumeSlider: {fileID: 0}
   userVol: 1
 --- !u!82 &9178902131003446579
 AudioSource:
