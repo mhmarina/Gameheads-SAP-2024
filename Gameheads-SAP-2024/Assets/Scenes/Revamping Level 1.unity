@@ -91757,15 +91757,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 785123033719576198, guid: a624bc81bd1c342f5aa18ca008a76b1f, type: 3}
       propertyPath: sfxSounds.Array.size
-      value: 19
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 785123033719576198, guid: a624bc81bd1c342f5aa18ca008a76b1f, type: 3}
       propertyPath: sfxSounds.Array.data[18].clip
       value: 
       objectReference: {fileID: 8300000, guid: 82dd4c9812f384bb582e5fb232884d04, type: 3}
     - target: {fileID: 785123033719576198, guid: a624bc81bd1c342f5aa18ca008a76b1f, type: 3}
+      propertyPath: sfxSounds.Array.data[19].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: ab323eb01d7db614f9add6ce043999fd, type: 3}
+    - target: {fileID: 785123033719576198, guid: a624bc81bd1c342f5aa18ca008a76b1f, type: 3}
       propertyPath: sfxSounds.Array.data[18].clipName
       value: Cave SFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 785123033719576198, guid: a624bc81bd1c342f5aa18ca008a76b1f, type: 3}
+      propertyPath: sfxSounds.Array.data[19].clipName
+      value: Heal SFX
       objectReference: {fileID: 0}
     - target: {fileID: 2315629192673574506, guid: a624bc81bd1c342f5aa18ca008a76b1f, type: 3}
       propertyPath: m_LocalPosition.x
