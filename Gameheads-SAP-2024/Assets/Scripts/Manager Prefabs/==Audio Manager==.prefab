@@ -92,6 +92,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: f6a71ba0c86b04eb486589603048777c, type: 3}
   - clipName: Cave SFX
     clip: {fileID: 8300000, guid: 82dd4c9812f384bb582e5fb232884d04, type: 3}
+  - clipName: Heal SFX
+    clip: {fileID: 8300000, guid: ab323eb01d7db614f9add6ce043999fd, type: 3}
   musicSource: {fileID: 9178902131003446579}
   sfxSource: {fileID: 1352635589576737566}
   playerSource: {fileID: 0}
