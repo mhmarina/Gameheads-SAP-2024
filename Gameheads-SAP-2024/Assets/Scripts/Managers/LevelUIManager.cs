@@ -14,8 +14,6 @@ public class LevelUIManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI lossScore;
     [SerializeField] GameObject pauseCanvas;
     [SerializeField] Boulder boulder;
-    [SerializeField] int levelNumber;
-
     private GameObject player;
     private bool isPaused;
 
@@ -77,13 +75,7 @@ public class LevelUIManager : MonoBehaviour
         {
             waitTime += 1 * Time.deltaTime;
         }
-        if (levelNumber == 1)
-        {
-            SceneManager.LoadScene("Proto Level 2");
-        }
-        else if (levelNumber == 2) {
-            SceneManager.LoadScene("Final Cutscene");
-        }
+        SceneManager.LoadScene("Final Cutscene");
     }
 
     public void pauseGame()
