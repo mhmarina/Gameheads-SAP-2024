@@ -11,7 +11,7 @@ public class HealTrigger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        healTrigger = GetComponent<Animator>(); 
+        //healTrigger = GetComponent<Animator>(); 
     }
 
     // Update is called once per frame
@@ -23,7 +23,7 @@ public class HealTrigger : MonoBehaviour
             Debug.Log(collision.gameObject.GetComponent<InteractableObject>().getObjectType());
             if (collision.gameObject.GetComponent<InteractableObject>().getObjectType() == "mana" && InputManager.instance.button_inhale)
             {
-                healTrigger.Play("Heal");
+               // healTrigger.Play("Heal");
                 Debug.Log("heal");
             }
         }

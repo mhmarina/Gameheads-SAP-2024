@@ -9,6 +9,7 @@ TagManager:
   - InputManager
   - wall
   - boulder
+  - VolumeSlider
   layers:
   - Default
   - TransparentFX
@@ -51,4 +52,7 @@ TagManager:
     locked: 0
   - name: New Layer 2
     uniqueID: 1336330175
+    locked: 0
+  - name: UI Layer
+    uniqueID: 1076302183
     locked: 0
