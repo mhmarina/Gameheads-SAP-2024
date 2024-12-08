@@ -64,7 +64,8 @@ public abstract class InteractableObject : MonoBehaviour
                 {
                     return;
                 }
-                StartCoroutine(handlePush(1.5f));
+                
+                StartCoroutine(handlePush(2f));
             }
             Vector2 direction = (Vector2)(transform.position - playerObject.transform.position).normalized;
             Vector2 targetPosition = (Vector2)transform.position + (direction * pushForce * Time.deltaTime);
