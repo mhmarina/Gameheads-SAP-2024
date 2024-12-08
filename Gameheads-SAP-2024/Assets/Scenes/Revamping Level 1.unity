@@ -554,6 +554,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6300087415271049751, guid: 7d037850cbbae489d83e0ab5c63b4606, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1091420871}
+    - targetCorrespondingSourceObject: {fileID: 6300087415271049751, guid: 7d037850cbbae489d83e0ab5c63b4606, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1091420883}
   m_SourcePrefab: {fileID: 100100000, guid: 7d037850cbbae489d83e0ab5c63b4606, type: 3}
 --- !u!114 &56945761 stripped
 MonoBehaviour:
@@ -53696,14 +53699,13 @@ GameObject:
   - component: {fileID: 662317196}
   - component: {fileID: 662317195}
   - component: {fileID: 662317194}
-  - component: {fileID: 662317197}
   m_Layer: 8
   m_Name: Heal Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &662317193
 Transform:
   m_ObjectHideFlags: 0
@@ -53713,7 +53715,7 @@ Transform:
   m_GameObject: {fileID: 662317192}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.052, y: 0.312, z: 0}
+  m_LocalPosition: {x: 0.052, y: 0.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -53805,41 +53807,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &662317197
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 662317192}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.06480354, y: -0.39817822}
-  serializedVersion: 2
-  m_Radius: 0.29652256
 --- !u!4 &686180561 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 86500880369762646, guid: 7d037850cbbae489d83e0ab5c63b4606, type: 3}
@@ -89624,6 +89591,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d3db56fa6a0f4af9aa3187f5583a0fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1091420883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091420870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adacaf81abbf27a449a1c67070ea4b00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healTrigger: {fileID: 662317195}
 --- !u!1001 &1105138935
 PrefabInstance:
   m_ObjectHideFlags: 0
