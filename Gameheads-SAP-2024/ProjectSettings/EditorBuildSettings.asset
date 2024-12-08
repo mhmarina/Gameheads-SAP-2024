@@ -23,7 +23,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: 054e18662d16b2b44b6d5e963107c29f
-  - enabled: 1
-    path: Assets/Scenes/Revamping Level 1.unity
-    guid: 04f7b4c6599b9fa46b446f91148cb98c
   m_configObjects: {}

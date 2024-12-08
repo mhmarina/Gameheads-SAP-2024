@@ -37,34 +37,29 @@ public class DialogueManager : MonoBehaviour
         if (!inhaleTrigger && dialogueIndex == 2 && !dialogueBox.activeSelf)
         {
             inhaleTrigger = true;
-            dialogueIndex = 3;//breathe in
+            dialogueIndex = 3;
             ShowDialogueLine();
         }
         if (inhaleTrigger && InputManager.instance.button_inhale && !releaseTrigger)
         {
             releaseTrigger = true;
-            dialogueIndex = 4; //breathe out
+            dialogueIndex = 4;
             ShowDialogueLine();
             StartCoroutine(handleDelay(1, 5));
-            StartCoroutine(handleDelay(1, 5));
         }
-
-        if(dialogueIndex == 6 && !dialogueBox.activeSelf) //relax it will all be okay
+        if(dialogueIndex == 5 && !dialogueBox.activeSelf)
         {
-            //dialogueIndex = 6; //keep pushing
-            dialogueIndex = 7; //objective
-            ShowDialogueLine(); 
+            dialogueIndex = 6;
+            ShowDialogueLine();
         }
-
         if(playerInventory.getNumEnemiesCollected() == 1)
         {
             Destroy(tutorialCollider);
         }
-        
         if (playerInventory.getNumEnemiesCollected() == playerInventory.getGoalNumEnemies() && !targetNumReachedTrigger)
         {
             targetNumReachedTrigger = true;
-            dialogueIndex = 8; //aue they breaking free
+            dialogueIndex = 7;
             ShowDialogueLine();
         }
     }

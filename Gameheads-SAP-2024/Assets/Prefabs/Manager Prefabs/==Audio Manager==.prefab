@@ -56,8 +56,6 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 9f8e7aca5a6944f1cb746805c1a9d9d1, type: 3}
   - clipName: hallway music
     clip: {fileID: 8300000, guid: f7875146048de485196a47913738a893, type: 3}
-  - clipName: drums music
-    clip: {fileID: 8300000, guid: e6b9e47a10fa04d0d9158af548ae453f, type: 3}
   sfxSounds:
   - clipName: Player footsteps
     clip: {fileID: 8300000, guid: 96e2bacf739974f05bda7a451fb4a808, type: 3}
@@ -101,7 +99,6 @@ MonoBehaviour:
   musicVol: 0
   sfxVol: 0
   playerVol: 0
-  userVol: 1
 --- !u!82 &9178902131003446579
 AudioSource:
   m_ObjectHideFlags: 0

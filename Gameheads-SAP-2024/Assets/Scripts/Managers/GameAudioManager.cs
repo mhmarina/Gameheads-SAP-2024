@@ -1,9 +1,6 @@
 ﻿using System;
-using UnityEditor.Media;
-using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class GameAudioManager : MonoBehaviour
 {
@@ -11,12 +8,6 @@ public class GameAudioManager : MonoBehaviour
     public Sounds[] musicSounds, sfxSounds;
     public AudioSource musicSource, sfxSource, playerSource;
     public float musicVol, sfxVol, playerVol;
-
-
-    [SerializeField] private Slider volumeSlider;
-    [SerializeField] private float userVol;
-
-    private Sounds currentMusic;
 
     void OnEnable()
     {
@@ -26,33 +17,32 @@ public class GameAudioManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        //sets music played
         if (SceneManager.GetActiveScene().name == "Main Menu")
         {
-            musicVol = 1f;
+            musicSource.volume = 1f;
             instance.PlayMusic("Main Menu Song");
         }
         else if (SceneManager.GetActiveScene().name == "Credits")
         {
-            musicVol = 1f;
+            musicSource.volume = 1f;
             instance.PlayMusic("Credits Music");
         } 
         else if (SceneManager.GetActiveScene().name == "Opening Cutscene")
         {
-            musicVol = 0.5f;
+            musicSource.volume = 0.5f;
             instance.PlayMusic("hallway music");
         }
         else if(SceneManager.GetActiveScene().name == "Final Cutscene")
         {
             //TODO: add final cutscene music here.
-            musicVol = 0.5f;
-            instance.PlayMusic("drums music");
+            musicSource.volume = 0.5f;
+            musicSource.Stop();
         }
         else
         {
-            musicVol = 0.1f;
-            playerVol = 0.5f;
-            sfxVol = 0.3f;
+            musicSource.volume = 0.1f;
+            playerSource.volume = 0.5f;
+            sfxSource.volume = 0.3f;
             instance.PlayMusic("Background Music");
         }
         /*
@@ -61,8 +51,9 @@ public class GameAudioManager : MonoBehaviour
             musicSource.Stop();
         }
         */
-        //set volumes to base values
-        ChangeVolume(false);
+        musicVol = musicSource.volume;
+        playerVol = playerSource.volume;
+        sfxVol = sfxSource.volume;
     }
 
     private void Awake()
@@ -77,11 +68,10 @@ public class GameAudioManager : MonoBehaviour
             return;
         }
         DontDestroyOnLoad(this);
-
-        //set volumes to base values
-        ChangeVolume(false);
+        musicVol = musicSource.volume;
+        playerVol = playerSource.volume;
+        sfxVol = sfxSource.volume;
     }
-
 
     public void PlayMusic(string name)
     {
@@ -91,7 +81,6 @@ public class GameAudioManager : MonoBehaviour
             musicSource.clip = mySound.clip;
             musicSource.loop = true;
             musicSource.Play();
-            
         }
         else
         {
@@ -101,48 +90,29 @@ public class GameAudioManager : MonoBehaviour
 
     public void PlaySFX(string name)
     {
-        //play sfx only if game is not paused
-        if (Time.timeScale > 0) {
-            Sounds mySound = Array.Find(sfxSounds, x => x.clipName == name);
-            if (mySound != null && sfxSource.clip?.name != mySound.clip.name)
-            {
-                sfxSource.clip = mySound.clip;
-                sfxSource.Play();
-            }
-            else
-            {
-                Debug.Log($"Sound \"{name}\" not found (Possible Misspelling?)");
-            }
+        Sounds mySound = Array.Find(sfxSounds, x => x.clipName == name);
+        if (mySound != null && sfxSource.clip?.name != mySound.clip.name)
+        {
+            sfxSource.clip = mySound.clip;
+            sfxSource.Play();
+        }
+        else
+        {
+            Debug.Log($"Sound \"{name}\" not found (Possible Misspelling?)");
         }
     }
 
     public void PlaySFXFromPlayer(string name)
     {
-        if (Time.timeScale > 0) {
-            Sounds mySound = Array.Find(sfxSounds, x => x.clipName == name);
-            if (mySound != null && playerSource.clip?.name != mySound.clip.name)
-            {
-                playerSource.clip = mySound.clip;
-                playerSource.Play();
-            }
-            else
-            {
-                Debug.Log($"Sound \"{name}\" not found (Possible Misspelling?)");
-            }
+        Sounds mySound = Array.Find(sfxSounds, x => x.clipName == name);
+        if (mySound != null && playerSource.clip?.name != mySound.clip.name)
+        {
+            playerSource.clip = mySound.clip;
+            playerSource.Play();
+        }
+        else
+        {
+            Debug.Log($"Sound \"{name}\" not found (Possible Misspelling?)");
         }
     }
-
-    /// <summary>
-    /// Sets user volume to value on volume slider. called by the volume slider.
-    /// </summary>
-    /// <param name="withSlider">whether the volume was changed by the volume slider or not</param>
-    public void ChangeVolume(bool withSlider) {
-        if(withSlider) {
-            userVol = volumeSlider.value;
-        }
-        musicSource.volume = musicVol * userVol;
-        playerSource.volume = playerVol * userVol;
-        sfxSource.volume = sfxVol * userVol;
-    }
-
 }

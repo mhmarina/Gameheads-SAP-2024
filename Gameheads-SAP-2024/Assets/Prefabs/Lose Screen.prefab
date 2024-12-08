@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1889661918135999755}
   - component: {fileID: 6417152810123400499}
   - component: {fileID: 7334722529067851504}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: QuitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,10 +99,10 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 1, g: 0.27058825, b: 0.4509804, a: 1}
-    m_PressedColor: {r: 1, g: 0.27058825, b: 0.45098042, a: 1}
-    m_SelectedColor: {r: 1, g: 0.27058825, b: 0.45098042, a: 1}
-    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -117,13 +117,13 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 2351239573956221878}
+  m_TargetGraphic: {fileID: 6417152810123400499}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: quitGame
+        m_MethodName: goToMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -144,8 +144,8 @@ GameObject:
   - component: {fileID: 465287359811860253}
   - component: {fileID: 1026850744919352549}
   - component: {fileID: 5646210591393493015}
-  m_Layer: 5
-  m_Name: EventSystem(Loss)
+  m_Layer: 0
+  m_Name: EventSystem(Pause Menu) (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -213,7 +213,7 @@ GameObject:
   - component: {fileID: 6447925960143414431}
   - component: {fileID: 1911237320684668646}
   - component: {fileID: 580161018849559069}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: TryAgainButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -300,10 +300,10 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 1, g: 0.27058825, b: 0.4509804, a: 1}
-    m_PressedColor: {r: 1, g: 0.27058825, b: 0.45098042, a: 1}
-    m_SelectedColor: {r: 1, g: 0.27058825, b: 0.45098042, a: 1}
-    m_DisabledColor: {r: 1, g: 1, b: 1, a: 0.5019608}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -318,7 +318,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 3344519100843483103}
+  m_TargetGraphic: {fileID: 1911237320684668646}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -343,7 +343,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5394932037145650383}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Lose Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -377,7 +377,7 @@ GameObject:
   - component: {fileID: 8151465962370361050}
   - component: {fileID: 4236061322632320785}
   - component: {fileID: 4741686504410846997}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -511,7 +511,7 @@ GameObject:
   - component: {fileID: 5204136247666330897}
   - component: {fileID: 1198833729445099529}
   - component: {fileID: 5949439642909041363}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Enemy Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -587,7 +587,7 @@ GameObject:
   - component: {fileID: 6229151366373370962}
   - component: {fileID: 7624244911609634699}
   - component: {fileID: 6954749933562883081}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -693,7 +693,7 @@ GameObject:
   - component: {fileID: 4510088391945912026}
   - component: {fileID: 8715019652537783022}
   - component: {fileID: 3344519100843483103}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -827,7 +827,7 @@ GameObject:
   - component: {fileID: 3239595113654506151}
   - component: {fileID: 3465382487830986842}
   - component: {fileID: 2351239573956221878}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -963,7 +963,7 @@ GameObject:
   - component: {fileID: 1301878806983363087}
   - component: {fileID: 1430544264723683011}
   - component: {fileID: 8486601229471371359}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1038,7 +1038,7 @@ GameObject:
   - component: {fileID: 5094508272536186601}
   - component: {fileID: 4941220669471494272}
   - component: {fileID: 3812166010523910426}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Defeat_plank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1094,7 +1094,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e8f839556ab99714da5476e8307b4920, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c1ee636c772a2d441a3a34c4f22905f1, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1115,7 +1115,7 @@ GameObject:
   - component: {fileID: 792208404625742041}
   - component: {fileID: 8060810213881603865}
   - component: {fileID: 84796486881074200}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Score Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}

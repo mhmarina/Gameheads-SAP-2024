@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    //Serialized for metrics testing
-    [SerializeField] private int currentHealth;
+    private int currentHealth;
     [SerializeField] public int MAX_HEALTH;
 
     private void Start()
