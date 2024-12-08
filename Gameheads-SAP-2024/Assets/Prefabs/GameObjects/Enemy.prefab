@@ -181,7 +181,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 7126311854603686905}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 13f553c07f19dd14193ac69f61211cb5, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -257,6 +257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pullRange: 15
-  moveSpeed: 3
+  isPushed: 0
+  moveSpeed: 5
   damage: 10
   attackRadius: 15
