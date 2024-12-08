@@ -11,6 +11,7 @@ public class Cave : MonoBehaviour
         InteractableObject ib = collision.gameObject.GetComponent<InteractableObject>();
         if (ib?.getObjectType() == "enemy" && ib.isPushed)
         {
+            GameAudioManager.instance.PlaySFX("Cave SFX");
             inventory.addEnemytoInventory();
             Destroy(collision.gameObject);
         }
