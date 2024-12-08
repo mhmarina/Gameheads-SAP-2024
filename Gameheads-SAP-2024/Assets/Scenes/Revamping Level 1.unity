@@ -92466,6 +92466,7 @@ MonoBehaviour:
   lossScore: {fileID: 9936204}
   pauseCanvas: {fileID: 1621293674}
   boulder: {fileID: 1892131989}
+  levelNumber: 1
 --- !u!4 &2141276440
 Transform:
   m_ObjectHideFlags: 0
