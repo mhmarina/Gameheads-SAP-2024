@@ -23,7 +23,8 @@ public class HealTrigger : MonoBehaviour
             Debug.Log(collision.gameObject.GetComponent<InteractableObject>().getObjectType());
             if (collision.gameObject.GetComponent<InteractableObject>().getObjectType() == "mana" && InputManager.instance.button_inhale)
             {
-               // healTrigger.Play("Heal");
+                healTrigger.Play("Heal");
+                GameAudioManager.instance.PlaySFX("Heal SFX");
                 Debug.Log("heal");
             }
         }
