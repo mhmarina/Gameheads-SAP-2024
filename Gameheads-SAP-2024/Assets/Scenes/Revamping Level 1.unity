@@ -516,15 +516,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9188518994893437824, guid: 7d037850cbbae489d83e0ab5c63b4606, type: 3}
       propertyPath: breathMin
-      value: 9
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9188518994893437824, guid: 7d037850cbbae489d83e0ab5c63b4606, type: 3}
       propertyPath: pullForce
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 9188518994893437824, guid: 7d037850cbbae489d83e0ab5c63b4606, type: 3}
       propertyPath: pulseForce
-      value: 10
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 9188518994893437824, guid: 7d037850cbbae489d83e0ab5c63b4606, type: 3}
       propertyPath: pulseRadius
@@ -54267,6 +54267,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &736511589 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 785123033719576198, guid: a624bc81bd1c342f5aa18ca008a76b1f, type: 3}
+  m_PrefabInstance: {fileID: 1770675580}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b32119fa8472b45e8a4531b3906e2a8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &772060446
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54631,6 +54642,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4188663540538389234, guid: b092faedfb5f93548bf9c494788fff44, type: 3}
+      propertyPath: attackRadius
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 4950065075065474856, guid: b092faedfb5f93548bf9c494788fff44, type: 3}
       propertyPath: m_Name
       value: Fully Animated Enemy (1)
@@ -89724,6 +89739,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4188663540538389234, guid: b092faedfb5f93548bf9c494788fff44, type: 3}
+      propertyPath: attackRadius
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 4950065075065474856, guid: b092faedfb5f93548bf9c494788fff44, type: 3}
       propertyPath: m_Name
       value: Fully Animated Enemy (1)
@@ -90301,6 +90320,10 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 2.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4188663540538389234, guid: b092faedfb5f93548bf9c494788fff44, type: 3}
+      propertyPath: attackRadius
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 4950065075065474856, guid: b092faedfb5f93548bf9c494788fff44, type: 3}
       propertyPath: m_Name
       value: Fully Animated Enemy (4)
@@ -90315,7 +90338,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7642936126555644689, guid: b092faedfb5f93548bf9c494788fff44, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.91
+      value: 20.75
       objectReference: {fileID: 0}
     - target: {fileID: 7642936126555644689, guid: b092faedfb5f93548bf9c494788fff44, type: 3}
       propertyPath: m_LocalPosition.z
@@ -90847,6 +90870,30 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2141276439}
+    - target: {fileID: 3691635254680992328, guid: b853945f4df7296429f3ee45b0807f9e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3691635254680992328, guid: b853945f4df7296429f3ee45b0807f9e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 736511589}
+    - target: {fileID: 3691635254680992328, guid: b853945f4df7296429f3ee45b0807f9e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 3691635254680992328, guid: b853945f4df7296429f3ee45b0807f9e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameAudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3691635254680992328, guid: b853945f4df7296429f3ee45b0807f9e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3691635254680992328, guid: b853945f4df7296429f3ee45b0807f9e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4325938152496861014, guid: b853945f4df7296429f3ee45b0807f9e, type: 3}
       propertyPath: m_Name
       value: Pause Menu
@@ -91092,6 +91139,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1480261222 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3691635254680992328, guid: b853945f4df7296429f3ee45b0807f9e, type: 3}
+  m_PrefabInstance: {fileID: 1404784607}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1482105158
 GameObject:
   m_ObjectHideFlags: 0
@@ -91756,6 +91814,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 785123033719576198, guid: a624bc81bd1c342f5aa18ca008a76b1f, type: 3}
+      propertyPath: volumeSlider
+      value: 
+      objectReference: {fileID: 1480261222}
+    - target: {fileID: 785123033719576198, guid: a624bc81bd1c342f5aa18ca008a76b1f, type: 3}
       propertyPath: sfxSounds.Array.size
       value: 20
       objectReference: {fileID: 0}
@@ -91832,6 +91894,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4188663540538389234, guid: b092faedfb5f93548bf9c494788fff44, type: 3}
+      propertyPath: attackRadius
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 4950065075065474856, guid: b092faedfb5f93548bf9c494788fff44, type: 3}
       propertyPath: m_Name
       value: Fully Animated Enemy (3)
@@ -93069,7 +93135,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4188663540538389234, guid: b092faedfb5f93548bf9c494788fff44, type: 3}
       propertyPath: attackRadius
-      value: 8
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4950065075065474856, guid: b092faedfb5f93548bf9c494788fff44, type: 3}
       propertyPath: m_Name
@@ -93339,6 +93405,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4188663540538389234, guid: b092faedfb5f93548bf9c494788fff44, type: 3}
+      propertyPath: attackRadius
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 4950065075065474856, guid: b092faedfb5f93548bf9c494788fff44, type: 3}
       propertyPath: m_Name
       value: Fully Animated Enemy (2)

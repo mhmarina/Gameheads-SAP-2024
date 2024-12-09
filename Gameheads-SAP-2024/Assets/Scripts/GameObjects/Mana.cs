@@ -54,9 +54,10 @@ public class Mana : InteractableObject
         im = InputManager.instance;
         Health playerHealth = player.GetComponent<Health>();
         //makes it so player must pull mana in to get healed
-        if (im.button_inhale && playerHealth.getHealth() + healing <= playerHealth.MAX_HEALTH)
+        if (im.button_inhale && playerHealth.getHealth() < playerHealth.MAX_HEALTH)
         {
             playerHealth.setHealth(playerHealth.getHealth() + healing);
+
             Destroy(gameObject);
         }
     }

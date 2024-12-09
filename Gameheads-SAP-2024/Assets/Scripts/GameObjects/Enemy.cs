@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using BarthaSzabolcs.Tutorial_SpriteFlash;
+using UnityEditor.EditorTools;
 using UnityEngine;
 
 public class Enemy : InteractableObject
@@ -9,6 +10,8 @@ public class Enemy : InteractableObject
     [SerializeField] int damage;
     [SerializeField] float attackRadius;
     private GameObject player;
+
+    [SerializeField] private Animator animator;
 
     public Enemy()
     {
@@ -26,6 +29,7 @@ public class Enemy : InteractableObject
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        animator = gameObject.GetComponent<Animator>();
     }
     private void Update()
     {
@@ -42,9 +46,16 @@ public class Enemy : InteractableObject
                 //check if there are walls in the way...
                 if (Vector3.Distance(player.transform.position, this.transform.position) < attackRadius)
                 {
+                    animator.speed = 1;
                     onInhale(player, moveSpeed);
+                } else {
+                    animator.speed = 0;
                 }
+
+            } else {
+                animator.speed = 0;
             }
+             
         }
     }
 
