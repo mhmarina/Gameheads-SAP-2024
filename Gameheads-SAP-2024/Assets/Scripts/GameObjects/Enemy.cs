@@ -31,7 +31,7 @@ public class Enemy : InteractableObject
         player = GameObject.FindGameObjectWithTag("Player");
         animator = gameObject.GetComponent<Animator>();
     }
-    private void Update()
+    private void FixedUpdate()
     {
         if (player)
         {
@@ -48,6 +48,7 @@ public class Enemy : InteractableObject
                 {
                     animator.speed = 1;
                     onInhale(player, moveSpeed);
+                    Debug.Log("Moved!");
                 } else {
                     animator.speed = 0;
                 }
