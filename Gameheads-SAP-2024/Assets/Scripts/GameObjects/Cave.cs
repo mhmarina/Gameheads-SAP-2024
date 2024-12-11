@@ -15,7 +15,7 @@ public class Cave : MonoBehaviour
             inventory.addEnemytoInventory();
             Destroy(collision.gameObject);
         }
-        if(collision.gameObject.tag == "boulder")
+        if(collision.gameObject.GetComponent<Boulder>() != null)
         {
             collision.gameObject.GetComponent<Boulder>().isInCave = true;
         }

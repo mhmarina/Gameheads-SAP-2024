@@ -24,7 +24,9 @@ public abstract class InteractableObject : MonoBehaviour
     [SerializeField] float pullRange;
     public bool isPushed = false;
 
-    public abstract void onCollisionWithPlayer(GameObject player);
+    public virtual void onCollisionWithPlayer(GameObject player) {
+        
+    }
 
     public void onInhale(GameObject playerObject, float pullSpeed)
     {
@@ -50,7 +52,6 @@ public abstract class InteractableObject : MonoBehaviour
     //maybe apply some velocity to push the object away idk..
     public void onExhale(GameObject playerObject, float pushForce)
     {
-        isPushed = true;
         //raycast logic:
         if ((pushOrPull == pushPullType.CAN_PUSH || pushOrPull == pushPullType.BOTH))
         {
@@ -64,8 +65,8 @@ public abstract class InteractableObject : MonoBehaviour
                 {
                     return;
                 }
-                
-                StartCoroutine(handlePush(1.5f));
+                isPushed = true;
+                StartCoroutine(HandlePush(1.5f));
             }
             Vector2 direction = (Vector2)(transform.position - playerObject.transform.position).normalized;
             Vector2 targetPosition = (Vector2)transform.position + (direction * pushForce * Time.deltaTime);
@@ -77,7 +78,7 @@ public abstract class InteractableObject : MonoBehaviour
         }
     }
 
-    private IEnumerator handlePush(float seconds)
+    private IEnumerator HandlePush(float seconds)
     {
         yield return new WaitForSeconds(seconds);
         isPushed = false;

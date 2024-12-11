@@ -93145,13 +93145,17 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6212604822442417540, guid: b092faedfb5f93548bf9c494788fff44, type: 3}
+      propertyPath: m_PreviewTimeScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7642936126555644689, guid: b092faedfb5f93548bf9c494788fff44, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.67
+      value: -16.1
       objectReference: {fileID: 0}
     - target: {fileID: 7642936126555644689, guid: b092faedfb5f93548bf9c494788fff44, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.64
+      value: -2.8
       objectReference: {fileID: 0}
     - target: {fileID: 7642936126555644689, guid: b092faedfb5f93548bf9c494788fff44, type: 3}
       propertyPath: m_LocalPosition.z
@@ -93532,6 +93536,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2277936367107618363, guid: 4a155febd5a8c4fcda98ad5ddafdb000, type: 3}
+      propertyPath: isInCave
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2277936367107618363, guid: 4a155febd5a8c4fcda98ad5ddafdb000, type: 3}
+      propertyPath: isPushed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2277936367107618363, guid: 4a155febd5a8c4fcda98ad5ddafdb000, type: 3}
+      propertyPath: pullRange
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2277936367107618363, guid: 4a155febd5a8c4fcda98ad5ddafdb000, type: 3}
       propertyPath: playerInventory
       value: 
       objectReference: {fileID: 1091420874}
@@ -93582,6 +93598,10 @@ PrefabInstance:
     - target: {fileID: 9031432356539965364, guid: 4a155febd5a8c4fcda98ad5ddafdb000, type: 3}
       propertyPath: m_Name
       value: Boulder
+      objectReference: {fileID: 0}
+    - target: {fileID: 9031432356539965364, guid: 4a155febd5a8c4fcda98ad5ddafdb000, type: 3}
+      propertyPath: m_TagString
+      value: InteractableObject
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
